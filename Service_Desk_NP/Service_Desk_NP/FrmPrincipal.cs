@@ -17,8 +17,13 @@ namespace Service_Desk_NP
         public FrmPrincipal()
         {
             InitializeComponent();
+           
         }
-        // C
+        
+        // Mensajes de ayuda para el ususurio 
+       
+
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -27,12 +32,12 @@ namespace Service_Desk_NP
         // Boton para expandir o contraer el menu
         private void BtnSlide_Click(object sender, EventArgs e)
         {
-            if (menuVertical.Width == 250)
+            if (menuVertical.Width == 310)
             {
-                menuVertical.Width = 74;
+                menuVertical.Width = 90;
             }
             else
-                menuVertical.Width = 250;
+                menuVertical.Width = 310;
         }
         //  Boton para cerrar la pantalla
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -64,5 +69,6 @@ namespace Service_Desk_NP
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
     }
 }
