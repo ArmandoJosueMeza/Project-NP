@@ -20,10 +20,7 @@ namespace Service_Desk_NP
            
         }
         
-        // Mensajes de ayuda para el ususurio 
-       
-
-
+  
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -32,12 +29,12 @@ namespace Service_Desk_NP
         // Boton para expandir o contraer el menu
         private void BtnSlide_Click(object sender, EventArgs e)
         {
-            if (menuVertical.Width == 310)
+            if (menuVertical.Width == 294)
             {
                 menuVertical.Width = 90;
             }
             else
-                menuVertical.Width = 310;
+                menuVertical.Width = 294;
         }
         //  Boton para cerrar la pantalla
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -63,12 +60,29 @@ namespace Service_Desk_NP
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        // Permitir accion de arratrar el formulario
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        // Funcion para enlazar formularios en el Formulario Principal
+        private void AbrirFormEnPrincipal(object FormSecundario)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+                this.panelContenedor.Controls.RemoveAt(0);
+            Form fs = FormSecundario as Form;
+            fs.TopLevel = false;
+            fs.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fs);
+            this.panelContenedor.Tag = fs;
+            fs.Show();
+        }
+
+        private void BtnCliente_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new FrmCliente());
+        }
     }
 }
