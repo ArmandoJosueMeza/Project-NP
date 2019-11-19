@@ -47,8 +47,7 @@ GO
 
 CREATE TABLE Personas.Cliente
 (
-	IDCliente			INT IDENTITY(1, 1) CONSTRAINT PK_Personas_Cliente_ID PRIMARY KEY CLUSTERED, 
-	Identidad_Cliente	NVARCHAR(15)	NOT NULL,											
+	Identidad_Cliente	NVARCHAR(15)	CONSTRAINT PK_Personas_Cliente_ID PRIMARY KEY CLUSTERED,											
 	Nombre_Cliente		NVARCHAR(50)	NOT NULL,
 	Apellido_Cliente	NVARCHAR(50)	NOT NULL,
 	Empresa				NVARCHAR(50)			,
@@ -67,10 +66,10 @@ GO
 
 CREATE TABLE Personas.Usuario
 (
-	IDUsuario			INT IDENTITY(1, 1) CONSTRAINT PK_Personas_Usuario_ID PRIMARY KEY CLUSTERED,
-	Identidad_Usuario	NVARCHAR(15)	NOT NULL,
+	Identidad_Usuario	NVARCHAR(15)	CONSTRAINT PK_Personas_Usuario_ID PRIMARY KEY CLUSTERED,
 	Nombre_Usuario		NVARCHAR(50)	NOT NULL,
-	Apellido_Usuario	NVARCHAR(50)	NOT NULL,	
+	Apellido_Usuario	NVARCHAR(50)	NOT NULL,
+	Correo_Usuario		NVARCHAR(50)	NOT NULL,
 	Nombre_Acceso		NVARCHAR(50)	NOT NULL,	
 	Clave_Usuario		NVARCHAR(50)	NOT NULL
 )
@@ -85,11 +84,11 @@ GO
 
 CREATE TABLE Personas.Tecnico
 (
-	IDTecnico			INT IDENTITY(1, 1) CONSTRAINT PK_Personas_Tecnico_ID PRIMARY KEY CLUSTERED,
-	Identidad_Tecnico	NVARCHAR(15)	NOT NULL,
+	Identidad_Tecnico	NVARCHAR(15)	CONSTRAINT PK_Personas_Tecnico_ID PRIMARY KEY CLUSTERED,
 	Nombre_Tecnico		NVARCHAR(50)	NOT NULL,
 	Apellido_Tecnico	NVARCHAR(50)	NOT NULL,
-	Telefono			NVARCHAR(9)		NOT NULL
+	Telefono			NVARCHAR(9)		NOT NULL,
+	Correo_Tecnico		NVARCHAR(50)	NOT NULL
 )
 GO
 
@@ -104,13 +103,12 @@ GO
 
 CREATE TABLE Articulos.Articulo
 (
-	IDArticulo		INT IDENTITY(1,1) CONSTRAINT PK_Articulos_Articulo_ID PRIMARY KEY CLUSTERED,
-	IDCliente		INT				NOT NULL,
-	No_Serie		VARCHAR(50)		NOT NULL,
-	Articulo		NVARCHAR(50)	NOT NULL,
-	Marca			NVARCHAR(50)	NOT NULL,
-	Modelo			NVARCHAR(50)	NOT NULL,
-	Clave_Acceso	NVARCHAR(50)	
+	No_Serie			NVARCHAR(50)	CONSTRAINT PK_Articulos_Articulo_ID PRIMARY KEY CLUSTERED,
+	Identidad_Cliente	NVARCHAR(15)	NOT NULL,
+	Articulo			NVARCHAR(50)	NOT NULL,
+	Marca				NVARCHAR(50)	NOT NULL,
+	Modelo				NVARCHAR(50)	NOT NULL,
+	Clave_Acceso		NVARCHAR(50)	
 )
 GO
 
@@ -123,8 +121,8 @@ GO
 
 CREATE TABLE Registros.Estado
 (
-	IDEstado	INT IDENTITY(1,1) CONSTRAINT PK_Registros_Estado_ID PRIMARY KEY CLUSTERED,
-	Tipo_Estado	NVARCHAR(15)	NOT NULL,
+	IDEstado	INT IDENTITY(1,1)	CONSTRAINT PK_Registros_Estado_ID PRIMARY KEY CLUSTERED,
+	Tipo_Estado	NVARCHAR(15)		NOT NULL,
 )
 GO
 
@@ -138,15 +136,15 @@ GO
 
 CREATE TABLE Registros.Ticket
 (
-	IDTicket			INT IDENTITY(1,1) CONSTRAINT PK_Registros_Pedido_Id PRIMARY KEY CLUSTERED,
-	IDCliente			INT							NOT NULL,
-	IDArticulo			INT							NOT NULL,
-	IDTecnico_Asignado	INT							NOT NULL,
-	No_Orden			NVARCHAR(50)				NOT NULL,
-	Fecha_Ticket		DATETIME DEFAULT GETDATE()	NOT NULL,
-	IDEstado			INT							NOT NULL,
-	Problema_Reportado	TEXT						NOT NULL, 
-	Observaciones		TEXT						NOT NULL
+	IDTicket					INT IDENTITY(1,1) CONSTRAINT PK_Registros_Ticket_ID PRIMARY KEY CLUSTERED,
+	No_Ticket					AS ('TIK' + RIGHT ('0000' + CONVERT (VARCHAR, IDTicket), (4))), 
+	Identidad_Cliente			NVARCHAR(15)				NOT NULL,
+	No_Serie					NVARCHAR(50)				NOT NULL,
+	Identidad_Tecnico_Asignado	NVARCHAR(15)				NOT NULL,
+	Fecha_Ticket				DATETIME DEFAULT GETDATE()	NOT NULL,
+	IDEstado					INT							NOT NULL,
+	Problema_Reportado			TEXT						NOT NULL, 
+	Observaciones				TEXT						NOT NULL
 )
 GO
 
@@ -159,46 +157,60 @@ GO
 
 CREATE TABLE Registros.Entrega 
 (
-	IDEntrega			INT IDENTITY(1,1) CONSTRAINT PK_Registros_Entrega_ID PRIMARY KEY CLUSTERED,
-	IDTicket_Entrega	INT							NOT NULL,
-	IDCliente			INT							NOT NULL,
-	IDArticulo			INT							NOT NULL,
-	IDTecnico_Asignado	INT							NOT NULL,
-	IDEstado			INT							NOT NULL,
-	Fecha_Entrega		DATETIME DEFAULT GETDATE()	NOT NULL,
-	Trabajo_Realizado	TEXT						NOT NULL,
-	Repuesto			TEXT						NOT NULL,
-	Garantia			NVARCHAR(15)				NOT NULL,
+	
+	IDEntrega					INT IDENTITY(1,1) CONSTRAINT PK_Registros_Entrega_ID PRIMARY KEY CLUSTERED,
+	No_Entrega					AS ('ETR' + RIGHT ('0000' + CONVERT (VARCHAR, IDEntrega), (4))), 
+	Ticket_Entrega				INT							NOT NULL,
+	Identidad_Cliente			NVARCHAR(15)				NOT NULL,
+	No_Serie					NVARCHAR(50)				NOT NULL,
+	Identidad_Tecnico_Asignado	NVARCHAR(15)				NOT NULL,
+	IDEstado					INT							NOT NULL,
+	Fecha_Entrega				DATETIME DEFAULT GETDATE()	NOT NULL,
+	Trabajo_Realizado			TEXT						NOT NULL,
+	Repuesto					TEXT						NOT NULL,
+	Garantia					NVARCHAR(15)				NOT NULL,
 )
 GO
 
-/* Llaves Foreanes de las tablas */
+
+/* LLAVES PRIMARIAS */
+/* TABLA TICKET */
+/*ALTER TABLE Registros.Ticket ALTER COLUMN No_Ticket  NOT NULL;
+GO*/
+
+
+
+/* LLAVES FORANEAS */
 /* TABLA ARTICULO */
+/* Articulo - Cliente */
 ALTER TABLE		Articulos.Articulo
 ADD CONSTRAINT	FK_Articulos_Articulo$TIENE_UN$Personas_Cliente
-FOREIGN KEY		(IDCliente) 
-REFERENCES		Personas.Cliente(IDCliente)
+FOREIGN KEY		(Identidad_Cliente) 
+REFERENCES		Personas.Cliente(Identidad_Cliente)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 GO
 
 /* TABLA TICKET */
+/* Ticket - Cliente */
 ALTER TABLE		Registros.Ticket
 ADD CONSTRAINT	FK_Registros_Ticket$TIENE_UN$Personas_Cliente
-FOREIGN KEY		(IDCliente) 
-REFERENCES		Personas.Cliente(IDCliente)
+FOREIGN KEY		(Identidad_Cliente) 
+REFERENCES		Personas.Cliente(Identidad_Cliente)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 GO
 
+/* Ticket - Articulo */
 ALTER TABLE		Registros.Ticket
 ADD CONSTRAINT	FK_Registros_Ticket$TIENE_UN$Articulos_Articulo
-FOREIGN KEY		(IDArticulo) 
-REFERENCES		Articulos.Articulo(IDArticulo)
+FOREIGN KEY		(No_Serie) 
+REFERENCES		Articulos.Articulo(No_Serie)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 GO
 
+/* Ticket - Estado */
 ALTER TABLE		Registros.Ticket
 ADD CONSTRAINT	FK_Registros_Ticket$TIENE_UN$Registros_Estado
 FOREIGN KEY		(IDEstado) 
@@ -207,18 +219,21 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 GO
 
+/* Ticket - Tecnico */
 ALTER TABLE		Registros.Ticket
 ADD CONSTRAINT	FK_Registros_Ticket$TIENE_UN$Personas_Tecnico
-FOREIGN KEY		(IDTecnico_Asignado) 
-REFERENCES		Personas.Tecnico(IDTecnico)
+FOREIGN KEY		(Identidad_Tecnico_Asignado) 
+REFERENCES		Personas.Tecnico(Identidad_Tecnico)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 GO
 
 /* TABLA ENTREGA */
+/* Entrega - Ticket */
+
 ALTER TABLE		Registros.Entrega
 ADD CONSTRAINT	FK_Registros_Entrega$TIENE_UN$Registros_Ticket
-FOREIGN KEY		(IDTicket_Entrega) 
+FOREIGN KEY		(Ticket_Entrega) 
 REFERENCES		Registros.Ticket(IDTicket)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
@@ -226,16 +241,16 @@ GO
 
 ALTER TABLE		Registros.Entrega
 ADD CONSTRAINT	FK_Registros_Entrega$TIENE_UN$Personas_Cliente
-FOREIGN KEY		(IDCliente) 
-REFERENCES		Personas.Cliente(IDCliente)
+FOREIGN KEY		(Identidad_Cliente) 
+REFERENCES		Personas.Cliente(Identidad_Cliente)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 GO
 
 ALTER TABLE		Registros.Entrega
 ADD CONSTRAINT	FK_Registros_Entrega$TIENE_UN$Articulos_Articulo
-FOREIGN KEY		(IDArticulo) 
-REFERENCES		Articulos.Articulo(IDArticulo)
+FOREIGN KEY		(No_Serie) 
+REFERENCES		Articulos.Articulo(No_Serie)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 GO
@@ -250,8 +265,8 @@ GO
 
 ALTER TABLE		Registros.Entrega
 ADD CONSTRAINT	FK_Registros_Entrega$TIENE_UN$Personas_Tecnico
-FOREIGN KEY		(IDTecnico_Asignado) 
-REFERENCES		Personas.Tecnico(IDTecnico)
+FOREIGN KEY		(Identidad_Tecnico_Asignado) 
+REFERENCES		Personas.Tecnico(Identidad_Tecnico)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
@@ -296,10 +311,17 @@ ALTER TABLE Articulos.Articulo
 GO
 
 /* TABLA TICKET */
-/* Numero de Orden */
+/* Numero de Ticket */
 ALTER TABLE Registros.Ticket
-	ADD CONSTRAINT AK_Registros_No_Orden
-	UNIQUE NONCLUSTERED (No_Orden);
+	ADD CONSTRAINT AK_Registros_No_Ticket
+	UNIQUE NONCLUSTERED (No_Ticket);
+GO
+
+/* TABLA ENTREGA */
+/* Numero de Entrega */
+ALTER TABLE Registros.Entrega
+	ADD CONSTRAINT AK_Registros_No_Entrega
+	UNIQUE NONCLUSTERED (No_Entrega);
 GO
 
 --------------------------------------------------------------------
@@ -319,7 +341,7 @@ CREATE VIEW V_ARTICULOS_CLIENTES
 AS 
 SELECT 
 
-ART.IDArticulo,
+
 CLI.Identidad_Cliente, 
 CLI.Nombre_Cliente, 
 CLI.Apellido_Cliente, 
@@ -330,15 +352,17 @@ ART.Modelo,
 ART.Clave_Acceso
 
 FROM Articulos.Articulo as "ART" 
-JOIN Personas.Cliente AS "CLI" ON ART.IDCliente= CLI.IDCliente
+JOIN Personas.Cliente AS "CLI" ON ART.Identidad_Cliente= CLI.Identidad_Cliente
 GO
+
+
 
 /* TICKET - VISTA */
 CREATE VIEW V_TICKET
 AS 
 SELECT 
-TIC.IDTicket,
-TIC.No_Orden,
+
+TIC.No_Ticket,
 EST.Tipo_Estado,
 TIC.Fecha_Ticket,
 CLI.Identidad_Cliente,
@@ -352,19 +376,22 @@ TEC.Nombre_Tecnico,
 TEC.Apellido_Tecnico
 
 FROM (((Registros.Ticket AS TIC 
-INNER JOIN Personas.Cliente AS CLI		ON TIC.IDCliente = CLI.IDCliente)
-INNER JOIN Articulos.Articulo AS ART	ON TIC.IDArticulo = ART.IDArticulo)
+INNER JOIN Personas.Cliente AS CLI		ON TIC.Identidad_Cliente = CLI.Identidad_Cliente)
+INNER JOIN Articulos.Articulo AS ART	ON TIC.No_Serie = ART.No_Serie)
 INNER JOIN Registros.Estado AS EST		ON TIC.IDEstado = EST.IDEstado)
-INNER JOIN Personas.Tecnico AS TEC		ON TIC.IDTecnico_Asignado = TEC.IDTecnico
+INNER JOIN Personas.Tecnico AS TEC		ON TIC.Identidad_Tecnico_Asignado = TEC.Identidad_Tecnico
 
 GO
+
+
 
 /* ENTREGA - VISTA */
 CREATE VIEW V_ENTREGA 
 AS 
 SELECT
-ENT.IDEntrega,
-TIC.No_Orden,
+
+ENT.No_Entrega,
+TIC.No_Ticket,
 CLI.Identidad_Cliente,
 CLI.Nombre_Cliente,
 CLI.Apellido_Cliente,
@@ -379,19 +406,20 @@ TEC.Nombre_Tecnico,
 TEC.Apellido_Tecnico
 
 FROM ((((Registros.Entrega AS ENT 
-INNER JOIN Registros.Ticket AS TIC		ON ENT.IDTicket_Entrega = TIC.IDTicket)
-INNER JOIN Personas.Cliente AS CLI		ON ENT.IDCliente = CLI.IDCliente)
-INNER JOIN Articulos.Articulo AS ART	ON ENT.IDArticulo = ART.IDArticulo)
+INNER JOIN Registros.Ticket AS TIC		ON ENT.Ticket_Entrega = TIC.IDTicket)
+INNER JOIN Personas.Cliente AS CLI		ON ENT.Identidad_Cliente = CLI.Identidad_Cliente)
+INNER JOIN Articulos.Articulo AS ART	ON ENT.No_Serie = ART.No_Serie)
 INNER JOIN Registros.Estado AS EST		ON ENT.IDEstado = EST.IDEstado)
-INNER JOIN Personas.Tecnico AS TEC		ON ENT.IDTecnico_Asignado = TEC.IDTecnico
+INNER JOIN Personas.Tecnico AS TEC		ON ENT.Identidad_Tecnico_Asignado = TEC.Identidad_Tecnico
 GO
+
 
 /* TICKET PENDIENTE */
 CREATE VIEW V_TICKET_PENDIENTE
 AS 
 SELECT 
-TIC.IDTicket,
-TIC.No_Orden,
+
+TIC.No_Ticket,
 EST.Tipo_Estado,
 TIC.Fecha_Ticket,
 CLI.Identidad_Cliente,
@@ -405,10 +433,10 @@ TEC.Nombre_Tecnico,
 TEC.Apellido_Tecnico
 
 FROM (((Registros.Ticket AS TIC 
-INNER JOIN Personas.Cliente AS CLI		ON TIC.IDCliente = CLI.IDCliente)
-INNER JOIN Articulos.Articulo AS ART	ON TIC.IDArticulo = ART.IDArticulo)
+INNER JOIN Personas.Cliente AS CLI		ON TIC.Identidad_Cliente = CLI.Identidad_Cliente)
+INNER JOIN Articulos.Articulo AS ART	ON TIC.No_Serie = ART.No_Serie)
 INNER JOIN Registros.Estado AS EST		ON TIC.IDEstado = EST.IDEstado)
-INNER JOIN Personas.Tecnico AS TEC		ON TIC.IDTecnico_Asignado = TEC.IDTecnico
+INNER JOIN Personas.Tecnico AS TEC		ON TIC.Identidad_Tecnico_Asignado = TEC.Identidad_Tecnico
 WHERE EST.Tipo_Estado = 'PENDIENTE'
 GO
 
@@ -416,8 +444,8 @@ GO
 CREATE VIEW V_TICKET_PROCESO
 AS 
 SELECT 
-TIC.IDTicket,
-TIC.No_Orden,
+
+TIC.No_Ticket,
 EST.Tipo_Estado,
 TIC.Fecha_Ticket,
 CLI.Identidad_Cliente,
@@ -431,10 +459,10 @@ TEC.Nombre_Tecnico,
 TEC.Apellido_Tecnico
 
 FROM (((Registros.Ticket AS TIC 
-INNER JOIN Personas.Cliente AS CLI		ON TIC.IDCliente = CLI.IDCliente)
-INNER JOIN Articulos.Articulo AS ART	ON TIC.IDArticulo = ART.IDArticulo)
+INNER JOIN Personas.Cliente AS CLI		ON TIC.Identidad_Cliente = CLI.Identidad_Cliente)
+INNER JOIN Articulos.Articulo AS ART	ON TIC.No_Serie = ART.No_Serie)
 INNER JOIN Registros.Estado AS EST		ON TIC.IDEstado = EST.IDEstado)
-INNER JOIN Personas.Tecnico AS TEC		ON TIC.IDTecnico_Asignado = TEC.IDTecnico
+INNER JOIN Personas.Tecnico AS TEC		ON TIC.Identidad_Tecnico_Asignado = TEC.Identidad_Tecnico
 WHERE EST.Tipo_Estado = 'EN PROCESO'
 GO
 
@@ -444,8 +472,8 @@ GO
 CREATE VIEW V_TICKET_RESUELTO
 AS 
 SELECT 
-TIC.IDTicket,
-TIC.No_Orden,
+
+TIC.No_Ticket,
 EST.Tipo_Estado,
 TIC.Fecha_Ticket,
 CLI.Identidad_Cliente,
@@ -459,9 +487,9 @@ TEC.Nombre_Tecnico,
 TEC.Apellido_Tecnico
 
 FROM (((Registros.Ticket AS TIC 
-INNER JOIN Personas.Cliente AS CLI		ON TIC.IDCliente = CLI.IDCliente)
-INNER JOIN Articulos.Articulo AS ART	ON TIC.IDArticulo = ART.IDArticulo)
+INNER JOIN Personas.Cliente AS CLI		ON TIC.Identidad_Cliente = CLI.Identidad_Cliente)
+INNER JOIN Articulos.Articulo AS ART	ON TIC.No_Serie = ART.No_Serie)
 INNER JOIN Registros.Estado AS EST		ON TIC.IDEstado = EST.IDEstado)
-INNER JOIN Personas.Tecnico AS TEC		ON TIC.IDTecnico_Asignado = TEC.IDTecnico
+INNER JOIN Personas.Tecnico AS TEC		ON TIC.Identidad_Tecnico_Asignado = TEC.Identidad_Tecnico
 WHERE EST.Tipo_Estado = 'RESUELTO'
 GO

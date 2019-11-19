@@ -84,5 +84,30 @@ namespace Service_Desk_NP
         {
             AbrirFormEnPrincipal(new FrmCliente());
         }
+
+        private void btnPrincipal_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new FrmInicio());
+        }
+
+        private void btnArticulo_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new FrmArticulo());
+        }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new FrmTicket());
+        }
+
+        private void btnTecnico_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new FrmTecnico());
+        }
+
+        private void btnEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new FrmEntrega());
+        }
     }
 }

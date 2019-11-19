@@ -20,11 +20,20 @@ namespace Service_Desk_NP
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+            //MostarInicio(new FrmInicio());
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        /* private void MostarInicio(object FormInicio)
+         {
+             Form fi = FormInicio as Form;
+             fi.TopLevel = false;
+             fi.Dock = DockStyle.Fill;
+             fi.Show();
+         }*/
     }
 }
