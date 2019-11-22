@@ -19,29 +19,26 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_AGREGAR_TICKET( @ID_CLIENTE			INT, 
-									@ID_ARTICULO		INT, 
-									@ID_TECNICO			INT, 
-									@NO_ORDEN			NVARCHAR(50),
-									@FECHA_TICKET		DATE,
-									@ID_ESTADO			INT,
-									@PROBLEMA_REPORTADO	NVARCHAR(50),
-									@OBSERVACIONES		TEXT)
+CREATE PROCEDURE SP_AGREGAR_TICKET(	@NO_CLIENTE				NVARCHAR(3), 
+									@NO_SERIE				NVARCHAR(50), 
+									@NO_TECNICO_ASIGNADO	NVARCHAR(3), 
+									@FECHA_TICKET			DATE,
+									@ID_ESTADO				INT,
+									@PROBLEMA_REPORTADO		TEXT,
+									@OBSERVACIONES			TEXT)
 AS
 BEGIN
-	INSERT INTO Registros.Ticket(	IDCliente,
-									IDArticulo,
-									IDTecnico_Asignado, 
-									No_Orden, 
+	INSERT INTO Registros.Ticket(	No_Cliente,
+									No_Serie,
+									No_Tecnico_Asignado, 
 									Fecha_Ticket,
 									IDEstado,
 									Problema_Reportado,
 									Observaciones)
 
-	VALUES						(	@ID_CLIENTE,
-									@ID_ARTICULO, 
-									@ID_TECNICO, 
-									@NO_ORDEN, 
+	VALUES						(	@NO_CLIENTE,
+									@NO_SERIE, 
+									@NO_TECNICO_ASIGNADO, 
 									@FECHA_TICKET,
 									@ID_ESTADO,
 									@PROBLEMA_REPORTADO,
@@ -57,26 +54,24 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ACTUALIZAR_TICKET(
-										@ID_CLIENTE			INT, 
-										@ID_ARTICULO		INT, 
-										@ID_TECNICO			INT, 
-										@NO_ORDEN			NVARCHAR(50),
-										@FECHA_TICKET		DATE,
-										@ID_ESTADO			INT,
-										@PROBLEMA_REPORTADO	TEXT,
-										@OBSERVACIONES		TEXT )
+CREATE PROCEDURE SP_ACTUALIZAR_TICKET(	@NO_TICKET				NVARCHAR(8), 
+										@NO_CLIENTE				NVARCHAR(3), 
+										@NO_SERIE				NVARCHAR(50), 
+										@NO_TECNICO_ASIGNADO	NVARCHAR(15), 
+										@FECHA_TICKET			DATE,
+										@ID_ESTADO				INT,
+										@PROBLEMA_REPORTADO		NVARCHAR(50),
+										@OBSERVACIONES			TEXT)
 AS
 BEGIN
-	UPDATE Registros.Ticket SET IDCliente=			@ID_CLIENTE,
-								IDArticulo=			@ID_ARTICULO, 
-								IDTecnico_Asignado=	@ID_TECNICO, 
-								No_Orden=			@NO_ORDEN,
-								Fecha_Ticket=		@FECHA_TICKET,
-								IDEstado=			@ID_ESTADO,
-								Problema_Reportado=	@PROBLEMA_REPORTADO,
-								Observaciones =		@OBSERVACIONES
-								WHERE No_Orden=	@NO_ORDEN;
+	UPDATE Registros.Ticket SET No_Cliente=				@NO_CLIENTE,
+								No_Serie=				@NO_SERIE, 
+								No_Tecnico_Asignado=	@NO_TECNICO_ASIGNADO, 
+								Fecha_Ticket=			@FECHA_TICKET,
+								IDEstado=				@ID_ESTADO,
+								Problema_Reportado=		@PROBLEMA_REPORTADO,
+								Observaciones =			@OBSERVACIONES
+								WHERE No_Ticket=		@NO_TICKET;
 END 
 GO
 
@@ -87,11 +82,10 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ELIMINAR_TICKET( @NO_ORDEN	NVARCHAR(50))
+CREATE PROCEDURE SP_ELIMINAR_TICKET( @NO_TICKET NVARCHAR(8))
 AS
 BEGIN
-	DECLARE @IDTICKET INT;
-	SET @IDTICKET = (SELECT IDTicket FROM Registros.Ticket WHERE No_Orden=@NO_ORDEN);
+	SET @NO_TICKET = (SELECT No_Ticket FROM Registros.Ticket WHERE No_Ticket=@NO_TICKET);
 
-	DELETE FROM Registros.Ticket WHERE IDTicket = @IDTICKET;
+	DELETE FROM Registros.Ticket WHERE No_Ticket = @NO_TICKET;
 END

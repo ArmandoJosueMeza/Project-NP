@@ -184,7 +184,7 @@
             this.btnArticulo.Name = "btnArticulo";
             this.btnArticulo.Size = new System.Drawing.Size(287, 41);
             this.btnArticulo.TabIndex = 1;
-            this.btnArticulo.Text = "ARTICULO";
+            this.btnArticulo.Text = "EQUIPO";
             this.toolMensaje.SetToolTip(this.btnArticulo, "Articulo");
             this.btnArticulo.UseVisualStyleBackColor = true;
             this.btnArticulo.Click += new System.EventHandler(this.btnArticulo_Click);

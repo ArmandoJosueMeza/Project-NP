@@ -19,8 +19,7 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_AGREGAR_CLIENTE(	@IDENTIDAD_CLIENTE	NVARCHAR(15), 
-										@NOMBRE_CLIENTE		NVARCHAR(50), 
+CREATE PROCEDURE SP_AGREGAR_CLIENTE(	@NOMBRE_CLIENTE		NVARCHAR(50), 
 										@APELLIDO_CLIENTE	NVARCHAR(50), 
 										@EMPRESA			VARCHAR(50), 
 										@UBICACION			TEXT, 
@@ -28,16 +27,14 @@ CREATE PROCEDURE SP_AGREGAR_CLIENTE(	@IDENTIDAD_CLIENTE	NVARCHAR(15),
 										@CORREO				NVARCHAR(50))
 AS
 BEGIN
-	INSERT INTO Personas.Cliente (	Identidad_Cliente,
-									Nombre_Cliente,
+	INSERT INTO Personas.Cliente (	Nombre_Cliente,
 									Apellido_Cliente,
 									Empresa,
 									Ubicacion,
 									Telefono,
 									Correo_Electronico)
 
-	VALUES						(	@IDENTIDAD_CLIENTE,
-									@NOMBRE_CLIENTE,
+	VALUES						(	@NOMBRE_CLIENTE,
 									@APELLIDO_CLIENTE,
 									@EMPRESA,
 									@UBICACION,
@@ -54,24 +51,22 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ACTUALIZAR_CLIENTE(	
-										@IDENTIDAD_CLIENTE	VARCHAR(15), 
+CREATE PROCEDURE SP_ACTUALIZAR_CLIENTE(	@NO_CLIENTE			NVARCHAR(3), 
 										@NOMBRE_CLIENTE		NVARCHAR(50), 
 										@APELLIDO_CLIENTE	NVARCHAR(50), 
 										@EMPRESA			VARCHAR(50), 
 										@UBICACION			TEXT, 
-										@TELEFONO			VARCHAR(9), 
+										@TELEFONO			NVARCHAR(9), 
 										@CORREO				NVARCHAR(50))
 AS
 BEGIN
-	UPDATE Personas.Cliente SET	Identidad_Cliente=	@IDENTIDAD_CLIENTE,
-								Nombre_Cliente=		@NOMBRE_CLIENTE, 
+	UPDATE Personas.Cliente SET	Nombre_Cliente=		@NOMBRE_CLIENTE, 
 								Apellido_Cliente=	@APELLIDO_CLIENTE, 
 								Empresa=			@EMPRESA, 
 								Ubicacion=			@UBICACION, 
 								Telefono=			@TELEFONO, 
 								Correo_Electronico=	@CORREO
-								WHERE Identidad_Cliente=	@IDENTIDAD_CLIENTE AND Nombre_Cliente = @NOMBRE_CLIENTE;
+								WHERE No_Cliente=	@NO_CLIENTE AND Nombre_Cliente = @NOMBRE_CLIENTE;
 END 
 GO
 
@@ -82,13 +77,10 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ELIMINAR_CLIENTE(	@NOMBRE_CLIENTE		NVARCHAR(50),
-										@IDENTIDAD_CLIENTE	NVARCHAR(15) )
+CREATE PROCEDURE SP_ELIMINAR_CLIENTE(	@NO_CLIENTE	NVARCHAR(15),
+										@NOMBRE_CLIENTE		NVARCHAR(50))
 AS
 BEGIN
-	DECLARE @ID_CLIENTE INT;
-	SET @ID_CLIENTE = (SELECT IDCLiente FROM Personas.Cliente WHERE Nombre_Cliente=@NOMBRE_CLIENTE and Identidad_Cliente=@IDENTIDAD_CLIENTE);
-
-	DELETE FROM Personas.Cliente WHERE IDCliente = @ID_CLIENTE;
+	SET @NO_CLIENTE = (SELECT No_Cliente FROM Personas.Cliente WHERE No_Cliente=@NO_CLIENTE AND Nombre_Cliente=@NOMBRE_CLIENTE );
+	DELETE FROM Personas.Cliente WHERE No_Cliente = @NO_CLIENTE;
 END
-

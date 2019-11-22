@@ -35,36 +35,37 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpbBusqueda = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblFiltrado = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.cmbFiltrado = new System.Windows.Forms.ComboBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblUbicacion = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.gpbTablaCliente = new System.Windows.Forms.GroupBox();
+            this.dgvEntregas = new System.Windows.Forms.DataGridView();
+            this.gpbDatosEntrega = new System.Windows.Forms.GroupBox();
+            this.lblGarantia = new System.Windows.Forms.Label();
+            this.txtGarantia = new System.Windows.Forms.TextBox();
+            this.dtFechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.txtNoCliente = new System.Windows.Forms.TextBox();
+            this.txtNoSerie = new System.Windows.Forms.TextBox();
+            this.txtTecnicoAsignado = new System.Windows.Forms.TextBox();
+            this.lblRepuesto = new System.Windows.Forms.Label();
+            this.txtRepuesto = new System.Windows.Forms.TextBox();
+            this.lblTrabajoRealizado = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.txtTrabajoRealizado = new System.Windows.Forms.TextBox();
+            this.lblFechaEntrega = new System.Windows.Forms.Label();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblTecnicoAsignado = new System.Windows.Forms.Label();
+            this.lblNoSerie = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.gpbBusqueda.SuspendLayout();
+            this.gpbTablaCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
+            this.gpbDatosEntrega.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -80,7 +81,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(733, 535);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 33);
-            this.btnGuardar.TabIndex = 106;
+            this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
@@ -108,25 +109,25 @@
             this.btnEliminar.Location = new System.Drawing.Point(353, 535);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(140, 33);
-            this.btnEliminar.TabIndex = 104;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // gpbBusqueda
             // 
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.lblFiltrado);
-            this.groupBox1.Controls.Add(this.txtBusqueda);
-            this.groupBox1.Controls.Add(this.cmbFiltrado);
-            this.groupBox1.Controls.Add(this.lblBusqueda);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(510, 64);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 121);
-            this.groupBox1.TabIndex = 107;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda de Entregas";
+            this.gpbBusqueda.Controls.Add(this.btnBuscar);
+            this.gpbBusqueda.Controls.Add(this.lblFiltrado);
+            this.gpbBusqueda.Controls.Add(this.txtBusqueda);
+            this.gpbBusqueda.Controls.Add(this.cmbFiltrado);
+            this.gpbBusqueda.Controls.Add(this.lblBusqueda);
+            this.gpbBusqueda.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbBusqueda.ForeColor = System.Drawing.Color.White;
+            this.gpbBusqueda.Location = new System.Drawing.Point(510, 64);
+            this.gpbBusqueda.Name = "gpbBusqueda";
+            this.gpbBusqueda.Size = new System.Drawing.Size(363, 121);
+            this.gpbBusqueda.TabIndex = 107;
+            this.gpbBusqueda.TabStop = false;
+            this.gpbBusqueda.Text = "Busqueda de Entregas";
             // 
             // btnBuscar
             // 
@@ -140,7 +141,7 @@
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(65, 21);
-            this.btnBuscar.TabIndex = 16;
+            this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseCompatibleTextRendering = true;
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -163,7 +164,7 @@
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(128, 23);
-            this.txtBusqueda.TabIndex = 14;
+            this.txtBusqueda.TabIndex = 3;
             // 
             // cmbFiltrado
             // 
@@ -173,7 +174,7 @@
             this.cmbFiltrado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFiltrado.Name = "cmbFiltrado";
             this.cmbFiltrado.Size = new System.Drawing.Size(128, 24);
-            this.cmbFiltrado.TabIndex = 15;
+            this.cmbFiltrado.TabIndex = 4;
             // 
             // lblBusqueda
             // 
@@ -199,30 +200,30 @@
             this.btnEditar.Location = new System.Drawing.Point(207, 535);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(140, 33);
-            this.btnEditar.TabIndex = 103;
+            this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
-            // groupBox3
+            // gpbTablaCliente
             // 
-            this.groupBox3.Controls.Add(this.dgvClientes);
-            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(13, 64);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(480, 465);
-            this.groupBox3.TabIndex = 108;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Entregas";
+            this.gpbTablaCliente.Controls.Add(this.dgvEntregas);
+            this.gpbTablaCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbTablaCliente.ForeColor = System.Drawing.Color.White;
+            this.gpbTablaCliente.Location = new System.Drawing.Point(13, 64);
+            this.gpbTablaCliente.Name = "gpbTablaCliente";
+            this.gpbTablaCliente.Size = new System.Drawing.Size(480, 465);
+            this.gpbTablaCliente.TabIndex = 108;
+            this.gpbTablaCliente.TabStop = false;
+            this.gpbTablaCliente.Text = "Entregas";
             // 
-            // dgvClientes
+            // dgvEntregas
             // 
-            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
-            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEntregas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEntregas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEntregas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvEntregas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,14 +231,14 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvClientes.ColumnHeadersHeight = 30;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvClientes.EnableHeadersVisualStyles = false;
-            this.dgvClientes.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvClientes.Location = new System.Drawing.Point(6, 30);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEntregas.ColumnHeadersHeight = 30;
+            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEntregas.EnableHeadersVisualStyles = false;
+            this.dgvEntregas.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvEntregas.Location = new System.Drawing.Point(6, 30);
+            this.dgvEntregas.Name = "dgvEntregas";
+            this.dgvEntregas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -245,200 +246,217 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEntregas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvClientes.Size = new System.Drawing.Size(468, 429);
-            this.dgvClientes.TabIndex = 64;
+            this.dgvEntregas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEntregas.Size = new System.Drawing.Size(468, 429);
+            this.dgvEntregas.TabIndex = 0;
             // 
-            // groupBox2
+            // gpbDatosEntrega
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.txtID);
-            this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Controls.Add(this.txtApellido);
-            this.groupBox2.Controls.Add(this.lblCorreo);
-            this.groupBox2.Controls.Add(this.txtCorreo);
-            this.groupBox2.Controls.Add(this.lblTelefono);
-            this.groupBox2.Controls.Add(this.lblUbicacion);
-            this.groupBox2.Controls.Add(this.txtTelefono);
-            this.groupBox2.Controls.Add(this.lblEmpresa);
-            this.groupBox2.Controls.Add(this.lblID);
-            this.groupBox2.Controls.Add(this.lblApellido);
-            this.groupBox2.Controls.Add(this.lblNombre);
-            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(510, 191);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(363, 338);
-            this.groupBox2.TabIndex = 109;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Entrega";
+            this.gpbDatosEntrega.Controls.Add(this.lblGarantia);
+            this.gpbDatosEntrega.Controls.Add(this.txtGarantia);
+            this.gpbDatosEntrega.Controls.Add(this.dtFechaEntrega);
+            this.gpbDatosEntrega.Controls.Add(this.cmbEstado);
+            this.gpbDatosEntrega.Controls.Add(this.txtNoCliente);
+            this.gpbDatosEntrega.Controls.Add(this.txtNoSerie);
+            this.gpbDatosEntrega.Controls.Add(this.txtTecnicoAsignado);
+            this.gpbDatosEntrega.Controls.Add(this.lblRepuesto);
+            this.gpbDatosEntrega.Controls.Add(this.lblFechaEntrega);
+            this.gpbDatosEntrega.Controls.Add(this.txtRepuesto);
+            this.gpbDatosEntrega.Controls.Add(this.lblTrabajoRealizado);
+            this.gpbDatosEntrega.Controls.Add(this.lblEstado);
+            this.gpbDatosEntrega.Controls.Add(this.txtTrabajoRealizado);
+            this.gpbDatosEntrega.Controls.Add(this.lblCliente);
+            this.gpbDatosEntrega.Controls.Add(this.lblTecnicoAsignado);
+            this.gpbDatosEntrega.Controls.Add(this.lblNoSerie);
+            this.gpbDatosEntrega.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbDatosEntrega.ForeColor = System.Drawing.Color.White;
+            this.gpbDatosEntrega.Location = new System.Drawing.Point(510, 191);
+            this.gpbDatosEntrega.Name = "gpbDatosEntrega";
+            this.gpbDatosEntrega.Size = new System.Drawing.Size(363, 338);
+            this.gpbDatosEntrega.TabIndex = 109;
+            this.gpbDatosEntrega.TabStop = false;
+            this.gpbDatosEntrega.Text = "Datos Entrega";
             // 
-            // label1
+            // lblGarantia
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 180);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "Garantia:";
+            this.lblGarantia.AutoSize = true;
+            this.lblGarantia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGarantia.ForeColor = System.Drawing.Color.White;
+            this.lblGarantia.Location = new System.Drawing.Point(15, 307);
+            this.lblGarantia.Name = "lblGarantia";
+            this.lblGarantia.Size = new System.Drawing.Size(71, 16);
+            this.lblGarantia.TabIndex = 37;
+            this.lblGarantia.Text = "Garantia:";
             // 
-            // textBox1
+            // txtGarantia
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(151, 173);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 23);
-            this.textBox1.TabIndex = 24;
+            this.txtGarantia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGarantia.Location = new System.Drawing.Point(151, 300);
+            this.txtGarantia.Name = "txtGarantia";
+            this.txtGarantia.Size = new System.Drawing.Size(200, 23);
+            this.txtGarantia.TabIndex = 13;
             // 
-            // dateTimePicker1
+            // dtFechaEntrega
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(151, 115);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 36;
+            this.dtFechaEntrega.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaEntrega.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaEntrega.Location = new System.Drawing.Point(151, 142);
+            this.dtFechaEntrega.Margin = new System.Windows.Forms.Padding(2);
+            this.dtFechaEntrega.Name = "dtFechaEntrega";
+            this.dtFechaEntrega.Size = new System.Drawing.Size(200, 23);
+            this.dtFechaEntrega.TabIndex = 10;
             // 
-            // comboBox1
+            // cmbEstado
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(151, 144);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 17;
+            this.cmbEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(151, 114);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(200, 24);
+            this.cmbEstado.TabIndex = 9;
             // 
-            // txtID
+            // txtNoCliente
             // 
-            this.txtID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(151, 28);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(200, 23);
-            this.txtID.TabIndex = 17;
+            this.txtNoCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoCliente.Location = new System.Drawing.Point(151, 28);
+            this.txtNoCliente.Name = "txtNoCliente";
+            this.txtNoCliente.Size = new System.Drawing.Size(200, 23);
+            this.txtNoCliente.TabIndex = 6;
             // 
-            // txtNombre
+            // txtNoSerie
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(151, 57);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 23);
-            this.txtNombre.TabIndex = 18;
+            this.txtNoSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoSerie.Location = new System.Drawing.Point(151, 57);
+            this.txtNoSerie.Name = "txtNoSerie";
+            this.txtNoSerie.Size = new System.Drawing.Size(200, 23);
+            this.txtNoSerie.TabIndex = 7;
             // 
-            // txtApellido
+            // txtTecnicoAsignado
             // 
-            this.txtApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(151, 86);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(200, 23);
-            this.txtApellido.TabIndex = 19;
+            this.txtTecnicoAsignado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTecnicoAsignado.Location = new System.Drawing.Point(151, 86);
+            this.txtTecnicoAsignado.Name = "txtTecnicoAsignado";
+            this.txtTecnicoAsignado.Size = new System.Drawing.Size(200, 23);
+            this.txtTecnicoAsignado.TabIndex = 8;
             // 
-            // lblCorreo
+            // lblRepuesto
             // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(17, 270);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(71, 16);
-            this.lblCorreo.TabIndex = 11;
-            this.lblCorreo.Text = "Repuesto:";
+            this.lblRepuesto.AutoSize = true;
+            this.lblRepuesto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRepuesto.ForeColor = System.Drawing.Color.White;
+            this.lblRepuesto.Location = new System.Drawing.Point(15, 238);
+            this.lblRepuesto.Name = "lblRepuesto";
+            this.lblRepuesto.Size = new System.Drawing.Size(71, 16);
+            this.lblRepuesto.TabIndex = 11;
+            this.lblRepuesto.Text = "Repuesto:";
             // 
-            // txtCorreo
+            // txtRepuesto
             // 
-            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(151, 267);
-            this.txtCorreo.Multiline = true;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(200, 59);
-            this.txtCorreo.TabIndex = 23;
+            this.txtRepuesto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRepuesto.Location = new System.Drawing.Point(151, 235);
+            this.txtRepuesto.Multiline = true;
+            this.txtRepuesto.Name = "txtRepuesto";
+            this.txtRepuesto.Size = new System.Drawing.Size(200, 59);
+            this.txtRepuesto.TabIndex = 12;
             // 
-            // lblTelefono
+            // lblTrabajoRealizado
             // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.ForeColor = System.Drawing.Color.White;
-            this.lblTelefono.Location = new System.Drawing.Point(17, 205);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(128, 16);
-            this.lblTelefono.TabIndex = 10;
-            this.lblTelefono.Text = "Trabajo realizado:";
+            this.lblTrabajoRealizado.AutoSize = true;
+            this.lblTrabajoRealizado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrabajoRealizado.ForeColor = System.Drawing.Color.White;
+            this.lblTrabajoRealizado.Location = new System.Drawing.Point(15, 182);
+            this.lblTrabajoRealizado.Name = "lblTrabajoRealizado";
+            this.lblTrabajoRealizado.Size = new System.Drawing.Size(128, 16);
+            this.lblTrabajoRealizado.TabIndex = 10;
+            this.lblTrabajoRealizado.Text = "Trabajo realizado:";
             // 
-            // lblUbicacion
+            // lblEstado
             // 
-            this.lblUbicacion.AutoSize = true;
-            this.lblUbicacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUbicacion.ForeColor = System.Drawing.Color.White;
-            this.lblUbicacion.Location = new System.Drawing.Point(17, 152);
-            this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(55, 16);
-            this.lblUbicacion.TabIndex = 9;
-            this.lblUbicacion.Text = "Estado:";
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.ForeColor = System.Drawing.Color.White;
+            this.lblEstado.Location = new System.Drawing.Point(17, 122);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(55, 16);
+            this.lblEstado.TabIndex = 9;
+            this.lblEstado.Text = "Estado:";
             // 
-            // txtTelefono
+            // txtTrabajoRealizado
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(151, 202);
-            this.txtTelefono.Multiline = true;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(200, 59);
-            this.txtTelefono.TabIndex = 22;
+            this.txtTrabajoRealizado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTrabajoRealizado.Location = new System.Drawing.Point(151, 170);
+            this.txtTrabajoRealizado.Multiline = true;
+            this.txtTrabajoRealizado.Name = "txtTrabajoRealizado";
+            this.txtTrabajoRealizado.Size = new System.Drawing.Size(200, 59);
+            this.txtTrabajoRealizado.TabIndex = 11;
             // 
-            // lblEmpresa
+            // lblFechaEntrega
             // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
-            this.lblEmpresa.Location = new System.Drawing.Point(17, 122);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(127, 16);
-            this.lblEmpresa.TabIndex = 8;
-            this.lblEmpresa.Text = "Fecha de entrega:";
+            this.lblFechaEntrega.AutoSize = true;
+            this.lblFechaEntrega.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaEntrega.ForeColor = System.Drawing.Color.White;
+            this.lblFechaEntrega.Location = new System.Drawing.Point(15, 149);
+            this.lblFechaEntrega.Name = "lblFechaEntrega";
+            this.lblFechaEntrega.Size = new System.Drawing.Size(127, 16);
+            this.lblFechaEntrega.TabIndex = 8;
+            this.lblFechaEntrega.Text = "Fecha de entrega:";
             // 
-            // lblID
+            // lblCliente
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(17, 35);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(76, 16);
-            this.lblID.TabIndex = 5;
-            this.lblID.Text = "Identidad:";
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.ForeColor = System.Drawing.Color.White;
+            this.lblCliente.Location = new System.Drawing.Point(17, 35);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(80, 16);
+            this.lblCliente.TabIndex = 5;
+            this.lblCliente.Text = "No Cliente:";
             // 
-            // lblApellido
+            // lblTecnicoAsignado
             // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.ForeColor = System.Drawing.Color.White;
-            this.lblApellido.Location = new System.Drawing.Point(17, 93);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(129, 16);
-            this.lblApellido.TabIndex = 7;
-            this.lblApellido.Text = "Tecnico Asignado:";
+            this.lblTecnicoAsignado.AutoSize = true;
+            this.lblTecnicoAsignado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTecnicoAsignado.ForeColor = System.Drawing.Color.White;
+            this.lblTecnicoAsignado.Location = new System.Drawing.Point(17, 93);
+            this.lblTecnicoAsignado.Name = "lblTecnicoAsignado";
+            this.lblTecnicoAsignado.Size = new System.Drawing.Size(129, 16);
+            this.lblTecnicoAsignado.TabIndex = 7;
+            this.lblTecnicoAsignado.Text = "Tecnico Asignado:";
             // 
-            // lblNombre
+            // lblNoSerie
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(17, 64);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(66, 16);
-            this.lblNombre.TabIndex = 6;
-            this.lblNombre.Text = "No Serie:";
+            this.lblNoSerie.AutoSize = true;
+            this.lblNoSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoSerie.ForeColor = System.Drawing.Color.White;
+            this.lblNoSerie.Location = new System.Drawing.Point(17, 64);
+            this.lblNoSerie.Name = "lblNoSerie";
+            this.lblNoSerie.Size = new System.Drawing.Size(66, 16);
+            this.lblNoSerie.TabIndex = 6;
+            this.lblNoSerie.Text = "No Serie:";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(571, 535);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(156, 33);
+            this.btnImprimir.TabIndex = 14;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
             // 
             // FrmEntrega
             // 
@@ -446,23 +464,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(898, 585);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpbBusqueda);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gpbTablaCliente);
+            this.Controls.Add(this.gpbDatosEntrega);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEntrega";
             this.Text = "Entrega";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gpbBusqueda.ResumeLayout(false);
+            this.gpbBusqueda.PerformLayout();
+            this.gpbTablaCliente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).EndInit();
+            this.gpbDatosEntrega.ResumeLayout(false);
+            this.gpbDatosEntrega.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,31 +492,32 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpbBusqueda;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblFiltrado;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.ComboBox cmbFiltrado;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.Label lblUbicacion;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gpbTablaCliente;
+        private System.Windows.Forms.DataGridView dgvEntregas;
+        private System.Windows.Forms.GroupBox gpbDatosEntrega;
+        private System.Windows.Forms.DateTimePicker dtFechaEntrega;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.TextBox txtGarantia;
+        private System.Windows.Forms.TextBox txtNoCliente;
+        private System.Windows.Forms.TextBox txtNoSerie;
+        private System.Windows.Forms.TextBox txtTecnicoAsignado;
+        private System.Windows.Forms.Label lblRepuesto;
+        private System.Windows.Forms.TextBox txtRepuesto;
+        private System.Windows.Forms.Label lblTrabajoRealizado;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.TextBox txtTrabajoRealizado;
+        private System.Windows.Forms.Label lblFechaEntrega;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label lblTecnicoAsignado;
+        private System.Windows.Forms.Label lblNoSerie;
+        private System.Windows.Forms.Label lblGarantia;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

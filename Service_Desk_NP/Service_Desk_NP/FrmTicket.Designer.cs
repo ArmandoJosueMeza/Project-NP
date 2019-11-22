@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTicket));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -42,26 +42,27 @@
             this.cmbFiltrado = new System.Windows.Forms.ComboBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.gpbTicket = new System.Windows.Forms.GroupBox();
+            this.dgvTickets = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.dtFechaIngreso = new System.Windows.Forms.DateTimePicker();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.txtNoCliente = new System.Windows.Forms.TextBox();
+            this.txtNoSerie = new System.Windows.Forms.TextBox();
+            this.txtTecnicoAsignado = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblUbicacion = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtProblema = new System.Windows.Forms.TextBox();
+            this.lblFechaTicket = new System.Windows.Forms.Label();
+            this.lblNoCliente = new System.Windows.Forms.Label();
+            this.lblTecnicoAsignado = new System.Windows.Forms.Label();
+            this.lblNoSerie = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.gpbTicket.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +79,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(734, 527);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 33);
-            this.btnGuardar.TabIndex = 99;
+            this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
@@ -106,7 +107,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(354, 527);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(140, 33);
-            this.btnEliminar.TabIndex = 97;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
@@ -138,7 +139,7 @@
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(65, 21);
-            this.btnBuscar.TabIndex = 16;
+            this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseCompatibleTextRendering = true;
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -161,7 +162,7 @@
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(128, 23);
-            this.txtBusqueda.TabIndex = 14;
+            this.txtBusqueda.TabIndex = 3;
             // 
             // cmbFiltrado
             // 
@@ -171,7 +172,7 @@
             this.cmbFiltrado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFiltrado.Name = "cmbFiltrado";
             this.cmbFiltrado.Size = new System.Drawing.Size(128, 24);
-            this.cmbFiltrado.TabIndex = 15;
+            this.cmbFiltrado.TabIndex = 4;
             // 
             // lblBusqueda
             // 
@@ -197,78 +198,78 @@
             this.btnEditar.Location = new System.Drawing.Point(208, 527);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(140, 33);
-            this.btnEditar.TabIndex = 96;
+            this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
-            // groupBox3
+            // gpbTicket
             // 
-            this.groupBox3.Controls.Add(this.dgvClientes);
-            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(14, 56);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(480, 465);
-            this.groupBox3.TabIndex = 101;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tickets";
+            this.gpbTicket.Controls.Add(this.dgvTickets);
+            this.gpbTicket.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbTicket.ForeColor = System.Drawing.Color.White;
+            this.gpbTicket.Location = new System.Drawing.Point(14, 56);
+            this.gpbTicket.Name = "gpbTicket";
+            this.gpbTicket.Size = new System.Drawing.Size(480, 465);
+            this.gpbTicket.TabIndex = 101;
+            this.gpbTicket.TabStop = false;
+            this.gpbTicket.Text = "Tickets";
             // 
-            // dgvClientes
+            // dgvTickets
             // 
-            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
-            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvClientes.ColumnHeadersHeight = 30;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvClientes.EnableHeadersVisualStyles = false;
-            this.dgvClientes.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvClientes.Location = new System.Drawing.Point(6, 30);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvClientes.Size = new System.Drawing.Size(468, 429);
-            this.dgvClientes.TabIndex = 64;
+            this.dgvTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvTickets.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTickets.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTickets.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTickets.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvTickets.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTickets.ColumnHeadersHeight = 30;
+            this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTickets.EnableHeadersVisualStyles = false;
+            this.dgvTickets.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvTickets.Location = new System.Drawing.Point(6, 30);
+            this.dgvTickets.Name = "dgvTickets";
+            this.dgvTickets.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTickets.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTickets.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTickets.Size = new System.Drawing.Size(468, 429);
+            this.dgvTickets.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.txtID);
-            this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Controls.Add(this.txtApellido);
+            this.groupBox2.Controls.Add(this.dtFechaIngreso);
+            this.groupBox2.Controls.Add(this.cmbEstado);
+            this.groupBox2.Controls.Add(this.txtNoCliente);
+            this.groupBox2.Controls.Add(this.txtNoSerie);
+            this.groupBox2.Controls.Add(this.txtTecnicoAsignado);
             this.groupBox2.Controls.Add(this.lblCorreo);
-            this.groupBox2.Controls.Add(this.txtCorreo);
+            this.groupBox2.Controls.Add(this.txtObservaciones);
             this.groupBox2.Controls.Add(this.lblTelefono);
             this.groupBox2.Controls.Add(this.lblUbicacion);
-            this.groupBox2.Controls.Add(this.txtTelefono);
-            this.groupBox2.Controls.Add(this.lblEmpresa);
-            this.groupBox2.Controls.Add(this.lblID);
-            this.groupBox2.Controls.Add(this.lblApellido);
-            this.groupBox2.Controls.Add(this.lblNombre);
+            this.groupBox2.Controls.Add(this.txtProblema);
+            this.groupBox2.Controls.Add(this.lblFechaTicket);
+            this.groupBox2.Controls.Add(this.lblNoCliente);
+            this.groupBox2.Controls.Add(this.lblTecnicoAsignado);
+            this.groupBox2.Controls.Add(this.lblNoSerie);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(511, 183);
@@ -278,29 +279,49 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Ticket";
             // 
-            // txtID
+            // dtFechaIngreso
             // 
-            this.txtID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(157, 30);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(200, 23);
-            this.txtID.TabIndex = 17;
+            this.dtFechaIngreso.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaIngreso.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFechaIngreso.Location = new System.Drawing.Point(157, 116);
+            this.dtFechaIngreso.Margin = new System.Windows.Forms.Padding(2);
+            this.dtFechaIngreso.Name = "dtFechaIngreso";
+            this.dtFechaIngreso.Size = new System.Drawing.Size(200, 23);
+            this.dtFechaIngreso.TabIndex = 9;
             // 
-            // txtNombre
+            // cmbEstado
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(157, 59);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 23);
-            this.txtNombre.TabIndex = 18;
+            this.cmbEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(157, 145);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(200, 24);
+            this.cmbEstado.TabIndex = 10;
             // 
-            // txtApellido
+            // txtNoCliente
             // 
-            this.txtApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(157, 88);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(200, 23);
-            this.txtApellido.TabIndex = 19;
+            this.txtNoCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoCliente.Location = new System.Drawing.Point(157, 30);
+            this.txtNoCliente.Name = "txtNoCliente";
+            this.txtNoCliente.Size = new System.Drawing.Size(200, 23);
+            this.txtNoCliente.TabIndex = 6;
+            // 
+            // txtNoSerie
+            // 
+            this.txtNoSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoSerie.Location = new System.Drawing.Point(157, 59);
+            this.txtNoSerie.Name = "txtNoSerie";
+            this.txtNoSerie.Size = new System.Drawing.Size(200, 23);
+            this.txtNoSerie.TabIndex = 7;
+            // 
+            // txtTecnicoAsignado
+            // 
+            this.txtTecnicoAsignado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTecnicoAsignado.Location = new System.Drawing.Point(157, 88);
+            this.txtTecnicoAsignado.Name = "txtTecnicoAsignado";
+            this.txtTecnicoAsignado.Size = new System.Drawing.Size(200, 23);
+            this.txtTecnicoAsignado.TabIndex = 8;
             // 
             // lblCorreo
             // 
@@ -313,14 +334,14 @@
             this.lblCorreo.TabIndex = 11;
             this.lblCorreo.Text = "Observaciones:";
             // 
-            // txtCorreo
+            // txtObservaciones
             // 
-            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(157, 248);
-            this.txtCorreo.Multiline = true;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(200, 67);
-            this.txtCorreo.TabIndex = 23;
+            this.txtObservaciones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservaciones.Location = new System.Drawing.Point(157, 248);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(200, 67);
+            this.txtObservaciones.TabIndex = 12;
             // 
             // lblTelefono
             // 
@@ -344,78 +365,75 @@
             this.lblUbicacion.TabIndex = 9;
             this.lblUbicacion.Text = "Estado:";
             // 
-            // txtTelefono
+            // txtProblema
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(157, 175);
-            this.txtTelefono.Multiline = true;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(200, 67);
-            this.txtTelefono.TabIndex = 22;
+            this.txtProblema.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProblema.Location = new System.Drawing.Point(157, 175);
+            this.txtProblema.Multiline = true;
+            this.txtProblema.Name = "txtProblema";
+            this.txtProblema.Size = new System.Drawing.Size(200, 67);
+            this.txtProblema.TabIndex = 11;
             // 
-            // lblEmpresa
+            // lblFechaTicket
             // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpresa.ForeColor = System.Drawing.Color.White;
-            this.lblEmpresa.Location = new System.Drawing.Point(23, 124);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(124, 16);
-            this.lblEmpresa.TabIndex = 8;
-            this.lblEmpresa.Text = "Fecha de ingreso:";
+            this.lblFechaTicket.AutoSize = true;
+            this.lblFechaTicket.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaTicket.ForeColor = System.Drawing.Color.White;
+            this.lblFechaTicket.Location = new System.Drawing.Point(23, 124);
+            this.lblFechaTicket.Name = "lblFechaTicket";
+            this.lblFechaTicket.Size = new System.Drawing.Size(124, 16);
+            this.lblFechaTicket.TabIndex = 8;
+            this.lblFechaTicket.Text = "Fecha de ingreso:";
             // 
-            // lblID
+            // lblNoCliente
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(21, 37);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(76, 16);
-            this.lblID.TabIndex = 5;
-            this.lblID.Text = "Identidad:";
+            this.lblNoCliente.AutoSize = true;
+            this.lblNoCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoCliente.ForeColor = System.Drawing.Color.White;
+            this.lblNoCliente.Location = new System.Drawing.Point(21, 37);
+            this.lblNoCliente.Name = "lblNoCliente";
+            this.lblNoCliente.Size = new System.Drawing.Size(80, 16);
+            this.lblNoCliente.TabIndex = 5;
+            this.lblNoCliente.Text = "No Cliente:";
             // 
-            // lblApellido
+            // lblTecnicoAsignado
             // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.ForeColor = System.Drawing.Color.White;
-            this.lblApellido.Location = new System.Drawing.Point(21, 95);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(129, 16);
-            this.lblApellido.TabIndex = 7;
-            this.lblApellido.Text = "Tecnico Asignado:";
+            this.lblTecnicoAsignado.AutoSize = true;
+            this.lblTecnicoAsignado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTecnicoAsignado.ForeColor = System.Drawing.Color.White;
+            this.lblTecnicoAsignado.Location = new System.Drawing.Point(21, 95);
+            this.lblTecnicoAsignado.Name = "lblTecnicoAsignado";
+            this.lblTecnicoAsignado.Size = new System.Drawing.Size(129, 16);
+            this.lblTecnicoAsignado.TabIndex = 7;
+            this.lblTecnicoAsignado.Text = "Tecnico Asignado:";
             // 
-            // lblNombre
+            // lblNoSerie
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(23, 66);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(66, 16);
-            this.lblNombre.TabIndex = 6;
-            this.lblNombre.Text = "No Serie:";
+            this.lblNoSerie.AutoSize = true;
+            this.lblNoSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoSerie.ForeColor = System.Drawing.Color.White;
+            this.lblNoSerie.Location = new System.Drawing.Point(23, 66);
+            this.lblNoSerie.Name = "lblNoSerie";
+            this.lblNoSerie.Size = new System.Drawing.Size(66, 16);
+            this.lblNoSerie.TabIndex = 6;
+            this.lblNoSerie.Text = "No Serie:";
             // 
-            // comboBox1
+            // btnImprimir
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(157, 145);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 17;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 116);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 37;
+            this.btnImprimir.BackColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(572, 527);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(156, 33);
+            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
             // 
             // FrmTicket
             // 
@@ -423,12 +441,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(898, 585);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gpbTicket);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -436,8 +455,8 @@
             this.Text = "Ticket";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.gpbTicket.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -457,22 +476,23 @@
         private System.Windows.Forms.ComboBox cmbFiltrado;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.GroupBox gpbTicket;
+        private System.Windows.Forms.DataGridView dgvTickets;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtNoCliente;
+        private System.Windows.Forms.TextBox txtNoSerie;
+        private System.Windows.Forms.TextBox txtTecnicoAsignado;
         private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblUbicacion;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblEmpresa;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtProblema;
+        private System.Windows.Forms.Label lblFechaTicket;
+        private System.Windows.Forms.Label lblNoCliente;
+        private System.Windows.Forms.Label lblTecnicoAsignado;
+        private System.Windows.Forms.Label lblNoSerie;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.DateTimePicker dtFechaIngreso;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

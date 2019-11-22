@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Service_Desk_NP
 {
-    public partial class FrmArticulo : Form
+    public partial class FrmEquipo : Form
     {
-        public FrmArticulo()
+        public FrmEquipo()
         {
             InitializeComponent();
         }

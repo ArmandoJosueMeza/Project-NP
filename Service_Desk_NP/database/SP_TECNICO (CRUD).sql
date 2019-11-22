@@ -19,21 +19,21 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_AGREGAR_TECNICO(	@IDENTIDAD_TECNICO	NVARCHAR(15), 
-										@NOMBRE_TECNICO		NVARCHAR(50), 
+CREATE PROCEDURE SP_AGREGAR_TECNICO(	@NOMBRE_TECNICO		NVARCHAR(50), 
 										@APELLIDO_TECNICO	NVARCHAR(50), 
-										@TELEFONO			NVARCHAR(9))
+										@TELEFONO			NVARCHAR(9),
+										@CORREO				NVARCHAR(50))
 AS
 BEGIN
-	INSERT INTO Personas.Tecnico(	Identidad_Tecnico,
-									Nombre_Tecnico,
+	INSERT INTO Personas.Tecnico(	Nombre_Tecnico,
 									Apellido_Tecnico,
-									Telefono)
+									Telefono,
+									Correo_Tecnico)
 
-	VALUES						(	@IDENTIDAD_TECNICO,
-									@NOMBRE_TECNICO,
+	VALUES						(	@NOMBRE_TECNICO,
 									@APELLIDO_TECNICO,
-									@TELEFONO)
+									@TELEFONO,
+									@CORREO)
 END
 GO
 
@@ -45,18 +45,18 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ACTUALIZAR_TECNICO(
-										@IDENTIDAD_TECNICO	VARCHAR(15), 
+CREATE PROCEDURE SP_ACTUALIZAR_TECNICO(	@NO_TECNICO			NVARCHAR(3), 
 										@NOMBRE_TECNICO		NVARCHAR(50), 
 										@APELLIDO_TECNICO	NVARCHAR(50), 
-										@TELEFONO			VARCHAR(9))
+										@TELEFONO			NVARCHAR(9),
+										@CORREO				NVARCHAR(50))
 AS
 BEGIN
-	UPDATE Personas.Tecnico SET	Identidad_Tecnico=	@IDENTIDAD_TECNICO,
-								Nombre_Tecnico=		@NOMBRE_TECNICO, 
+	UPDATE Personas.Tecnico SET	Nombre_Tecnico=		@NOMBRE_TECNICO, 
 								Apellido_Tecnico=	@APELLIDO_TECNICO, 
-								Telefono=			@TELEFONO
-								WHERE Identidad_Tecnico=	@IDENTIDAD_TECNICO;
+								Telefono=			@TELEFONO,
+								Correo_Tecnico=		@CORREO
+								WHERE No_Tecnico=	@NO_TECNICO;
 END 
 GO
 
@@ -67,12 +67,10 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ELIMINAR_TECNICO(	@NOMBRE_TECNICO		NVARCHAR(50),
-										@IDENTIDAD_TECNICO	NVARCHAR(15) )
+CREATE PROCEDURE SP_ELIMINAR_TECNICO(	@NO_TECNICO		NVARCHAR(3),
+										@NOMBRE_TECNICO	NVARCHAR(50))
 AS
 BEGIN
-	DECLARE @ID_TECNICO INT;
-	SET @ID_TECNICO = (SELECT IDTecnico FROM Personas.Tecnico WHERE Nombre_Tecnico=@NOMBRE_TECNICO AND Identidad_Tecnico=@IDENTIDAD_TECNICO);
-
-	DELETE FROM Personas.Tecnico WHERE IDTecnico = @ID_TECNICO;
+	SET @NO_TECNICO = (SELECT No_Tecnico FROM Personas.Tecnico WHERE No_Tecnico=@NO_TECNICO and Nombre_Tecnico=@NOMBRE_TECNICO );
+	DELETE FROM Personas.Tecnico WHERE No_Tecnico = @NO_TECNICO;
 END

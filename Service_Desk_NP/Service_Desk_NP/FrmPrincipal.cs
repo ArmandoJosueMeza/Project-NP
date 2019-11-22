@@ -92,7 +92,7 @@ namespace Service_Desk_NP
 
         private void btnArticulo_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPrincipal(new FrmArticulo());
+            AbrirFormEnPrincipal(new FrmEquipo());
         }
 
         private void btnTicket_Click(object sender, EventArgs e)
