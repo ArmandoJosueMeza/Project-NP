@@ -277,6 +277,21 @@ ALTER TABLE Personas.Usuario
 GO
 
 /* VISTAS */
+
+/* CLIENTE */
+CREATE VIEW V_CLIENTES
+AS 
+SELECT 
+CLI.No_Cliente, 
+CLI.Nombre_Cliente, 
+CLI.Apellido_Cliente, 
+CLI.Empresa,
+CLI.Ubicacion,
+CLI.Telefono,
+CLI.Correo_Electronico
+FROM Personas.Cliente as "CLI" 
+GO
+
 /* EQUIPOS - CLIENTE */
 CREATE VIEW V_EQUIPOS_CLIENTES
 AS 
