@@ -5,24 +5,23 @@ GO
 /* TABLA CLIENTE */
 EXECUTE SP_MOSTRAR_CLIENTE
 
-EXECUTE SP_AGREGAR_CLIENTE	@IDENTIDAD_CLIENTE=		'0318-XXXX-XXXXX',
-							@NOMBRE_CLIENTE=		'JOSUE',
-							@APELLIDO_CLIENTE=		'MEZA',
-							@EMPRESA=				'AKIRA',
-							@UBICACION=				'INFERNO',
-							@TELEFONO=				'96523629',
-							@CORREO=				'akira@gmail.com'
+EXECUTE SP_AGREGAR_CLIENTE 'Lucas',
+							'Film',
+							'Star Wars',
+							'La galaxia',
+							'95854210',
+							'lucas@star.com'
 
-EXECUTE SP_ACTUALIZAR_CLIENTE	@IDENTIDAD_CLIENTE=		'0318-XXXX-XXXXX',
-								@NOMBRE_CLIENTE=		'JOSUE',
-								@APELLIDO_CLIENTE=		'MEZA',
-								@EMPRESA=				'AKIRA',
-								@UBICACION=				'TERABHITIA',
-								@TELEFONO=				'96523629',
-								@CORREO=				'akira@gmail.com'
+EXECUTE SP_ACTUALIZAR_CLIENTE	'Josue',
+								'Meza',
+								'Akira',
+								'Terabithia',
+								'96523629',
+								'akira@gmail.com',
+								'006'
 
-EXECUTE SP_ELIMINAR_CLIENTE		@IDENTIDAD_CLIENTE=		'0318-XXXX-XXXXX',
-								@NOMBRE_CLIENTE=		'JOSUE'
+
+EXECUTE SP_ELIMINAR_CLIENTE	'011'
 
 /* TABLA TECNICO */
 SELECT * FROM Personas.Tecnico

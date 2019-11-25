@@ -38,21 +38,12 @@ CREATE PROCEDURE SP_AGREGAR_CLIENTE(	@NOMBRE_CLIENTE		NVARCHAR(50),
 										@TELEFONO			NVARCHAR(9), 
 										@CORREO				NVARCHAR(50))
 AS
-BEGIN
-	INSERT INTO Personas.Cliente (	Nombre_Cliente,
-									Apellido_Cliente,
-									Empresa,
-									Ubicacion,
-									Telefono,
-									Correo_Electronico)
-
-	VALUES						(	@NOMBRE_CLIENTE,
-									@APELLIDO_CLIENTE,
-									@EMPRESA,
-									@UBICACION,
-									@TELEFONO,
-									@UBICACION)
-END
+INSERT INTO Personas.Cliente VALUES	(	@NOMBRE_CLIENTE,
+										@APELLIDO_CLIENTE,
+										@EMPRESA,
+										@UBICACION,
+										@TELEFONO,
+										@CORREO)
 GO
 
 
@@ -63,23 +54,21 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ACTUALIZAR_CLIENTE(	@NO_CLIENTE			NVARCHAR(3), 
-										@NOMBRE_CLIENTE		NVARCHAR(50), 
+CREATE PROCEDURE SP_ACTUALIZAR_CLIENTE(	@NOMBRE_CLIENTE		NVARCHAR(50), 
 										@APELLIDO_CLIENTE	NVARCHAR(50), 
 										@EMPRESA			VARCHAR(50), 
 										@UBICACION			TEXT, 
 										@TELEFONO			NVARCHAR(9), 
-										@CORREO				NVARCHAR(50))
+										@CORREO				NVARCHAR(50),
+										@NO_CLIENTE			NVARCHAR(3))
 AS
-BEGIN
-	UPDATE Personas.Cliente SET	Nombre_Cliente=		@NOMBRE_CLIENTE, 
-								Apellido_Cliente=	@APELLIDO_CLIENTE, 
-								Empresa=			@EMPRESA, 
-								Ubicacion=			@UBICACION, 
-								Telefono=			@TELEFONO, 
-								Correo_Electronico=	@CORREO
-								WHERE No_Cliente=	@NO_CLIENTE AND Nombre_Cliente = @NOMBRE_CLIENTE;
-END 
+UPDATE Personas.Cliente SET	Nombre_Cliente=		@NOMBRE_CLIENTE, 
+							Apellido_Cliente=	@APELLIDO_CLIENTE, 
+							Empresa=			@EMPRESA, 
+							Ubicacion=			@UBICACION, 
+							Telefono=			@TELEFONO, 
+							Correo_Electronico=	@CORREO
+							WHERE No_Cliente=	@NO_CLIENTE;
 GO
 
 /* Eliminar Cliente */
@@ -89,10 +78,7 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_ELIMINAR_CLIENTE(	@NO_CLIENTE	NVARCHAR(15),
-										@NOMBRE_CLIENTE		NVARCHAR(50))
+CREATE PROCEDURE SP_ELIMINAR_CLIENTE(@NO_CLIENTE	NVARCHAR(15))
 AS
-BEGIN
-	SET @NO_CLIENTE = (SELECT No_Cliente FROM Personas.Cliente WHERE No_Cliente=@NO_CLIENTE AND Nombre_Cliente=@NOMBRE_CLIENTE );
 	DELETE FROM Personas.Cliente WHERE No_Cliente = @NO_CLIENTE;
-END
+GO

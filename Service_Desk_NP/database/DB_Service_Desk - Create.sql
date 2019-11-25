@@ -292,6 +292,18 @@ CLI.Correo_Electronico
 FROM Personas.Cliente as "CLI" 
 GO
 
+/* TECNICO */
+CREATE VIEW V_TECNICOS
+AS 
+SELECT 
+TEC.No_Tecnico,
+TEC.Nombre_Tecnico,
+TEC.Apellido_Tecnico,
+TEC.Telefono,
+TEC.Correo_Tecnico
+FROM Personas.Tecnico as "TEC" 
+GO
+
 /* EQUIPOS - CLIENTE */
 CREATE VIEW V_EQUIPOS_CLIENTES
 AS 

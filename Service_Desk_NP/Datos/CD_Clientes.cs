@@ -37,8 +37,33 @@ namespace Datos
             comando.Parameters.AddWithValue("@TELEFONO", telefono);
             comando.Parameters.AddWithValue("@CORREO", correo);
             comando.ExecuteNonQuery();
-
+            comando.Parameters.Clear();
         }
 
+        public void Editar(string nombre, string apellido, string empresa, string ubicacion, string telefono, string correo, string no_cliente)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SP_ACTUALIZAR_CLIENTE";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NOMBRE_CLIENTE", nombre);
+            comando.Parameters.AddWithValue("@APELLIDO_CLIENTE", apellido);
+            comando.Parameters.AddWithValue("@EMPRESA", empresa);
+            comando.Parameters.AddWithValue("@UBICACION", ubicacion);
+            comando.Parameters.AddWithValue("@TELEFONO", telefono);
+            comando.Parameters.AddWithValue("@CORREO", correo);
+            comando.Parameters.AddWithValue("@NO_CLIENTE", no_cliente);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+        }
+
+        public void Eliminar(string no_cliente)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SP_ELIMINAR_CLIENTE";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NO_CLIENTE", no_cliente);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+        }
     }
 }

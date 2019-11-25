@@ -54,8 +54,6 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNoCliente = new System.Windows.Forms.TextBox();
-            this.lblNoCliente = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.gpbBusqueda = new System.Windows.Forms.GroupBox();
             this.bpgDatosCliente = new System.Windows.Forms.GroupBox();
@@ -125,7 +123,6 @@
             this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvClientes.Size = new System.Drawing.Size(468, 429);
             this.dgvClientes.TabIndex = 0;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // btnEditar
             // 
@@ -143,6 +140,7 @@
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -160,13 +158,14 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblFiltrado
             // 
             this.lblFiltrado.AutoSize = true;
             this.lblFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFiltrado.ForeColor = System.Drawing.Color.White;
-            this.lblFiltrado.Location = new System.Drawing.Point(15, 76);
+            this.lblFiltrado.Location = new System.Drawing.Point(15, 49);
             this.lblFiltrado.Name = "lblFiltrado";
             this.lblFiltrado.Size = new System.Drawing.Size(82, 16);
             this.lblFiltrado.TabIndex = 3;
@@ -176,7 +175,7 @@
             // 
             this.cmbFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFiltrado.FormattingEnabled = true;
-            this.cmbFiltrado.Location = new System.Drawing.Point(153, 68);
+            this.cmbFiltrado.Location = new System.Drawing.Point(153, 41);
             this.cmbFiltrado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFiltrado.Name = "cmbFiltrado";
             this.cmbFiltrado.Size = new System.Drawing.Size(128, 24);
@@ -187,7 +186,7 @@
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusqueda.ForeColor = System.Drawing.Color.White;
-            this.lblBusqueda.Location = new System.Drawing.Point(15, 45);
+            this.lblBusqueda.Location = new System.Drawing.Point(15, 76);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(77, 16);
             this.lblBusqueda.TabIndex = 2;
@@ -201,10 +200,10 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnBuscar.Location = new System.Drawing.Point(288, 71);
+            this.btnBuscar.Location = new System.Drawing.Point(285, 69);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 21);
+            this.btnBuscar.Size = new System.Drawing.Size(65, 23);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseCompatibleTextRendering = true;
@@ -213,7 +212,7 @@
             // txtBusqueda
             // 
             this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(153, 38);
+            this.txtBusqueda.Location = new System.Drawing.Point(153, 69);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(128, 23);
@@ -222,7 +221,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(153, 227);
+            this.txtCorreo.Location = new System.Drawing.Point(153, 192);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(200, 23);
             this.txtCorreo.TabIndex = 12;
@@ -232,7 +231,7 @@
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(15, 234);
+            this.lblCorreo.Location = new System.Drawing.Point(15, 199);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(132, 16);
             this.lblCorreo.TabIndex = 11;
@@ -241,7 +240,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(153, 198);
+            this.txtTelefono.Location = new System.Drawing.Point(153, 163);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(200, 23);
             this.txtTelefono.TabIndex = 11;
@@ -251,7 +250,7 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.Color.White;
-            this.lblTelefono.Location = new System.Drawing.Point(15, 205);
+            this.lblTelefono.Location = new System.Drawing.Point(15, 170);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(66, 16);
             this.lblTelefono.TabIndex = 10;
@@ -260,7 +259,7 @@
             // txtUbicacion
             // 
             this.txtUbicacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUbicacion.Location = new System.Drawing.Point(153, 169);
+            this.txtUbicacion.Location = new System.Drawing.Point(153, 134);
             this.txtUbicacion.Name = "txtUbicacion";
             this.txtUbicacion.Size = new System.Drawing.Size(200, 23);
             this.txtUbicacion.TabIndex = 10;
@@ -270,7 +269,7 @@
             this.lblUbicacion.AutoSize = true;
             this.lblUbicacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUbicacion.ForeColor = System.Drawing.Color.White;
-            this.lblUbicacion.Location = new System.Drawing.Point(15, 176);
+            this.lblUbicacion.Location = new System.Drawing.Point(15, 141);
             this.lblUbicacion.Name = "lblUbicacion";
             this.lblUbicacion.Size = new System.Drawing.Size(78, 16);
             this.lblUbicacion.TabIndex = 9;
@@ -279,7 +278,7 @@
             // txtEmpresa
             // 
             this.txtEmpresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpresa.Location = new System.Drawing.Point(153, 140);
+            this.txtEmpresa.Location = new System.Drawing.Point(153, 105);
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(200, 23);
             this.txtEmpresa.TabIndex = 9;
@@ -289,7 +288,7 @@
             this.lblEmpresa.AutoSize = true;
             this.lblEmpresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpresa.ForeColor = System.Drawing.Color.White;
-            this.lblEmpresa.Location = new System.Drawing.Point(15, 147);
+            this.lblEmpresa.Location = new System.Drawing.Point(15, 112);
             this.lblEmpresa.Name = "lblEmpresa";
             this.lblEmpresa.Size = new System.Drawing.Size(68, 16);
             this.lblEmpresa.TabIndex = 8;
@@ -298,7 +297,7 @@
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(153, 111);
+            this.txtApellido.Location = new System.Drawing.Point(153, 76);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 23);
             this.txtApellido.TabIndex = 8;
@@ -308,7 +307,7 @@
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.Color.White;
-            this.lblApellido.Location = new System.Drawing.Point(15, 118);
+            this.lblApellido.Location = new System.Drawing.Point(15, 83);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(68, 16);
             this.lblApellido.TabIndex = 7;
@@ -317,7 +316,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(153, 82);
+            this.txtNombre.Location = new System.Drawing.Point(153, 47);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 23);
             this.txtNombre.TabIndex = 7;
@@ -327,30 +326,11 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(15, 89);
+            this.lblNombre.Location = new System.Drawing.Point(15, 54);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(64, 16);
             this.lblNombre.TabIndex = 6;
             this.lblNombre.Text = "Nombre:";
-            // 
-            // txtNoCliente
-            // 
-            this.txtNoCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoCliente.Location = new System.Drawing.Point(153, 53);
-            this.txtNoCliente.Name = "txtNoCliente";
-            this.txtNoCliente.Size = new System.Drawing.Size(200, 23);
-            this.txtNoCliente.TabIndex = 6;
-            // 
-            // lblNoCliente
-            // 
-            this.lblNoCliente.AutoSize = true;
-            this.lblNoCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoCliente.ForeColor = System.Drawing.Color.White;
-            this.lblNoCliente.Location = new System.Drawing.Point(15, 60);
-            this.lblNoCliente.Name = "lblNoCliente";
-            this.lblNoCliente.Size = new System.Drawing.Size(80, 16);
-            this.lblNoCliente.TabIndex = 5;
-            this.lblNoCliente.Text = "No Cliente:";
             // 
             // btnGuardar
             // 
@@ -372,11 +352,11 @@
             // 
             // gpbBusqueda
             // 
-            this.gpbBusqueda.Controls.Add(this.btnBuscar);
-            this.gpbBusqueda.Controls.Add(this.lblFiltrado);
             this.gpbBusqueda.Controls.Add(this.txtBusqueda);
-            this.gpbBusqueda.Controls.Add(this.cmbFiltrado);
             this.gpbBusqueda.Controls.Add(this.lblBusqueda);
+            this.gpbBusqueda.Controls.Add(this.cmbFiltrado);
+            this.gpbBusqueda.Controls.Add(this.lblFiltrado);
+            this.gpbBusqueda.Controls.Add(this.btnBuscar);
             this.gpbBusqueda.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbBusqueda.ForeColor = System.Drawing.Color.White;
             this.gpbBusqueda.Location = new System.Drawing.Point(513, 40);
@@ -388,7 +368,6 @@
             // 
             // bpgDatosCliente
             // 
-            this.bpgDatosCliente.Controls.Add(this.txtNoCliente);
             this.bpgDatosCliente.Controls.Add(this.txtNombre);
             this.bpgDatosCliente.Controls.Add(this.txtApellido);
             this.bpgDatosCliente.Controls.Add(this.txtEmpresa);
@@ -399,14 +378,13 @@
             this.bpgDatosCliente.Controls.Add(this.lblUbicacion);
             this.bpgDatosCliente.Controls.Add(this.txtTelefono);
             this.bpgDatosCliente.Controls.Add(this.lblEmpresa);
-            this.bpgDatosCliente.Controls.Add(this.lblNoCliente);
             this.bpgDatosCliente.Controls.Add(this.lblApellido);
             this.bpgDatosCliente.Controls.Add(this.lblNombre);
             this.bpgDatosCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bpgDatosCliente.ForeColor = System.Drawing.Color.White;
-            this.bpgDatosCliente.Location = new System.Drawing.Point(513, 206);
+            this.bpgDatosCliente.Location = new System.Drawing.Point(513, 256);
             this.bpgDatosCliente.Name = "bpgDatosCliente";
-            this.bpgDatosCliente.Size = new System.Drawing.Size(363, 299);
+            this.bpgDatosCliente.Size = new System.Drawing.Size(363, 249);
             this.bpgDatosCliente.TabIndex = 95;
             this.bpgDatosCliente.TabStop = false;
             this.bpgDatosCliente.Text = "Datos del Cliente";
@@ -475,8 +453,6 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNoCliente;
-        private System.Windows.Forms.Label lblNoCliente;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox gpbBusqueda;
         private System.Windows.Forms.GroupBox bpgDatosCliente;
