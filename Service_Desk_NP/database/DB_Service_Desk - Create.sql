@@ -94,7 +94,7 @@ CREATE TABLE Personas.Tecnico
 GO
 
 
-/* TABLA ARTICULO */
+/* TABLA EQUIPOS */
 IF EXISTS(SELECT * FROM sys.databases WHERE name='Articulos.Articulo')
 BEGIN
 	DROP TABLE Equipos.Equipo
@@ -159,7 +159,7 @@ GO
 CREATE TABLE Registros.Entrega 
 (
 	IDEntrega					INT IDENTITY(1,1),
-	No_Entrega					AS ('ETR-' + RIGHT ('0000' + CONVERT (VARCHAR, IDEntrega), (4))) PERSISTED CONSTRAINT PK_Registros_Entrega_ID PRIMARY KEY CLUSTERED, 
+	No_Entrega					AS ('ETR-' + RIGHT ('0000' + CONVERT (NVARCHAR, IDEntrega), (4))) PERSISTED CONSTRAINT PK_Registros_Entrega_ID PRIMARY KEY CLUSTERED, 
 	No_Ticket					NVARCHAR(8)					NOT NULL,
 	No_Cliente					NVARCHAR(3) NOT NULL,
 	No_Serie					NVARCHAR(50)				NOT NULL,
@@ -282,63 +282,60 @@ GO
 CREATE VIEW V_CLIENTES
 AS 
 SELECT 
-CLI.No_Cliente, 
-CLI.Nombre_Cliente, 
-CLI.Apellido_Cliente, 
+CLI.No_Cliente AS			"No. Cliente", 
+CLI.Nombre_Cliente AS		"Nombre", 
+CLI.Apellido_Cliente AS		"Apellido", 
 CLI.Empresa,
-CLI.Ubicacion,
-CLI.Telefono,
-CLI.Correo_Electronico
-FROM Personas.Cliente as "CLI" 
+CLI.Ubicacion AS			"Ubicación",
+CLI.Telefono AS				"Numero de teléfono",
+CLI.Correo_Electronico AS	"Correo Electronico"
+FROM Personas.Cliente AS "CLI" 
 GO
 
 /* TECNICO */
 CREATE VIEW V_TECNICOS
 AS 
 SELECT 
-TEC.No_Tecnico,
-TEC.Nombre_Tecnico,
-TEC.Apellido_Tecnico,
-TEC.Telefono,
-TEC.Correo_Tecnico
-FROM Personas.Tecnico as "TEC" 
+TEC.No_Tecnico AS		"No. Tecnico",
+TEC.Nombre_Tecnico AS	"Nombre",
+TEC.Apellido_Tecnico AS	"Apellido",
+TEC.Telefono AS			"Numero de teléfono",
+TEC.Correo_Tecnico AS	"Correo electrónico"
+FROM Personas.Tecnico AS "TEC" 
 GO
 
-/* EQUIPOS - CLIENTE */
-CREATE VIEW V_EQUIPOS_CLIENTES
+/* USUARIO */
+CREATE VIEW V_USUARIOS
 AS 
 SELECT 
-CLI.No_Cliente, 
-CLI.Nombre_Cliente, 
-CLI.Apellido_Cliente, 
-EQU.Equipo,
-EQU.Marca,
-EQU.Modelo,
-EQU.No_Serie, 
-EQU.Clave_Acceso
+USU.Nombre_Usuario,
+USU.Apellido_Usuario,
+USU.Correo_Usuario,
+USU.Nombre_Acceso,
+USU.Clave_Usuario
 
-FROM Equipos.Equipo as "EQU" 
-JOIN Personas.Cliente AS "CLI" ON EQU.No_Cliente= CLI.No_Cliente
+FROM Personas.Usuario AS "USU" 
 GO
 
 /* TICKET - VISTA */
-CREATE VIEW V_TICKET
+CREATE VIEW V_TICKETS
 AS 
 SELECT 
-TIC.No_Ticket,
-EST.Tipo_Estado,
-TIC.Fecha_Ticket,
-CLI.No_Cliente,
-CLI.Nombre_Cliente,
-CLI.Apellido_Cliente,
-EQU.Equipo,
+TIC.No_Ticket AS			"No. Ticket",
+EST.Tipo_Estado AS			"Estado",
+TIC.Fecha_Ticket AS			"Fecha de ingreso",
+CLI.No_Cliente AS			"No. Cliente",
+CLI.Nombre_Cliente AS		"Nombre",
+CLI.Apellido_Cliente AS		"Apellido",
+EQU.Equipo AS				"Descripción del equipo",
 EQU.Marca,
 EQU.Modelo,
-EQU.No_Serie, 
-TIC.Problema_Reportado,
+EQU.No_Serie AS				"No. Serie", 
+TIC.Problema_Reportado AS	"Problema reportado",
 TIC.Observaciones,
-TEC.Nombre_Tecnico,
-TEC.Apellido_Tecnico
+TEC.No_Tecnico AS			"No. Tecnico Asignado", 
+TEC.Nombre_Tecnico AS		"Nombre del Tenico",
+TEC.Apellido_Tecnico AS		"Apellido del Tecnico"
 
 FROM (((Registros.Ticket AS TIC 
 INNER JOIN Personas.Cliente AS CLI		ON TIC.No_Cliente = CLI.No_Cliente)
@@ -348,26 +345,26 @@ INNER JOIN Personas.Tecnico AS TEC		ON TIC.No_Tecnico_Asignado = TEC.No_Tecnico
 GO
 
 
-
 /* ENTREGA - VISTA */
-CREATE VIEW V_ENTREGA 
+CREATE VIEW V_ENTREGAS 
 AS 
 SELECT
-ENT.No_Entrega,
-TIC.No_Ticket,
-CLI.No_Cliente,
-CLI.Nombre_Cliente,
-CLI.Apellido_Cliente,
-EST.Tipo_Estado,
-EQU.Equipo,
+ENT.No_Entrega AS			"No. Entrega",
+TIC.No_Ticket AS			"No. Ticket",
+CLI.No_Cliente AS			"No. Cliente",
+CLI.Nombre_Cliente AS		"Nombre",
+CLI.Apellido_Cliente AS		"Apellido",
+EST.Tipo_Estado AS			"Estado",
+EQU.Equipo AS				"Descripción del equipo",
 EQU.Marca,
 EQU.Modelo,
-EQU.No_Serie, 
-ENT.Fecha_Entrega,
-ENT.Trabajo_Realizado,
-ENT.Repuesto,
-TEC.Nombre_Tecnico,
-TEC.Apellido_Tecnico
+EQU.No_Serie AS				"No. Serie", 
+ENT.Fecha_Entrega AS		"Fecha de entrega",
+ENT.Trabajo_Realizado AS	"Trabajo realizado",
+ENT.Repuesto AS				"Repuestos utilizados",
+TEC.No_Tecnico AS			"No. Tecnico Asignado", 
+TEC.Nombre_Tecnico AS		"Nombre del Tenico",
+TEC.Apellido_Tecnico AS		"Apellido del Tecnico"
 
 FROM ((((Registros.Entrega AS ENT 
 INNER JOIN Registros.Ticket AS TIC		ON ENT.No_Ticket = TIC.No_Ticket)
@@ -379,23 +376,24 @@ GO
 
 
 /* TICKET PENDIENTE */
-CREATE VIEW V_TICKET_PENDIENTE
+CREATE VIEW V_TICKETS_PENDIENTES
 AS 
 SELECT 
-TIC.No_Ticket,
-EST.Tipo_Estado,
-TIC.Fecha_Ticket,
-CLI.No_Cliente,
-CLI.Nombre_Cliente,
-CLI.Apellido_Cliente,
-EQU.Equipo,
+TIC.No_Ticket AS			"No. Ticket",
+EST.Tipo_Estado AS			"Estado",
+TIC.Fecha_Ticket AS			"Fecha de ingreso",
+CLI.No_Cliente AS			"No. Cliente",
+CLI.Nombre_Cliente AS		"Nombre",
+CLI.Apellido_Cliente AS		"Apellido",
+EQU.Equipo AS				"Descripción del equipo",
 EQU.Marca,
 EQU.Modelo,
-EQU.No_Serie, 
-TIC.Problema_Reportado,
+EQU.No_Serie AS				"No. Serie", 
+TIC.Problema_Reportado AS	"Problema reportado",
 TIC.Observaciones,
-TEC.Nombre_Tecnico,
-TEC.Apellido_Tecnico
+TEC.No_Tecnico AS			"No. Tecnico Asignado", 
+TEC.Nombre_Tecnico AS		"Nombre del Tenico",
+TEC.Apellido_Tecnico AS		"Apellido del Tecnico"
 
 FROM (((Registros.Ticket AS TIC 
 INNER JOIN Personas.Cliente AS CLI		ON TIC.No_Cliente = CLI.No_Cliente)
@@ -406,23 +404,24 @@ WHERE EST.Tipo_Estado = 'PENDIENTE'
 GO
 
 /* TICKET EN PROCESO */
-CREATE VIEW V_TICKET_PROCESO
+CREATE VIEW V_TICKETS_PROCESO
 AS 
 SELECT 
-TIC.No_Ticket,
-EST.Tipo_Estado,
-TIC.Fecha_Ticket,
-CLI.No_Cliente,
-CLI.Nombre_Cliente,
-CLI.Apellido_Cliente,
-EQU.Equipo,
+TIC.No_Ticket AS			"No. Ticket",
+EST.Tipo_Estado AS			"Estado",
+TIC.Fecha_Ticket AS			"Fecha de ingreso",
+CLI.No_Cliente AS			"No. Cliente",
+CLI.Nombre_Cliente AS		"Nombre",
+CLI.Apellido_Cliente AS		"Apellido",
+EQU.Equipo AS				"Descripción del equipo",
 EQU.Marca,
 EQU.Modelo,
-EQU.No_Serie, 
-TIC.Problema_Reportado,
+EQU.No_Serie AS				"No. Serie", 
+TIC.Problema_Reportado AS	"Problema reportado",
 TIC.Observaciones,
-TEC.Nombre_Tecnico,
-TEC.Apellido_Tecnico
+TEC.No_Tecnico AS			"No. Tecnico Asignado", 
+TEC.Nombre_Tecnico AS		"Nombre del Tenico",
+TEC.Apellido_Tecnico AS		"Apellido del Tecnico"
 
 FROM (((Registros.Ticket AS TIC 
 INNER JOIN Personas.Cliente AS CLI		ON TIC.No_Cliente = CLI.No_Cliente)
@@ -435,23 +434,24 @@ GO
 
 /* TICKET RESUELTO */
 
-CREATE VIEW V_TICKET_RESUELTO
+CREATE VIEW V_TICKETS_RESUELTOS
 AS 
 SELECT 
-TIC.No_Ticket,
-EST.Tipo_Estado,
-TIC.Fecha_Ticket,
-CLI.No_Cliente,
-CLI.Nombre_Cliente,
-CLI.Apellido_Cliente,
-EQU.Equipo,
+TIC.No_Ticket AS			"No. Ticket",
+EST.Tipo_Estado AS			"Estado",
+TIC.Fecha_Ticket AS			"Fecha de ingreso",
+CLI.No_Cliente AS			"No. Cliente",
+CLI.Nombre_Cliente AS		"Nombre",
+CLI.Apellido_Cliente AS		"Apellido",
+EQU.Equipo AS				"Descripción del equipo",
 EQU.Marca,
 EQU.Modelo,
-EQU.No_Serie, 
-TIC.Problema_Reportado,
+EQU.No_Serie AS				"No. Serie", 
+TIC.Problema_Reportado AS	"Problema reportado",
 TIC.Observaciones,
-TEC.Nombre_Tecnico,
-TEC.Apellido_Tecnico
+TEC.No_Tecnico AS			"No. Tecnico Asignado", 
+TEC.Nombre_Tecnico AS		"Nombre del Tenico",
+TEC.Apellido_Tecnico AS		"Apellido del Tecnico"
 
 FROM (((Registros.Ticket AS TIC 
 INNER JOIN Personas.Cliente AS CLI		ON TIC.No_Cliente = CLI.No_Cliente)
