@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.gpbTablaCliente = new System.Windows.Forms.GroupBox();
-            this.dgvEntregas = new System.Windows.Forms.DataGridView();
             this.gpbDatosEntrega = new System.Windows.Forms.GroupBox();
             this.lblGarantia = new System.Windows.Forms.Label();
             this.txtGarantia = new System.Windows.Forms.TextBox();
@@ -53,19 +53,20 @@
             this.txtNoSerie = new System.Windows.Forms.TextBox();
             this.txtTecnicoAsignado = new System.Windows.Forms.TextBox();
             this.lblRepuesto = new System.Windows.Forms.Label();
+            this.lblFechaEntrega = new System.Windows.Forms.Label();
             this.txtRepuesto = new System.Windows.Forms.TextBox();
             this.lblTrabajoRealizado = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.txtTrabajoRealizado = new System.Windows.Forms.TextBox();
-            this.lblFechaEntrega = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblTecnicoAsignado = new System.Windows.Forms.Label();
             this.lblNoSerie = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.dgvEntregas = new System.Windows.Forms.DataGridView();
             this.gpbBusqueda.SuspendLayout();
             this.gpbTablaCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
             this.gpbDatosEntrega.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -216,46 +217,6 @@
             this.gpbTablaCliente.TabStop = false;
             this.gpbTablaCliente.Text = "Entregas";
             // 
-            // dgvEntregas
-            // 
-            this.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvEntregas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEntregas.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEntregas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvEntregas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEntregas.ColumnHeadersHeight = 30;
-            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEntregas.EnableHeadersVisualStyles = false;
-            this.dgvEntregas.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvEntregas.Location = new System.Drawing.Point(6, 30);
-            this.dgvEntregas.Name = "dgvEntregas";
-            this.dgvEntregas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntregas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEntregas.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEntregas.Size = new System.Drawing.Size(468, 429);
-            this.dgvEntregas.TabIndex = 0;
-            // 
             // gpbDatosEntrega
             // 
             this.gpbDatosEntrega.Controls.Add(this.lblGarantia);
@@ -357,6 +318,17 @@
             this.lblRepuesto.TabIndex = 11;
             this.lblRepuesto.Text = "Repuesto:";
             // 
+            // lblFechaEntrega
+            // 
+            this.lblFechaEntrega.AutoSize = true;
+            this.lblFechaEntrega.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaEntrega.ForeColor = System.Drawing.Color.White;
+            this.lblFechaEntrega.Location = new System.Drawing.Point(15, 149);
+            this.lblFechaEntrega.Name = "lblFechaEntrega";
+            this.lblFechaEntrega.Size = new System.Drawing.Size(127, 16);
+            this.lblFechaEntrega.TabIndex = 8;
+            this.lblFechaEntrega.Text = "Fecha de entrega:";
+            // 
             // txtRepuesto
             // 
             this.txtRepuesto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -396,17 +368,6 @@
             this.txtTrabajoRealizado.Name = "txtTrabajoRealizado";
             this.txtTrabajoRealizado.Size = new System.Drawing.Size(200, 59);
             this.txtTrabajoRealizado.TabIndex = 11;
-            // 
-            // lblFechaEntrega
-            // 
-            this.lblFechaEntrega.AutoSize = true;
-            this.lblFechaEntrega.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEntrega.ForeColor = System.Drawing.Color.White;
-            this.lblFechaEntrega.Location = new System.Drawing.Point(15, 149);
-            this.lblFechaEntrega.Name = "lblFechaEntrega";
-            this.lblFechaEntrega.Size = new System.Drawing.Size(127, 16);
-            this.lblFechaEntrega.TabIndex = 8;
-            this.lblFechaEntrega.Text = "Fecha de entrega:";
             // 
             // lblCliente
             // 
@@ -458,6 +419,56 @@
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             // 
+            // dgvEntregas
+            // 
+            this.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEntregas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEntregas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            this.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEntregas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvEntregas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEntregas.ColumnHeadersHeight = 25;
+            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEntregas.EnableHeadersVisualStyles = false;
+            this.dgvEntregas.GridColor = System.Drawing.Color.Turquoise;
+            this.dgvEntregas.Location = new System.Drawing.Point(6, 30);
+            this.dgvEntregas.Name = "dgvEntregas";
+            this.dgvEntregas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntregas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEntregas.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvEntregas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEntregas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEntregas.Size = new System.Drawing.Size(468, 429);
+            this.dgvEntregas.TabIndex = 1;
+            // 
             // FrmEntrega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,9 +490,9 @@
             this.gpbBusqueda.ResumeLayout(false);
             this.gpbBusqueda.PerformLayout();
             this.gpbTablaCliente.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).EndInit();
             this.gpbDatosEntrega.ResumeLayout(false);
             this.gpbDatosEntrega.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,7 +511,6 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.GroupBox gpbTablaCliente;
-        private System.Windows.Forms.DataGridView dgvEntregas;
         private System.Windows.Forms.GroupBox gpbDatosEntrega;
         private System.Windows.Forms.DateTimePicker dtFechaEntrega;
         private System.Windows.Forms.ComboBox cmbEstado;
@@ -519,5 +529,6 @@
         private System.Windows.Forms.Label lblNoSerie;
         private System.Windows.Forms.Label lblGarantia;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.DataGridView dgvEntregas;
     }
 }

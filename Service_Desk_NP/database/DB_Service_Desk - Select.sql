@@ -10,7 +10,7 @@ GO
 
 
 /* TABLA USUARIO */
-SELECT * FROM Personas.Usuario
+SELECT * FROM V_USUARIOS
 GO
 
 /* TABLA CLIENTE */

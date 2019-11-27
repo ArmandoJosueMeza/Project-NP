@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTecnico));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -45,14 +46,12 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvTecnicos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtNoTecnico = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblNoTecnico = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -77,6 +76,7 @@
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCerrar
             // 
@@ -105,6 +105,7 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // groupBox1
             // 
@@ -196,6 +197,7 @@
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // groupBox3
             // 
@@ -213,75 +215,75 @@
             // 
             this.dgvTecnicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTecnicos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvTecnicos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTecnicos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
             this.dgvTecnicos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTecnicos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvTecnicos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvTecnicos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTecnicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTecnicos.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTecnicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvTecnicos.ColumnHeadersHeight = 25;
             this.dgvTecnicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTecnicos.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvTecnicos.EnableHeadersVisualStyles = false;
-            this.dgvTecnicos.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvTecnicos.GridColor = System.Drawing.Color.Turquoise;
             this.dgvTecnicos.Location = new System.Drawing.Point(6, 30);
             this.dgvTecnicos.Name = "dgvTecnicos";
             this.dgvTecnicos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTecnicos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTecnicos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTecnicos.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvTecnicos.RowHeadersVisible = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvTecnicos.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvTecnicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTecnicos.Size = new System.Drawing.Size(468, 429);
-            this.dgvTecnicos.TabIndex = 0;
+            this.dgvTecnicos.TabIndex = 1;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtNoTecnico);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.txtApellido);
             this.groupBox2.Controls.Add(this.lblCorreo);
             this.groupBox2.Controls.Add(this.txtCorreo);
             this.groupBox2.Controls.Add(this.lblTelefono);
             this.groupBox2.Controls.Add(this.txtTelefono);
-            this.groupBox2.Controls.Add(this.lblNoTecnico);
             this.groupBox2.Controls.Add(this.lblApellido);
             this.groupBox2.Controls.Add(this.lblNombre);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(511, 270);
+            this.groupBox2.Location = new System.Drawing.Point(511, 327);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(363, 251);
+            this.groupBox2.Size = new System.Drawing.Size(363, 194);
             this.groupBox2.TabIndex = 102;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Tecnico";
             // 
-            // txtNoTecnico
-            // 
-            this.txtNoTecnico.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoTecnico.Location = new System.Drawing.Point(153, 57);
-            this.txtNoTecnico.Name = "txtNoTecnico";
-            this.txtNoTecnico.Size = new System.Drawing.Size(200, 23);
-            this.txtNoTecnico.TabIndex = 6;
-            // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(153, 86);
+            this.txtNombre.Location = new System.Drawing.Point(153, 46);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(200, 23);
             this.txtNombre.TabIndex = 7;
@@ -289,7 +291,7 @@
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(153, 115);
+            this.txtApellido.Location = new System.Drawing.Point(153, 75);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(200, 23);
             this.txtApellido.TabIndex = 8;
@@ -299,7 +301,7 @@
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(15, 180);
+            this.lblCorreo.Location = new System.Drawing.Point(15, 140);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(132, 16);
             this.lblCorreo.TabIndex = 11;
@@ -308,7 +310,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(153, 173);
+            this.txtCorreo.Location = new System.Drawing.Point(153, 133);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(200, 23);
             this.txtCorreo.TabIndex = 10;
@@ -318,7 +320,7 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.Color.White;
-            this.lblTelefono.Location = new System.Drawing.Point(15, 151);
+            this.lblTelefono.Location = new System.Drawing.Point(15, 111);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(66, 16);
             this.lblTelefono.TabIndex = 10;
@@ -327,28 +329,17 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(153, 144);
+            this.txtTelefono.Location = new System.Drawing.Point(153, 104);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(200, 23);
             this.txtTelefono.TabIndex = 9;
-            // 
-            // lblNoTecnico
-            // 
-            this.lblNoTecnico.AutoSize = true;
-            this.lblNoTecnico.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoTecnico.ForeColor = System.Drawing.Color.White;
-            this.lblNoTecnico.Location = new System.Drawing.Point(15, 64);
-            this.lblNoTecnico.Name = "lblNoTecnico";
-            this.lblNoTecnico.Size = new System.Drawing.Size(84, 16);
-            this.lblNoTecnico.TabIndex = 5;
-            this.lblNoTecnico.Text = "No Tecnico:";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.Color.White;
-            this.lblApellido.Location = new System.Drawing.Point(15, 122);
+            this.lblApellido.Location = new System.Drawing.Point(15, 82);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(68, 16);
             this.lblApellido.TabIndex = 7;
@@ -359,7 +350,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(15, 93);
+            this.lblNombre.Location = new System.Drawing.Point(15, 53);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(64, 16);
             this.lblNombre.TabIndex = 6;
@@ -382,6 +373,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTecnico";
             this.Text = "FrmTecnico";
+            this.Load += new System.EventHandler(this.FrmTecnico_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -406,17 +398,15 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvTecnicos;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtNoTecnico;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblNoTecnico;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.DataGridView dgvTecnicos;
     }
 }

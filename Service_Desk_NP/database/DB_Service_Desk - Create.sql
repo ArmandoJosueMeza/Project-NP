@@ -223,7 +223,6 @@ GO
 
 /* TABLA ENTREGA */
 /* Entrega - Ticket */
-
 ALTER TABLE		Registros.Entrega
 ADD CONSTRAINT	FK_Registros_Entrega$TIENE_UN$Registros_Ticket
 FOREIGN KEY		(No_Ticket) 
@@ -264,7 +263,6 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION;
 
 /* LLAVES UNICAS */
-
 /* Nombre de Usuario */
 ALTER TABLE Personas.Usuario
 	ADD CONSTRAINT AK_Personas_Usuario_Nombre_Usuario
@@ -277,7 +275,6 @@ ALTER TABLE Personas.Usuario
 GO
 
 /* VISTAS */
-
 /* CLIENTE */
 CREATE VIEW V_CLIENTES
 AS 
@@ -288,7 +285,7 @@ CLI.Apellido_Cliente AS		"Apellido",
 CLI.Empresa,
 CLI.Ubicacion AS			"Ubicación",
 CLI.Telefono AS				"Numero de teléfono",
-CLI.Correo_Electronico AS	"Correo Electronico"
+CLI.Correo_Electronico AS	"Correo electrónico"
 FROM Personas.Cliente AS "CLI" 
 GO
 
@@ -308,11 +305,11 @@ GO
 CREATE VIEW V_USUARIOS
 AS 
 SELECT 
-USU.Nombre_Usuario,
-USU.Apellido_Usuario,
-USU.Correo_Usuario,
-USU.Nombre_Acceso,
-USU.Clave_Usuario
+USU.Nombre_Usuario AS	"Nombre",
+USU.Apellido_Usuario AS	"Apellido",
+USU.Correo_Usuario AS	"Correo electrónico",
+USU.Nombre_Acceso AS	"Nombre de usuario",
+USU.Clave_Usuario AS	"Clave de usuario"
 
 FROM Personas.Usuario AS "USU" 
 GO

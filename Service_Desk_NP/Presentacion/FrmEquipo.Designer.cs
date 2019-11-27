@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.gpbEquipos = new System.Windows.Forms.GroupBox();
-            this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.gpbDatosEquipo = new System.Windows.Forms.GroupBox();
             this.txtNoCliente = new System.Windows.Forms.TextBox();
             this.txtNoSerie = new System.Windows.Forms.TextBox();
@@ -57,10 +57,11 @@
             this.txtEquipo = new System.Windows.Forms.TextBox();
             this.lblNoSerie = new System.Windows.Forms.Label();
             this.lblEquipo = new System.Windows.Forms.Label();
+            this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.gpbBusquedaEquipo.SuspendLayout();
             this.gpbEquipos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.gpbDatosEquipo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -212,46 +213,6 @@
             this.gpbEquipos.TabStop = false;
             this.gpbEquipos.Text = "Equipos";
             // 
-            // dgvEquipos
-            // 
-            this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEquipos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEquipos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEquipos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvEquipos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEquipos.ColumnHeadersHeight = 30;
-            this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEquipos.EnableHeadersVisualStyles = false;
-            this.dgvEquipos.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvEquipos.Location = new System.Drawing.Point(6, 30);
-            this.dgvEquipos.Name = "dgvEquipos";
-            this.dgvEquipos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEquipos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEquipos.Size = new System.Drawing.Size(468, 429);
-            this.dgvEquipos.TabIndex = 0;
-            // 
             // gpbDatosEquipo
             // 
             this.gpbDatosEquipo.Controls.Add(this.txtNoCliente);
@@ -389,6 +350,56 @@
             this.lblEquipo.TabIndex = 7;
             this.lblEquipo.Text = "Equipo:";
             // 
+            // dgvEquipos
+            // 
+            this.dgvEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEquipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEquipos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            this.dgvEquipos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEquipos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvEquipos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquipos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEquipos.ColumnHeadersHeight = 25;
+            this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEquipos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEquipos.EnableHeadersVisualStyles = false;
+            this.dgvEquipos.GridColor = System.Drawing.Color.Turquoise;
+            this.dgvEquipos.Location = new System.Drawing.Point(6, 30);
+            this.dgvEquipos.Name = "dgvEquipos";
+            this.dgvEquipos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEquipos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEquipos.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvEquipos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEquipos.Size = new System.Drawing.Size(468, 429);
+            this.dgvEquipos.TabIndex = 1;
+            // 
             // FrmEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,9 +421,9 @@
             this.gpbBusquedaEquipo.ResumeLayout(false);
             this.gpbBusquedaEquipo.PerformLayout();
             this.gpbEquipos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             this.gpbDatosEquipo.ResumeLayout(false);
             this.gpbDatosEquipo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,7 +441,6 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.GroupBox gpbEquipos;
-        private System.Windows.Forms.DataGridView dgvEquipos;
         private System.Windows.Forms.GroupBox gpbDatosEquipo;
         private System.Windows.Forms.TextBox txtNoCliente;
         private System.Windows.Forms.TextBox txtNoSerie;
@@ -444,5 +454,6 @@
         private System.Windows.Forms.Label lblNoCliente;
         private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.Label lblNoSerie;
+        private System.Windows.Forms.DataGridView dgvEquipos;
     }
 }

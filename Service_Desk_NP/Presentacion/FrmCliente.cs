@@ -78,13 +78,13 @@ namespace Service_Desk_NP
             if (dgvClientes.SelectedRows.Count > 0)
             {
                 Editar = true;
-                txtNombre.Text = dgvClientes.CurrentRow.Cells["Nombre_Cliente"].Value.ToString();
-                txtApellido.Text = dgvClientes.CurrentRow.Cells["Apellido_Cliente"].Value.ToString();
+                txtNombre.Text = dgvClientes.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtApellido.Text = dgvClientes.CurrentRow.Cells["Apellido"].Value.ToString();
                 txtEmpresa.Text = dgvClientes.CurrentRow.Cells["Empresa"].Value.ToString();
-                txtUbicacion.Text = dgvClientes.CurrentRow.Cells["Ubicacion"].Value.ToString();
-                txtTelefono.Text = dgvClientes.CurrentRow.Cells["Telefono"].Value.ToString();
-                txtCorreo.Text = dgvClientes.CurrentRow.Cells["Correo_Electronico"].Value.ToString();
-                NoCliente = dgvClientes.CurrentRow.Cells["No_Cliente"].Value.ToString(); ;
+                txtUbicacion.Text = dgvClientes.CurrentRow.Cells["Ubicación"].Value.ToString();
+                txtTelefono.Text = dgvClientes.CurrentRow.Cells["Numero de teléfono"].Value.ToString();
+                txtCorreo.Text = dgvClientes.CurrentRow.Cells["Correo electrónico"].Value.ToString();
+                NoCliente = dgvClientes.CurrentRow.Cells["No. Cliente"].Value.ToString(); ;
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
@@ -103,14 +103,13 @@ namespace Service_Desk_NP
         {
             if (dgvClientes.SelectedRows.Count > 0)
             {
-                NoCliente = dgvClientes.CurrentRow.Cells["No_Cliente"].Value.ToString(); ;
+                NoCliente = dgvClientes.CurrentRow.Cells["No. Cliente"].Value.ToString(); ;
                 objetoCN.EliminarClientes(NoCliente);
                 MessageBox.Show("Elimino con exito");
                 MostrarClientes();
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
-
         }
     }
 }
