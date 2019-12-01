@@ -24,14 +24,14 @@ namespace Negocios
             objetoCD.Insertar(no_cliente, equipo, marca, modelo, no_serie, clave_acceso);
         }
 
-        public void EditarEquipos(string no_cliente, string equipo, string marca, string modelo, string no_serie, string clave_acceso)
+        public void EditarEquipos(string no_cliente, string equipo, string marca, string modelo, string no_serie, string clave_acceso, string no_equipo)
         {
-            objetoCD.Editar(no_cliente, equipo, marca, modelo, no_serie, clave_acceso);
+            objetoCD.Editar(no_cliente, equipo, marca, modelo, no_serie, clave_acceso, no_equipo);
         }
 
-        public void EliminarEquipos(string no_serie)
+        public void EliminarEquipos(string no_equipo)
         {
-            objetoCD.Eliminar(no_serie);
+            objetoCD.Eliminar(no_equipo);
         }
     }
 

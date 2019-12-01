@@ -41,7 +41,7 @@ namespace Datos
             comando.Parameters.Clear();
         }
 
-        public void Editar(string no_cliente, string equipo, string marca, string modelo, string no_serie, string clave_acceso)
+        public void Editar(string no_cliente, string equipo, string marca, string modelo, string no_serie, string clave_acceso, string no_equipo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SP_ACTUALIZAR_EQUIPO";
@@ -52,16 +52,17 @@ namespace Datos
             comando.Parameters.AddWithValue("@MODELO", modelo);
             comando.Parameters.AddWithValue("@NO_SERIE", no_serie);
             comando.Parameters.AddWithValue("@CLAVE_ACCESO", clave_acceso);
+            comando.Parameters.AddWithValue("@NO_EQUIPO", no_equipo);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }
 
-        public void Eliminar(string no_serie)
+        public void Eliminar(string no_equipo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SP_ELIMINAR_EQUIPO";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("NO_SERIE", no_serie);
+            comando.Parameters.AddWithValue("@NO_EQUIPO", no_equipo);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }

@@ -101,7 +101,7 @@ VALUES						('EN PROCESO');
 GO
 
 INSERT INTO Registros.Estado(Tipo_Estado)
-VALUES						('RESUELTO');
+VALUES						('FINALIZADO');
 GO
 
 /* TABLA TICKET */

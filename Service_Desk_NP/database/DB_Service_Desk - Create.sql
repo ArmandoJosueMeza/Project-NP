@@ -66,7 +66,8 @@ GO
 
 CREATE TABLE Personas.Usuario
 (
-	IDUsuario			INT IDENTITY(1,1) PRIMARY KEY CLUSTERED,
+	IDUsuario			INT				IDENTITY(1,1),	
+	No_Usuario			AS				(RIGHT ('000' + CONVERT (NVARCHAR, IDUsuario), (3))) PERSISTED CONSTRAINT PK_Personas_Usuario_ID PRIMARY KEY CLUSTERED,
 	Nombre_Usuario		NVARCHAR(50)	NOT NULL,
 	Apellido_Usuario	NVARCHAR(50)	NOT NULL,
 	Correo_Usuario		NVARCHAR(50)	NOT NULL,
@@ -104,11 +105,13 @@ GO
 
 CREATE TABLE Equipos.Equipo
 (
+	IDEquipo			INT				IDENTITY(1,1),	
+	No_Equipo			AS				(RIGHT ('000' + CONVERT (NVARCHAR, IDEquipo), (3))) PERSISTED,
 	No_Cliente			NVARCHAR(3)		NOT NULL,
 	Equipo				NVARCHAR(50)	NOT NULL,
 	Marca				NVARCHAR(50)	NOT NULL,
 	Modelo				NVARCHAR(50)	NOT NULL,
-	No_Serie			NVARCHAR(50)	CONSTRAINT PK_Articulos_Articulo_ID PRIMARY KEY CLUSTERED,
+	No_Serie			NVARCHAR(50)	CONSTRAINT PK_Equipos_Equipo_NO_SERIE PRIMARY KEY CLUSTERED,
 	Clave_Acceso		NVARCHAR(50)	
 )
 GO
@@ -123,7 +126,7 @@ GO
 CREATE TABLE Registros.Estado
 (
 	IDEstado	INT IDENTITY(1,1)	CONSTRAINT PK_Registros_Estado_ID PRIMARY KEY CLUSTERED,
-	Tipo_Estado	NVARCHAR(15)		NOT NULL,
+	Tipo_Estado	NVARCHAR(20)		NOT NULL,
 )
 GO
 
@@ -142,7 +145,7 @@ CREATE TABLE Registros.Ticket
 	No_Cliente					NVARCHAR(3)					NOT NULL,
 	No_Serie					NVARCHAR(50)				NOT NULL,
 	No_Tecnico_Asignado			NVARCHAR(3)					NOT NULL,
-	Fecha_Ticket				DATETIME DEFAULT GETDATE()	NOT NULL,
+	Fecha_Ticket				DATE						NOT NULL,
 	IDEstado					INT							NOT NULL,
 	Problema_Reportado			TEXT						NOT NULL, 
 	Observaciones				TEXT						NOT NULL
@@ -165,7 +168,7 @@ CREATE TABLE Registros.Entrega
 	No_Serie					NVARCHAR(50)				NOT NULL,
 	No_Tecnico_Asignado			NVARCHAR(3)					NOT NULL,
 	IDEstado					INT							NOT NULL,
-	Fecha_Entrega				DATETIME DEFAULT GETDATE()	NOT NULL,
+	Fecha_Entrega				DATE						NOT NULL,
 	Trabajo_Realizado			TEXT						NOT NULL,
 	Repuesto					TEXT						NOT NULL,
 	Garantia					NVARCHAR(15)				NOT NULL,
@@ -319,20 +322,21 @@ CREATE VIEW V_TICKETS
 AS 
 SELECT 
 TIC.No_Ticket AS			"No. Ticket",
-EST.Tipo_Estado AS			"Estado",
-TIC.Fecha_Ticket AS			"Fecha de ingreso",
 CLI.No_Cliente AS			"No. Cliente",
 CLI.Nombre_Cliente AS		"Nombre",
 CLI.Apellido_Cliente AS		"Apellido",
+EQU.No_Serie AS				"No. Serie", 
 EQU.Equipo AS				"Descripción del equipo",
 EQU.Marca,
 EQU.Modelo,
-EQU.No_Serie AS				"No. Serie", 
-TIC.Problema_Reportado AS	"Problema reportado",
-TIC.Observaciones,
 TEC.No_Tecnico AS			"No. Tecnico Asignado", 
 TEC.Nombre_Tecnico AS		"Nombre del Tenico",
-TEC.Apellido_Tecnico AS		"Apellido del Tecnico"
+TEC.Apellido_Tecnico AS		"Apellido del Tecnico",
+UPPER(FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es')) AS "Fecha de ingreso",
+--TIC.Fecha_Ticket AS			"Fecha de ingreso",
+EST.Tipo_Estado AS			"Estado",
+TIC.Problema_Reportado AS	"Problema reportado",
+TIC.Observaciones
 
 FROM (((Registros.Ticket AS TIC 
 INNER JOIN Personas.Cliente AS CLI		ON TIC.No_Cliente = CLI.No_Cliente)
@@ -356,7 +360,7 @@ EQU.Equipo AS				"Descripción del equipo",
 EQU.Marca,
 EQU.Modelo,
 EQU.No_Serie AS				"No. Serie", 
-ENT.Fecha_Entrega AS		"Fecha de entrega",
+FORMAT (ENT.Fecha_Entrega, N'dddd dd MMMM yyyy', 'es') AS "Fecha de entrega",
 ENT.Trabajo_Realizado AS	"Trabajo realizado",
 ENT.Repuesto AS				"Repuestos utilizados",
 TEC.No_Tecnico AS			"No. Tecnico Asignado", 
@@ -378,7 +382,7 @@ AS
 SELECT 
 TIC.No_Ticket AS			"No. Ticket",
 EST.Tipo_Estado AS			"Estado",
-TIC.Fecha_Ticket AS			"Fecha de ingreso",
+FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es') AS "Fecha de ingreso",
 CLI.No_Cliente AS			"No. Cliente",
 CLI.Nombre_Cliente AS		"Nombre",
 CLI.Apellido_Cliente AS		"Apellido",
@@ -406,7 +410,7 @@ AS
 SELECT 
 TIC.No_Ticket AS			"No. Ticket",
 EST.Tipo_Estado AS			"Estado",
-TIC.Fecha_Ticket AS			"Fecha de ingreso",
+FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es') AS "Fecha de ingreso",
 CLI.No_Cliente AS			"No. Cliente",
 CLI.Nombre_Cliente AS		"Nombre",
 CLI.Apellido_Cliente AS		"Apellido",
@@ -431,12 +435,12 @@ GO
 
 /* TICKET RESUELTO */
 
-CREATE VIEW V_TICKETS_RESUELTOS
+CREATE VIEW V_TICKETS_FINALIZADOS
 AS 
 SELECT 
 TIC.No_Ticket AS			"No. Ticket",
 EST.Tipo_Estado AS			"Estado",
-TIC.Fecha_Ticket AS			"Fecha de ingreso",
+FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es') AS "Fecha de ingreso",
 CLI.No_Cliente AS			"No. Cliente",
 CLI.Nombre_Cliente AS		"Nombre",
 CLI.Apellido_Cliente AS		"Apellido",
@@ -455,5 +459,5 @@ INNER JOIN Personas.Cliente AS CLI		ON TIC.No_Cliente = CLI.No_Cliente)
 INNER JOIN Equipos.Equipo AS EQU		ON TIC.No_Serie = EQU.No_Serie)
 INNER JOIN Registros.Estado AS EST		ON TIC.IDEstado = EST.IDEstado)
 INNER JOIN Personas.Tecnico AS TEC		ON TIC.No_Tecnico_Asignado = TEC.No_Tecnico
-WHERE EST.Tipo_Estado = 'RESUELTO'
+WHERE EST.Tipo_Estado = 'FINALIZADO'
 GO

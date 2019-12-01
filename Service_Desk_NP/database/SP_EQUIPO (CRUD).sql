@@ -22,6 +22,7 @@ GO
 CREATE PROCEDURE SP_MOSTRAR_EQUIPO
 AS
 SELECT 
+EQU.No_Equipo AS		"No. Equipo",
 CLI.No_Cliente AS		"No. Cliente", 
 CLI.Nombre_Cliente AS	"Nombre", 
 CLI.Apellido_Cliente AS	"Apellido",
@@ -70,7 +71,8 @@ CREATE PROCEDURE SP_ACTUALIZAR_EQUIPO(	@NO_CLIENTE		NVARCHAR(3),
 										@MARCA			NVARCHAR(50),
 										@MODELO			NVARCHAR(50),
 										@NO_SERIE		NVARCHAR(50), 
-										@CLAVE_ACCESO	NVARCHAR(50))
+										@CLAVE_ACCESO	NVARCHAR(50),
+										@NO_EQUIPO		NVARCHAR(3))
 AS
 UPDATE Equipos.Equipo SET	No_Cliente=		@NO_CLIENTE, 
 							Equipo=			@EQUIPO,
@@ -78,17 +80,17 @@ UPDATE Equipos.Equipo SET	No_Cliente=		@NO_CLIENTE,
 							Modelo=			@MODELO,
 							No_Serie=		@NO_SERIE,
 							Clave_Acceso=	@CLAVE_ACCESO
-							WHERE No_Serie=	@NO_SERIE;
+							WHERE No_Equipo=	@NO_EQUIPO;
 GO
 
 /* Eliminar Articulo */
 IF EXISTS(SELECT * FROM sys.databases WHERE name='SP_ELIMINAR_EQUIPO')
 BEGIN
-	DROP PROCEDURE SP_ELIMINAR_EQUIPO
+	DROP PROCEDURE No. Equipo
 END
 GO
 
-CREATE PROCEDURE SP_ELIMINAR_EQUIPO(@NO_SERIE	NVARCHAR(50))
+CREATE PROCEDURE SP_ELIMINAR_EQUIPO(@NO_EQUIPO	NVARCHAR(3))
 AS
-	DELETE FROM Equipos.Equipo WHERE No_Serie = @NO_SERIE;
+	DELETE FROM Equipos.Equipo WHERE No_Equipo = @NO_EQUIPO;
 GO

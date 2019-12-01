@@ -21,6 +21,7 @@ namespace Service_Desk_NP
         {
             CN_Equipos objetoCN = new CN_Equipos();
             dgvEquipos.DataSource = objetoCN.MostrarEquipos();
+            this.dgvEquipos.Columns["No. Equipo"].Visible = false;
         }
         public FrmEquipo()
         {
@@ -66,7 +67,7 @@ namespace Service_Desk_NP
             {
                 try
                 {
-                    objetoCN.EditarEquipos(txtNoCliente.Text, txtEquipo.Text, txtMarca.Text, txtModelo.Text, txtNoSerie.Text, txtClaveAcceso.Text);
+                    objetoCN.EditarEquipos(txtNoCliente.Text, txtEquipo.Text, txtMarca.Text, txtModelo.Text, txtNoSerie.Text, txtClaveAcceso.Text, NoEquipo);
                     MessageBox.Show("Edito con exito");
                     MostrarEquipos();
                     LimpiarTextBox();
@@ -92,7 +93,7 @@ namespace Service_Desk_NP
                 txtModelo.Text = dgvEquipos.CurrentRow.Cells["Modelo"].Value.ToString();
                 txtNoSerie.Text = dgvEquipos.CurrentRow.Cells["No. Serie"].Value.ToString();
                 txtClaveAcceso.Text = dgvEquipos.CurrentRow.Cells["Clave de acceso"].Value.ToString();
-                NoEquipo = dgvEquipos.CurrentRow.Cells["No. Serie"].Value.ToString(); ;
+                NoEquipo = dgvEquipos.CurrentRow.Cells["No. Equipo"].Value.ToString(); ;
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
@@ -103,14 +104,13 @@ namespace Service_Desk_NP
         {
             if (dgvEquipos.SelectedRows.Count > 0)
             {
-                NoEquipo = dgvEquipos.CurrentRow.Cells["No. Serie"].Value.ToString(); ;
+                NoEquipo = dgvEquipos.CurrentRow.Cells["No. Equipo"].Value.ToString(); ;
                 objetoCN.EliminarEquipos(NoEquipo);
                 MessageBox.Show("Elimino con exito");
                 MostrarEquipos();
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
-
         }
     }
 }

@@ -14,11 +14,13 @@ namespace Datos
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-        public DataTable Mostrar()
+        public DataTable Mostrar(string tipo_filtro="TODOS", string criterio="")
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SP_MOSTRAR_CLIENTE";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@TIPO_FILTRO", tipo_filtro);
+            comando.Parameters.AddWithValue("@CRITERIO", criterio);
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             conexion.CerrarConexion();

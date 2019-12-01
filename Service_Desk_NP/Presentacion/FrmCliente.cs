@@ -24,15 +24,14 @@ namespace Service_Desk_NP
         public void MostrarClientes()
         {
             CN_Clientes objetoCN = new CN_Clientes();
-            dgvClientes.DataSource = objetoCN.MostrarClientes();
+            dgvClientes.DataSource = objetoCN.MostrarClientes("TODOS", ""); 
         }
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             MostrarClientes();
-            cmbFiltrado.Items.Add("Todos");
-            cmbFiltrado.Items.Add("No. Cliente");
+            cmbFiltrado.Items.Add("TODOS");
             cmbFiltrado.Items.Add("Nombre");
-            cmbFiltrado.Items.Add("Empresa");
+            cmbFiltrado.Items.Add("Apellido");
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -110,6 +109,12 @@ namespace Service_Desk_NP
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CN_Clientes objetoCN = new CN_Clientes();
+            dgvClientes.DataSource = objetoCN.MostrarClientes(cmbFiltrado.Text, txtBusqueda.Text);
         }
     }
 }
