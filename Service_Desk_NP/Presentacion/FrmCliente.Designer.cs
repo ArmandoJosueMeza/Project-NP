@@ -33,15 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
-            this.btnCerrar = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.lblFiltrado = new System.Windows.Forms.Label();
-            this.cmbFiltrado = new System.Windows.Forms.ComboBox();
-            this.lblBusqueda = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -56,6 +50,11 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.gpbBusqueda = new System.Windows.Forms.GroupBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.cmbFiltrado = new System.Windows.Forms.ComboBox();
+            this.lblFiltrado = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.bpgDatosCliente = new System.Windows.Forms.GroupBox();
             this.gpbTablaCliente = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -63,18 +62,6 @@
             this.bpgDatosCliente.SuspendLayout();
             this.gpbTablaCliente.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.AutoSize = true;
-            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(860, 9);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(26, 25);
-            this.btnCerrar.TabIndex = 18;
-            this.btnCerrar.Text = "X";
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // dgvClientes
             // 
@@ -161,65 +148,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // lblFiltrado
-            // 
-            this.lblFiltrado.AutoSize = true;
-            this.lblFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltrado.ForeColor = System.Drawing.Color.White;
-            this.lblFiltrado.Location = new System.Drawing.Point(15, 49);
-            this.lblFiltrado.Name = "lblFiltrado";
-            this.lblFiltrado.Size = new System.Drawing.Size(82, 16);
-            this.lblFiltrado.TabIndex = 3;
-            this.lblFiltrado.Text = "Buscar por:";
-            // 
-            // cmbFiltrado
-            // 
-            this.cmbFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFiltrado.FormattingEnabled = true;
-            this.cmbFiltrado.Location = new System.Drawing.Point(153, 41);
-            this.cmbFiltrado.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbFiltrado.Name = "cmbFiltrado";
-            this.cmbFiltrado.Size = new System.Drawing.Size(128, 24);
-            this.cmbFiltrado.TabIndex = 4;
-            // 
-            // lblBusqueda
-            // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.ForeColor = System.Drawing.Color.White;
-            this.lblBusqueda.Location = new System.Drawing.Point(15, 76);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(77, 16);
-            this.lblBusqueda.TabIndex = 2;
-            this.lblBusqueda.Text = "Búsqueda:";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.White;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnBuscar.Location = new System.Drawing.Point(285, 69);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 23);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseCompatibleTextRendering = true;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(153, 69);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(128, 23);
-            this.txtBusqueda.TabIndex = 3;
             // 
             // txtCorreo
             // 
@@ -370,6 +298,66 @@
             this.gpbBusqueda.TabStop = false;
             this.gpbBusqueda.Text = "Busqueda de Cliente";
             // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(153, 69);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(128, 23);
+            this.txtBusqueda.TabIndex = 3;
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.ForeColor = System.Drawing.Color.White;
+            this.lblBusqueda.Location = new System.Drawing.Point(15, 76);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(77, 16);
+            this.lblBusqueda.TabIndex = 2;
+            this.lblBusqueda.Text = "Búsqueda:";
+            // 
+            // cmbFiltrado
+            // 
+            this.cmbFiltrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltrado.FormattingEnabled = true;
+            this.cmbFiltrado.Location = new System.Drawing.Point(153, 41);
+            this.cmbFiltrado.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbFiltrado.Name = "cmbFiltrado";
+            this.cmbFiltrado.Size = new System.Drawing.Size(128, 24);
+            this.cmbFiltrado.TabIndex = 4;
+            // 
+            // lblFiltrado
+            // 
+            this.lblFiltrado.AutoSize = true;
+            this.lblFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltrado.ForeColor = System.Drawing.Color.White;
+            this.lblFiltrado.Location = new System.Drawing.Point(15, 49);
+            this.lblFiltrado.Name = "lblFiltrado";
+            this.lblFiltrado.Size = new System.Drawing.Size(82, 16);
+            this.lblFiltrado.TabIndex = 3;
+            this.lblFiltrado.Text = "Buscar por:";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnBuscar.Location = new System.Drawing.Point(285, 69);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(65, 23);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseCompatibleTextRendering = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // bpgDatosCliente
             // 
             this.bpgDatosCliente.Controls.Add(this.txtNombre);
@@ -412,7 +400,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(898, 585);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.gpbBusqueda);
             this.Controls.Add(this.btnEditar);
@@ -431,20 +418,13 @@
             this.bpgDatosCliente.PerformLayout();
             this.gpbTablaCliente.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label btnCerrar;
         private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label lblFiltrado;
-        private System.Windows.Forms.ComboBox cmbFiltrado;
-        private System.Windows.Forms.Label lblBusqueda;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtTelefono;
@@ -461,5 +441,10 @@
         private System.Windows.Forms.GroupBox gpbBusqueda;
         private System.Windows.Forms.GroupBox bpgDatosCliente;
         private System.Windows.Forms.GroupBox gpbTablaCliente;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.ComboBox cmbFiltrado;
+        private System.Windows.Forms.Label lblFiltrado;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

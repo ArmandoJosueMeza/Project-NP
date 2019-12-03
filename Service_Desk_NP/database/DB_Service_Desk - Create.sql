@@ -346,26 +346,34 @@ INNER JOIN Personas.Tecnico AS TEC		ON TIC.No_Tecnico_Asignado = TEC.No_Tecnico
 GO
 
 
+
 /* ENTREGA - VISTA */
 CREATE VIEW V_ENTREGAS 
 AS 
 SELECT
 ENT.No_Entrega AS			"No. Entrega",
 TIC.No_Ticket AS			"No. Ticket",
+
 CLI.No_Cliente AS			"No. Cliente",
 CLI.Nombre_Cliente AS		"Nombre",
 CLI.Apellido_Cliente AS		"Apellido",
-EST.Tipo_Estado AS			"Estado",
+
+EQU.No_Serie AS				"No. Serie",
 EQU.Equipo AS				"Descripción del equipo",
 EQU.Marca,
 EQU.Modelo,
-EQU.No_Serie AS				"No. Serie", 
-FORMAT (ENT.Fecha_Entrega, N'dddd dd MMMM yyyy', 'es') AS "Fecha de entrega",
-ENT.Trabajo_Realizado AS	"Trabajo realizado",
-ENT.Repuesto AS				"Repuestos utilizados",
+
 TEC.No_Tecnico AS			"No. Tecnico Asignado", 
 TEC.Nombre_Tecnico AS		"Nombre del Tenico",
-TEC.Apellido_Tecnico AS		"Apellido del Tecnico"
+TEC.Apellido_Tecnico AS		"Apellido del Tecnico", 
+
+EST.Tipo_Estado AS			"Estado",
+
+UPPER(FORMAT (ENT.Fecha_Entrega, N'dddd dd MMMM yyyy', 'es')) AS "Fecha de ingreso",
+
+ENT.Trabajo_Realizado AS	"Trabajo realizado",
+ENT.Repuesto AS				"Repuestos utilizados",
+ENT.Garantia
 
 FROM ((((Registros.Entrega AS ENT 
 INNER JOIN Registros.Ticket AS TIC		ON ENT.No_Ticket = TIC.No_Ticket)
@@ -382,7 +390,7 @@ AS
 SELECT 
 TIC.No_Ticket AS			"No. Ticket",
 EST.Tipo_Estado AS			"Estado",
-FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es') AS "Fecha de ingreso",
+UPPER(FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es')) AS "Fecha de ingreso",
 CLI.No_Cliente AS			"No. Cliente",
 CLI.Nombre_Cliente AS		"Nombre",
 CLI.Apellido_Cliente AS		"Apellido",
@@ -410,7 +418,7 @@ AS
 SELECT 
 TIC.No_Ticket AS			"No. Ticket",
 EST.Tipo_Estado AS			"Estado",
-FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es') AS "Fecha de ingreso",
+UPPER(FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es')) AS "Fecha de ingreso",
 CLI.No_Cliente AS			"No. Cliente",
 CLI.Nombre_Cliente AS		"Nombre",
 CLI.Apellido_Cliente AS		"Apellido",
@@ -440,7 +448,7 @@ AS
 SELECT 
 TIC.No_Ticket AS			"No. Ticket",
 EST.Tipo_Estado AS			"Estado",
-FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es') AS "Fecha de ingreso",
+UPPER(FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es')) AS "Fecha de ingreso",
 CLI.No_Cliente AS			"No. Cliente",
 CLI.Nombre_Cliente AS		"Nombre",
 CLI.Apellido_Cliente AS		"Apellido",

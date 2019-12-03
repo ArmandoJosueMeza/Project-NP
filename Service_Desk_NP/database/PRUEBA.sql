@@ -62,7 +62,7 @@ EXECUTE SP_ELIMINAR_USUARIO 	3
 
 
 /* TABLA ARTICULO */
-EXECUTE SP_MOSTRAR_EQUIPO
+EXECUTE SP_MOSTRAR_EQUIPO 'TODOS', ''
 
 
 EXECUTE SP_AGREGAR_EQUIPO	'005',
@@ -72,29 +72,29 @@ EXECUTE SP_AGREGAR_EQUIPO	'005',
 							'CNV87914',
 							'SERVIDOR2019**'
 
-EXECUTE SP_ACTUALIZAR_EQUIPO '005',
-							'SERVIDOR',
-							'DELL',
-							'T-1000',
-							'CNV87914',
-							'SERVIDOR2019//',
-							'011'
+EXECUTE SP_ACTUALIZAR_EQUIPO '004',
+							'Desktop',
+							'Asus',
+							'X550RCA',
+							'004',
+							'Lucas',
+							'005'
 
 
 EXECUTE SP_ELIMINAR_EQUIPO	'011'
 
 /* TABLA TICKET */
-EXECUTE SP_MOSTRAR_TICKET 
+EXECUTE SP_MOSTRAR_TICKET 'TODOS', ''
 	
 
 
-EXECUTE SP_AGREGAR_TICKET	'005',
-							'NBA',
+EXECUTE SP_AGREGAR_TICKET	'004',
+							'004',
 							'001',
-							'11/26/2019',
+							'12/2/2019',
 							'1',
-							'NO ENCIENDE',
-							'NINGUNA'
+							'No funciona tarjeta de red',
+							'Carcasa rallada'
 
 EXECUTE SP_ACTUALIZAR_TICKET	'005',
 								'NBA',
@@ -108,30 +108,29 @@ EXECUTE SP_ACTUALIZAR_TICKET	'005',
 EXECUTE SP_ELIMINAR_TICKET 'TIK-0011'		
 
 /* TABLA ENTREGA */
-EXECUTE SP_MOSTRAR_ENTREGA
+EXECUTE SP_MOSTRAR_ENTREGA 'TODOS', ''
 
-EXECUTE SP_AGREGAR_ENTREGA	'TIK-0010',
-							'002',
-							'Nibh',
+EXECUTE SP_AGREGAR_ENTREGA	'TIK-0005',
+							'004',
+							'004',
 							'001',
 							'3',
-							'11/24/2019',
-							'NADA',
-							'NADA',
-							'NADA'
+							'12/2/2019',
+							'No se realizo el trabajo el cliente retiro el equipo',
+							'NINGUNO',
+							'NINGUNO'
 
-EXECUTE SP_ACTUALIZAR_ENTREGA	'TIK-0010',
-								'002',
-								'Nibh',
+EXECUTE SP_ACTUALIZAR_ENTREGA	'TIK-0005',
+								'004',
+								'004',
 								'001',
 								'3',
-								'11/24/2019',
-								'TODO',
-								'TODO',
-								'TODO',
-								'ETR-0005'
+								'12/2/2019',
+								'No se realizo el trabajo el cliente retiro el equipo',
+								'NINGUNO',
+								'NINGUNO',
+								'ETR-0003'
 								
 
-EXECUTE SP_ELIMINAR_ENTREGA	'ETR-0005'
-								
+EXECUTE SP_ELIMINAR_ENTREGA	'ETR-0003'
 								

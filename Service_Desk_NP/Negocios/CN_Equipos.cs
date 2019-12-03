@@ -13,10 +13,10 @@ namespace Negocios
     {
         private CD_Equipos objetoCD = new CD_Equipos();
 
-        public DataTable MostrarEquipos()
+        public DataTable MostrarEquipos(string filtro, string criterio)
         {
             DataTable tabla = new DataTable();
-            tabla = objetoCD.Mostrar();
+            tabla = objetoCD.Mostrar(filtro, criterio);
             return tabla;
         }
         public void InsertarEquipos(string no_cliente, string equipo, string marca, string modelo, string no_serie, string clave_acceso)

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntrega));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.gpbBusqueda = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.lblFiltrado = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.cmbFiltrado = new System.Windows.Forms.ComboBox();
             this.lblBusqueda = new System.Windows.Forms.Label();
+            this.cmbFiltrado = new System.Windows.Forms.ComboBox();
+            this.lblFiltrado = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.gpbTablaCliente = new System.Windows.Forms.GroupBox();
+            this.dgvEntregas = new System.Windows.Forms.DataGridView();
             this.gpbDatosEntrega = new System.Windows.Forms.GroupBox();
             this.lblGarantia = new System.Windows.Forms.Label();
             this.txtGarantia = new System.Windows.Forms.TextBox();
@@ -62,11 +62,12 @@
             this.lblTecnicoAsignado = new System.Windows.Forms.Label();
             this.lblNoSerie = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.dgvEntregas = new System.Windows.Forms.DataGridView();
+            this.txtTicket = new System.Windows.Forms.TextBox();
+            this.lblNoTicket = new System.Windows.Forms.Label();
             this.gpbBusqueda.SuspendLayout();
             this.gpbTablaCliente.SuspendLayout();
-            this.gpbDatosEntrega.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
+            this.gpbDatosEntrega.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -85,17 +86,7 @@
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.AutoSize = true;
-            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(860, 9);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(26, 25);
-            this.btnCerrar.TabIndex = 105;
-            this.btnCerrar.Text = "X";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -113,22 +104,65 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // gpbBusqueda
             // 
-            this.gpbBusqueda.Controls.Add(this.btnBuscar);
-            this.gpbBusqueda.Controls.Add(this.lblFiltrado);
             this.gpbBusqueda.Controls.Add(this.txtBusqueda);
-            this.gpbBusqueda.Controls.Add(this.cmbFiltrado);
             this.gpbBusqueda.Controls.Add(this.lblBusqueda);
+            this.gpbBusqueda.Controls.Add(this.cmbFiltrado);
+            this.gpbBusqueda.Controls.Add(this.lblFiltrado);
+            this.gpbBusqueda.Controls.Add(this.btnBuscar);
             this.gpbBusqueda.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbBusqueda.ForeColor = System.Drawing.Color.White;
             this.gpbBusqueda.Location = new System.Drawing.Point(510, 64);
             this.gpbBusqueda.Name = "gpbBusqueda";
-            this.gpbBusqueda.Size = new System.Drawing.Size(363, 121);
+            this.gpbBusqueda.Size = new System.Drawing.Size(363, 103);
             this.gpbBusqueda.TabIndex = 107;
             this.gpbBusqueda.TabStop = false;
             this.gpbBusqueda.Text = "Busqueda de Entregas";
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(152, 58);
+            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(128, 23);
+            this.txtBusqueda.TabIndex = 7;
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.ForeColor = System.Drawing.Color.White;
+            this.lblBusqueda.Location = new System.Drawing.Point(17, 65);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(77, 16);
+            this.lblBusqueda.TabIndex = 6;
+            this.lblBusqueda.Text = "Búsqueda:";
+            // 
+            // cmbFiltrado
+            // 
+            this.cmbFiltrado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltrado.FormattingEnabled = true;
+            this.cmbFiltrado.Location = new System.Drawing.Point(152, 30);
+            this.cmbFiltrado.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbFiltrado.Name = "cmbFiltrado";
+            this.cmbFiltrado.Size = new System.Drawing.Size(128, 24);
+            this.cmbFiltrado.TabIndex = 9;
+            // 
+            // lblFiltrado
+            // 
+            this.lblFiltrado.AutoSize = true;
+            this.lblFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltrado.ForeColor = System.Drawing.Color.White;
+            this.lblFiltrado.Location = new System.Drawing.Point(17, 38);
+            this.lblFiltrado.Name = "lblFiltrado";
+            this.lblFiltrado.Size = new System.Drawing.Size(82, 16);
+            this.lblFiltrado.TabIndex = 8;
+            this.lblFiltrado.Text = "Buscar por:";
             // 
             // btnBuscar
             // 
@@ -138,55 +172,15 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnBuscar.Location = new System.Drawing.Point(288, 71);
+            this.btnBuscar.Location = new System.Drawing.Point(284, 58);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 21);
-            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Size = new System.Drawing.Size(65, 23);
+            this.btnBuscar.TabIndex = 10;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseCompatibleTextRendering = true;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // lblFiltrado
-            // 
-            this.lblFiltrado.AutoSize = true;
-            this.lblFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltrado.ForeColor = System.Drawing.Color.White;
-            this.lblFiltrado.Location = new System.Drawing.Point(15, 76);
-            this.lblFiltrado.Name = "lblFiltrado";
-            this.lblFiltrado.Size = new System.Drawing.Size(82, 16);
-            this.lblFiltrado.TabIndex = 3;
-            this.lblFiltrado.Text = "Buscar por:";
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(153, 38);
-            this.txtBusqueda.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(128, 23);
-            this.txtBusqueda.TabIndex = 3;
-            // 
-            // cmbFiltrado
-            // 
-            this.cmbFiltrado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFiltrado.FormattingEnabled = true;
-            this.cmbFiltrado.Location = new System.Drawing.Point(153, 68);
-            this.cmbFiltrado.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbFiltrado.Name = "cmbFiltrado";
-            this.cmbFiltrado.Size = new System.Drawing.Size(128, 24);
-            this.cmbFiltrado.TabIndex = 4;
-            // 
-            // lblBusqueda
-            // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.ForeColor = System.Drawing.Color.White;
-            this.lblBusqueda.Location = new System.Drawing.Point(15, 45);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(77, 16);
-            this.lblBusqueda.TabIndex = 2;
-            this.lblBusqueda.Text = "Búsqueda:";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEditar
             // 
@@ -204,6 +198,7 @@
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // gpbTablaCliente
             // 
@@ -217,8 +212,60 @@
             this.gpbTablaCliente.TabStop = false;
             this.gpbTablaCliente.Text = "Entregas";
             // 
+            // dgvEntregas
+            // 
+            this.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEntregas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEntregas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            this.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEntregas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvEntregas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvEntregas.ColumnHeadersHeight = 25;
+            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvEntregas.EnableHeadersVisualStyles = false;
+            this.dgvEntregas.GridColor = System.Drawing.Color.Turquoise;
+            this.dgvEntregas.Location = new System.Drawing.Point(6, 30);
+            this.dgvEntregas.Name = "dgvEntregas";
+            this.dgvEntregas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntregas.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvEntregas.RowHeadersVisible = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvEntregas.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvEntregas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEntregas.Size = new System.Drawing.Size(468, 429);
+            this.dgvEntregas.TabIndex = 1;
+            // 
             // gpbDatosEntrega
             // 
+            this.gpbDatosEntrega.Controls.Add(this.lblNoTicket);
+            this.gpbDatosEntrega.Controls.Add(this.txtTicket);
             this.gpbDatosEntrega.Controls.Add(this.lblGarantia);
             this.gpbDatosEntrega.Controls.Add(this.txtGarantia);
             this.gpbDatosEntrega.Controls.Add(this.dtFechaEntrega);
@@ -237,9 +284,9 @@
             this.gpbDatosEntrega.Controls.Add(this.lblNoSerie);
             this.gpbDatosEntrega.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDatosEntrega.ForeColor = System.Drawing.Color.White;
-            this.gpbDatosEntrega.Location = new System.Drawing.Point(510, 191);
+            this.gpbDatosEntrega.Location = new System.Drawing.Point(510, 173);
             this.gpbDatosEntrega.Name = "gpbDatosEntrega";
-            this.gpbDatosEntrega.Size = new System.Drawing.Size(363, 338);
+            this.gpbDatosEntrega.Size = new System.Drawing.Size(363, 356);
             this.gpbDatosEntrega.TabIndex = 109;
             this.gpbDatosEntrega.TabStop = false;
             this.gpbDatosEntrega.Text = "Datos Entrega";
@@ -249,7 +296,7 @@
             this.lblGarantia.AutoSize = true;
             this.lblGarantia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGarantia.ForeColor = System.Drawing.Color.White;
-            this.lblGarantia.Location = new System.Drawing.Point(15, 307);
+            this.lblGarantia.Location = new System.Drawing.Point(12, 325);
             this.lblGarantia.Name = "lblGarantia";
             this.lblGarantia.Size = new System.Drawing.Size(71, 16);
             this.lblGarantia.TabIndex = 37;
@@ -258,7 +305,7 @@
             // txtGarantia
             // 
             this.txtGarantia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGarantia.Location = new System.Drawing.Point(151, 300);
+            this.txtGarantia.Location = new System.Drawing.Point(151, 322);
             this.txtGarantia.Name = "txtGarantia";
             this.txtGarantia.Size = new System.Drawing.Size(200, 23);
             this.txtGarantia.TabIndex = 13;
@@ -267,17 +314,19 @@
             // 
             this.dtFechaEntrega.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFechaEntrega.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFechaEntrega.Location = new System.Drawing.Point(151, 142);
+            this.dtFechaEntrega.Location = new System.Drawing.Point(151, 166);
             this.dtFechaEntrega.Margin = new System.Windows.Forms.Padding(2);
             this.dtFechaEntrega.Name = "dtFechaEntrega";
             this.dtFechaEntrega.Size = new System.Drawing.Size(200, 23);
             this.dtFechaEntrega.TabIndex = 10;
+            this.dtFechaEntrega.ValueChanged += new System.EventHandler(this.dtFechaEntrega_ValueChanged);
             // 
             // cmbEstado
             // 
-            this.cmbEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(151, 114);
+            this.cmbEstado.Location = new System.Drawing.Point(151, 136);
             this.cmbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(200, 24);
@@ -286,7 +335,7 @@
             // txtNoCliente
             // 
             this.txtNoCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoCliente.Location = new System.Drawing.Point(151, 28);
+            this.txtNoCliente.Location = new System.Drawing.Point(151, 50);
             this.txtNoCliente.Name = "txtNoCliente";
             this.txtNoCliente.Size = new System.Drawing.Size(200, 23);
             this.txtNoCliente.TabIndex = 6;
@@ -294,7 +343,7 @@
             // txtNoSerie
             // 
             this.txtNoSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoSerie.Location = new System.Drawing.Point(151, 57);
+            this.txtNoSerie.Location = new System.Drawing.Point(151, 79);
             this.txtNoSerie.Name = "txtNoSerie";
             this.txtNoSerie.Size = new System.Drawing.Size(200, 23);
             this.txtNoSerie.TabIndex = 7;
@@ -302,7 +351,7 @@
             // txtTecnicoAsignado
             // 
             this.txtTecnicoAsignado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTecnicoAsignado.Location = new System.Drawing.Point(151, 86);
+            this.txtTecnicoAsignado.Location = new System.Drawing.Point(151, 108);
             this.txtTecnicoAsignado.Name = "txtTecnicoAsignado";
             this.txtTecnicoAsignado.Size = new System.Drawing.Size(200, 23);
             this.txtTecnicoAsignado.TabIndex = 8;
@@ -312,7 +361,7 @@
             this.lblRepuesto.AutoSize = true;
             this.lblRepuesto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRepuesto.ForeColor = System.Drawing.Color.White;
-            this.lblRepuesto.Location = new System.Drawing.Point(15, 238);
+            this.lblRepuesto.Location = new System.Drawing.Point(17, 260);
             this.lblRepuesto.Name = "lblRepuesto";
             this.lblRepuesto.Size = new System.Drawing.Size(71, 16);
             this.lblRepuesto.TabIndex = 11;
@@ -323,7 +372,7 @@
             this.lblFechaEntrega.AutoSize = true;
             this.lblFechaEntrega.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaEntrega.ForeColor = System.Drawing.Color.White;
-            this.lblFechaEntrega.Location = new System.Drawing.Point(15, 149);
+            this.lblFechaEntrega.Location = new System.Drawing.Point(17, 173);
             this.lblFechaEntrega.Name = "lblFechaEntrega";
             this.lblFechaEntrega.Size = new System.Drawing.Size(127, 16);
             this.lblFechaEntrega.TabIndex = 8;
@@ -332,7 +381,7 @@
             // txtRepuesto
             // 
             this.txtRepuesto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRepuesto.Location = new System.Drawing.Point(151, 235);
+            this.txtRepuesto.Location = new System.Drawing.Point(151, 257);
             this.txtRepuesto.Multiline = true;
             this.txtRepuesto.Name = "txtRepuesto";
             this.txtRepuesto.Size = new System.Drawing.Size(200, 59);
@@ -343,7 +392,7 @@
             this.lblTrabajoRealizado.AutoSize = true;
             this.lblTrabajoRealizado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrabajoRealizado.ForeColor = System.Drawing.Color.White;
-            this.lblTrabajoRealizado.Location = new System.Drawing.Point(15, 182);
+            this.lblTrabajoRealizado.Location = new System.Drawing.Point(17, 209);
             this.lblTrabajoRealizado.Name = "lblTrabajoRealizado";
             this.lblTrabajoRealizado.Size = new System.Drawing.Size(128, 16);
             this.lblTrabajoRealizado.TabIndex = 10;
@@ -354,7 +403,7 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.White;
-            this.lblEstado.Location = new System.Drawing.Point(17, 122);
+            this.lblEstado.Location = new System.Drawing.Point(17, 144);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(55, 16);
             this.lblEstado.TabIndex = 9;
@@ -363,7 +412,7 @@
             // txtTrabajoRealizado
             // 
             this.txtTrabajoRealizado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTrabajoRealizado.Location = new System.Drawing.Point(151, 170);
+            this.txtTrabajoRealizado.Location = new System.Drawing.Point(151, 192);
             this.txtTrabajoRealizado.Multiline = true;
             this.txtTrabajoRealizado.Name = "txtTrabajoRealizado";
             this.txtTrabajoRealizado.Size = new System.Drawing.Size(200, 59);
@@ -374,7 +423,7 @@
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCliente.ForeColor = System.Drawing.Color.White;
-            this.lblCliente.Location = new System.Drawing.Point(17, 35);
+            this.lblCliente.Location = new System.Drawing.Point(17, 57);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(80, 16);
             this.lblCliente.TabIndex = 5;
@@ -385,7 +434,7 @@
             this.lblTecnicoAsignado.AutoSize = true;
             this.lblTecnicoAsignado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTecnicoAsignado.ForeColor = System.Drawing.Color.White;
-            this.lblTecnicoAsignado.Location = new System.Drawing.Point(17, 93);
+            this.lblTecnicoAsignado.Location = new System.Drawing.Point(17, 115);
             this.lblTecnicoAsignado.Name = "lblTecnicoAsignado";
             this.lblTecnicoAsignado.Size = new System.Drawing.Size(129, 16);
             this.lblTecnicoAsignado.TabIndex = 7;
@@ -396,7 +445,7 @@
             this.lblNoSerie.AutoSize = true;
             this.lblNoSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoSerie.ForeColor = System.Drawing.Color.White;
-            this.lblNoSerie.Location = new System.Drawing.Point(17, 64);
+            this.lblNoSerie.Location = new System.Drawing.Point(17, 86);
             this.lblNoSerie.Name = "lblNoSerie";
             this.lblNoSerie.Size = new System.Drawing.Size(66, 16);
             this.lblNoSerie.TabIndex = 6;
@@ -419,55 +468,24 @@
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             // 
-            // dgvEntregas
+            // txtTicket
             // 
-            this.dgvEntregas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvEntregas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEntregas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
-            this.dgvEntregas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEntregas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dgvEntregas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntregas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEntregas.ColumnHeadersHeight = 25;
-            this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEntregas.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEntregas.EnableHeadersVisualStyles = false;
-            this.dgvEntregas.GridColor = System.Drawing.Color.Turquoise;
-            this.dgvEntregas.Location = new System.Drawing.Point(6, 30);
-            this.dgvEntregas.Name = "dgvEntregas";
-            this.dgvEntregas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntregas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEntregas.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(247)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvEntregas.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvEntregas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEntregas.Size = new System.Drawing.Size(468, 429);
-            this.dgvEntregas.TabIndex = 1;
+            this.txtTicket.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTicket.Location = new System.Drawing.Point(151, 21);
+            this.txtTicket.Name = "txtTicket";
+            this.txtTicket.Size = new System.Drawing.Size(200, 23);
+            this.txtTicket.TabIndex = 38;
+            // 
+            // lblNoTicket
+            // 
+            this.lblNoTicket.AutoSize = true;
+            this.lblNoTicket.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoTicket.ForeColor = System.Drawing.Color.White;
+            this.lblNoTicket.Location = new System.Drawing.Point(17, 28);
+            this.lblNoTicket.Name = "lblNoTicket";
+            this.lblNoTicket.Size = new System.Drawing.Size(72, 16);
+            this.lblNoTicket.TabIndex = 39;
+            this.lblNoTicket.Text = "No Ticket:";
             // 
             // FrmEntrega
             // 
@@ -477,7 +495,6 @@
             this.ClientSize = new System.Drawing.Size(898, 585);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.gpbBusqueda);
             this.Controls.Add(this.btnEditar);
@@ -487,28 +504,22 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEntrega";
             this.Text = "Entrega";
+            this.Load += new System.EventHandler(this.FrmEntrega_Load);
             this.gpbBusqueda.ResumeLayout(false);
             this.gpbBusqueda.PerformLayout();
             this.gpbTablaCliente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).EndInit();
             this.gpbDatosEntrega.ResumeLayout(false);
             this.gpbDatosEntrega.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.GroupBox gpbBusqueda;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label lblFiltrado;
-        private System.Windows.Forms.TextBox txtBusqueda;
-        private System.Windows.Forms.ComboBox cmbFiltrado;
-        private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.GroupBox gpbTablaCliente;
         private System.Windows.Forms.GroupBox gpbDatosEntrega;
@@ -530,5 +541,12 @@
         private System.Windows.Forms.Label lblGarantia;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.DataGridView dgvEntregas;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Label lblBusqueda;
+        private System.Windows.Forms.ComboBox cmbFiltrado;
+        private System.Windows.Forms.Label lblFiltrado;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblNoTicket;
+        private System.Windows.Forms.TextBox txtTicket;
     }
 }

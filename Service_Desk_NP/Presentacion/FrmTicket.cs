@@ -45,10 +45,12 @@ namespace Service_Desk_NP
         {
             MostrarTickets();
             cargar_estados();
+            dateFechaIngreso.CustomFormat = Text.ToUpper();
             cmbFiltrado.Items.Add("TODOS");
             cmbFiltrado.Items.Add("No. Ticket");
+            cmbFiltrado.Items.Add("No. Cliente");
             cmbFiltrado.Items.Add("Estado");
-            cmbFiltrado.Items.Add("Fecha de Ingreso");
+            cmbFiltrado.Items.Add("Equipo");
         }
 
         public void LimpiarTextBox()
@@ -58,6 +60,7 @@ namespace Service_Desk_NP
             txtTecnicoAsignado.Clear();
             txtProblema.Clear();
             txtObservaciones.Clear();
+            txtBusqueda.Clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -91,9 +94,7 @@ namespace Service_Desk_NP
                 {
                     MessageBox.Show("No se edito la informacion por: " + ex);
                 }
-
             }
-
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -106,15 +107,11 @@ namespace Service_Desk_NP
 
                 EstadoTicket = dgvTickets.CurrentRow.Cells["Estado"].Value.ToString();
                 cmbEstado.Text = EstadoTicket;
-                lblEstado.Text = cmbEstado.ToString();
-
+                
                 FechaIngreso = dgvTickets.CurrentRow.Cells["Fecha de ingreso"].Value.ToString();
                 dateFechaIngreso.Text = FechaIngreso;
                 FechaIngreso = dateFechaIngreso.Value.Date.ToShortDateString();
-                lblFecha.Text = FechaIngreso.ToString();
-
-
-
+             
                 txtProblema.Text = dgvTickets.CurrentRow.Cells["Problema reportado"].Value.ToString();
                 txtObservaciones.Text = dgvTickets.CurrentRow.Cells["Observaciones"].Value.ToString();
                 NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); ;
@@ -143,13 +140,13 @@ namespace Service_Desk_NP
         private void dateFechaIngreso_ValueChanged(object sender, EventArgs e)
         {
             FechaIngreso = dateFechaIngreso.Value.Date.ToString("MM/dd/yyyy");
-            lblFecha.Text = FechaIngreso.ToString();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             CN_Tickets objetoCN = new CN_Tickets();
             dgvTickets.DataSource = objetoCN.MostrarTickets(cmbFiltrado.Text, txtBusqueda.Text);
+            LimpiarTextBox();
         }
     }
 }

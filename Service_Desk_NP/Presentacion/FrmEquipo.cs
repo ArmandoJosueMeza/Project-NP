@@ -20,7 +20,7 @@ namespace Service_Desk_NP
         public void MostrarEquipos()
         {
             CN_Equipos objetoCN = new CN_Equipos();
-            dgvEquipos.DataSource = objetoCN.MostrarEquipos();
+            dgvEquipos.DataSource = objetoCN.MostrarEquipos("TODOS", "");
             this.dgvEquipos.Columns["No. Equipo"].Visible = false;
         }
         public FrmEquipo()
@@ -36,7 +36,10 @@ namespace Service_Desk_NP
         private void FrmEquipo_Load(object sender, EventArgs e)
         {
             MostrarEquipos();
-
+            cmbFiltrado.Items.Add("TODOS");
+            cmbFiltrado.Items.Add("No. Cliente");
+            cmbFiltrado.Items.Add("No. Serie");
+            cmbFiltrado.Items.Add("Marca");
         }
         public void LimpiarTextBox()
         {
@@ -46,6 +49,7 @@ namespace Service_Desk_NP
             txtModelo.Clear();
             txtNoSerie.Clear();
             txtClaveAcceso.Clear();
+            txtBusqueda.Clear();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -111,6 +115,13 @@ namespace Service_Desk_NP
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CN_Equipos objetoCN = new CN_Equipos();
+            dgvEquipos.DataSource = objetoCN.MostrarEquipos(cmbFiltrado.Text, txtBusqueda.Text);
+            LimpiarTextBox();
         }
     }
 }

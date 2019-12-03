@@ -30,6 +30,7 @@ namespace Service_Desk_NP
         {
             MostrarClientes();
             cmbFiltrado.Items.Add("TODOS");
+            cmbFiltrado.Items.Add("No. Cliente");
             cmbFiltrado.Items.Add("Nombre");
             cmbFiltrado.Items.Add("Apellido");
         }
@@ -96,6 +97,7 @@ namespace Service_Desk_NP
             txtUbicacion.Clear();
             txtTelefono.Clear();
             txtCorreo.Clear();
+            txtBusqueda.Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -115,6 +117,10 @@ namespace Service_Desk_NP
         {
             CN_Clientes objetoCN = new CN_Clientes();
             dgvClientes.DataSource = objetoCN.MostrarClientes(cmbFiltrado.Text, txtBusqueda.Text);
+            LimpiarTextBox();
+
         }
+
+       
     }
 }

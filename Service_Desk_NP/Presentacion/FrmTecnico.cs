@@ -24,12 +24,16 @@ namespace Service_Desk_NP
         public void MostrarTecnicos()
         {
             CN_Tecnicos objetoCN = new CN_Tecnicos();
-            dgvTecnicos.DataSource = objetoCN.MostrarTecnicos();
+            dgvTecnicos.DataSource = objetoCN.MostrarTecnicos("TODOS", "");
         }
 
         private void FrmTecnico_Load(object sender, EventArgs e)
         {
             MostrarTecnicos();
+            cmbFiltrado.Items.Add("TODOS");
+            cmbFiltrado.Items.Add("No. Tecnico");
+            cmbFiltrado.Items.Add("Nombre");
+            cmbFiltrado.Items.Add("Apellido");
         }
 
         public void LimpiarTextBox()
@@ -101,6 +105,13 @@ namespace Service_Desk_NP
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CN_Tecnicos objetoCN = new CN_Tecnicos();
+            dgvTecnicos.DataSource = objetoCN.MostrarTecnicos(cmbFiltrado.Text, txtBusqueda.Text);
+            LimpiarTextBox();
         }
     }
 }

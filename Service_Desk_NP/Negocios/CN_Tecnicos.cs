@@ -13,10 +13,10 @@ namespace Negocios
     {
         private CD_Tecnicos objetoCD = new CD_Tecnicos();
 
-        public DataTable MostrarTecnicos()
+        public DataTable MostrarTecnicos(string filtro, string criterio)
         {
             DataTable tabla = new DataTable();
-            tabla = objetoCD.Mostrar();
+            tabla = objetoCD.Mostrar(filtro, criterio);
             return tabla;
         }
 
