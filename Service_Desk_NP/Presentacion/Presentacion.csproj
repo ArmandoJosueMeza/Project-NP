@@ -80,10 +80,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BD_SERVICE_DESK_GENERAR_TICKET.Designer.cs">
+    <Compile Include="BD_SERVICE_DESKDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BD_SERVICE_DESK_GENERAR_TICKET.xsd</DependentUpon>
+      <DependentUpon>BD_SERVICE_DESKDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
@@ -102,6 +102,12 @@
     </Compile>
     <Compile Include="FrmEquipo.Designer.cs">
       <DependentUpon>FrmEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGenerarEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGenerarEntrega.Designer.cs">
+      <DependentUpon>FrmGenerarEntrega.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGenerarTicket.cs">
       <SubType>Form</SubType>
@@ -135,6 +141,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Entrega.rdlc" />
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEquipo.resx">
       <DependentUpon>FrmEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGenerarEntrega.resx">
+      <DependentUpon>FrmGenerarEntrega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGenerarTicket.resx">
       <DependentUpon>FrmGenerarTicket.cs</DependentUpon>
@@ -159,7 +169,7 @@
     <EmbeddedResource Include="FrmTicket.resx">
       <DependentUpon>FrmTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenerarTicket.rdlc" />
+    <EmbeddedResource Include="Ticket.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -169,16 +179,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="BD_SERVICE_DESK_GENERAR_TICKET.xsc">
-      <DependentUpon>BD_SERVICE_DESK_GENERAR_TICKET.xsd</DependentUpon>
+    <None Include="BD_SERVICE_DESKDataSet.xsc">
+      <DependentUpon>BD_SERVICE_DESKDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BD_SERVICE_DESK_GENERAR_TICKET.xsd">
+    <None Include="BD_SERVICE_DESKDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BD_SERVICE_DESK_GENERAR_TICKET.Designer.cs</LastGenOutput>
+      <LastGenOutput>BD_SERVICE_DESKDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BD_SERVICE_DESK_GENERAR_TICKET.xss">
-      <DependentUpon>BD_SERVICE_DESK_GENERAR_TICKET.xsd</DependentUpon>
+    <None Include="BD_SERVICE_DESKDataSet.xss">
+      <DependentUpon>BD_SERVICE_DESKDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Negocios.CN_Tickets.datasource" />
     <None Include="Properties\DataSources\Service_Desk_NP.FrmTicket+DatosInforme.datasource" />

@@ -161,7 +161,7 @@ namespace Service_Desk_NP
             {
                 NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); 
 
-                txtPrueba.Text = NoTicket;
+           
                 FrmGenerarTicket generarTicket = new FrmGenerarTicket(NoTicket);
               
                 MessageBox.Show("Generando Ticket ");

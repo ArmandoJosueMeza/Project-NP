@@ -116,7 +116,9 @@ AS
 		TIC.No_Ticket, 
 		CLI.No_Cliente,
 		CLI.Nombre_Cliente, 
-		CLI.Apellido_Cliente, 
+		CLI.Apellido_Cliente,
+		CLI.Telefono, 
+		CLI.Correo_Electronico,
 		EQU.No_Serie,		
 		EQU.Equipo,		
 		EQU.Marca,
@@ -125,7 +127,6 @@ AS
 		TEC.Nombre_Tecnico,		
 		TEC.Apellido_Tecnico,	
 		UPPER(FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es')) AS "Fecha",
-		--TIC.Fecha_Ticket AS			"Fecha de ingreso",
 		EST.Tipo_Estado,			
 		TIC.Problema_Reportado,	
 		TIC.Observaciones

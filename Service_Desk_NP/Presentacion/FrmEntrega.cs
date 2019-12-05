@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
-
+using Microsoft.Reporting.WinForms;
+using Presentacion;
 namespace Service_Desk_NP
 {
     public partial class FrmEntrega : Form
@@ -114,7 +115,7 @@ namespace Service_Desk_NP
                 txtTrabajoRealizado.Text = dgvEntregas.CurrentRow.Cells["Trabajo realizado"].Value.ToString();
                 txtRepuesto.Text = dgvEntregas.CurrentRow.Cells["Repuestos utilizados"].Value.ToString();
                 txtGarantia.Text = dgvEntregas.CurrentRow.Cells["Garantia"].Value.ToString();
-                NoEntrega = dgvEntregas.CurrentRow.Cells["No. Entrega"].Value.ToString(); ;
+                NoEntrega = dgvEntregas.CurrentRow.Cells["No. Entrega"].Value.ToString(); 
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
@@ -146,6 +147,25 @@ namespace Service_Desk_NP
             CN_Entregas objetoCN = new CN_Entregas();
             dgvEntregas.DataSource = objetoCN.MostrarEntregas(cmbFiltrado.Text, txtBusqueda.Text);
             LimpiarTextBox();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (dgvEntregas.SelectedRows.Count > 0)
+            {
+                NoEntrega = dgvEntregas.CurrentRow.Cells["No. Entrega"].Value.ToString();
+
+                FrmGenerarEntrega generarEntrega = new FrmGenerarEntrega(NoEntrega);
+                MessageBox.Show("Generando Ticket ");
+                generarEntrega.ShowDialog();
+                MostrarEntregas();
+                LimpiarTextBox();
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor selecione una fila");
+            }
         }
     }
 }

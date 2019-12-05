@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
+    
     public partial class FrmGenerarTicket : Form
     {
         private string NoTicket;
@@ -21,10 +22,8 @@ namespace Presentacion
 
         private void FrmGenerarTicket_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'BD_SERVICE_DESK_GENERAR_TICKET.SP_DATOS_TICKET' Puede moverla o quitarla según sea necesario.
-            this.SP_DATOS_TICKETTableAdapter.Fill(this.BD_SERVICE_DESK_GENERAR_TICKET.SP_DATOS_TICKET, NoTicket);
-
-            this.reportGenerarTicket.RefreshReport();
+            this.SP_DATOS_TICKETTableAdapter.Fill(this.BD_SERVICE_DESKDataSet.SP_DATOS_TICKET, NoTicket);
+            this.Generar_Ticket.RefreshReport();
         }
     }
 }

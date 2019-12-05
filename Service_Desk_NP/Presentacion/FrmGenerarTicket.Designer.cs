@@ -30,36 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportGenerarTicket = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.BD_SERVICE_DESK_GENERAR_TICKET = new Presentacion.BD_SERVICE_DESK_GENERAR_TICKET();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGenerarTicket));
+            this.Generar_Ticket = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.BD_SERVICE_DESKDataSet = new Presentacion.BD_SERVICE_DESKDataSet();
             this.SP_DATOS_TICKETBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SP_DATOS_TICKETTableAdapter = new Presentacion.BD_SERVICE_DESK_GENERAR_TICKETTableAdapters.SP_DATOS_TICKETTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.BD_SERVICE_DESK_GENERAR_TICKET)).BeginInit();
+            this.SP_DATOS_TICKETTableAdapter = new Presentacion.BD_SERVICE_DESKDataSetTableAdapters.SP_DATOS_TICKETTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.BD_SERVICE_DESKDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_DATOS_TICKETBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportGenerarTicket
+            // Generar_Ticket
             // 
-            this.reportGenerarTicket.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "GENERAR_TICKET";
+            this.Generar_Ticket.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Generar_Ticket_DataSet";
             reportDataSource1.Value = this.SP_DATOS_TICKETBindingSource;
-            this.reportGenerarTicket.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportGenerarTicket.LocalReport.ReportEmbeddedResource = "Presentacion.GenerarTicket.rdlc";
-            this.reportGenerarTicket.Location = new System.Drawing.Point(0, 0);
-            this.reportGenerarTicket.Name = "reportGenerarTicket";
-            this.reportGenerarTicket.ServerReport.BearerToken = null;
-            this.reportGenerarTicket.Size = new System.Drawing.Size(800, 450);
-            this.reportGenerarTicket.TabIndex = 0;
+            this.Generar_Ticket.LocalReport.DataSources.Add(reportDataSource1);
+            this.Generar_Ticket.LocalReport.ReportEmbeddedResource = "Presentacion.Ticket.rdlc";
+            this.Generar_Ticket.Location = new System.Drawing.Point(0, 0);
+            this.Generar_Ticket.Name = "Generar_Ticket";
+            this.Generar_Ticket.ServerReport.BearerToken = null;
+            this.Generar_Ticket.Size = new System.Drawing.Size(667, 450);
+            this.Generar_Ticket.TabIndex = 0;
             // 
-            // BD_SERVICE_DESK_GENERAR_TICKET
+            // BD_SERVICE_DESKDataSet
             // 
-            this.BD_SERVICE_DESK_GENERAR_TICKET.DataSetName = "BD_SERVICE_DESK_GENERAR_TICKET";
-            this.BD_SERVICE_DESK_GENERAR_TICKET.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.BD_SERVICE_DESKDataSet.DataSetName = "BD_SERVICE_DESKDataSet";
+            this.BD_SERVICE_DESKDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SP_DATOS_TICKETBindingSource
             // 
             this.SP_DATOS_TICKETBindingSource.DataMember = "SP_DATOS_TICKET";
-            this.SP_DATOS_TICKETBindingSource.DataSource = this.BD_SERVICE_DESK_GENERAR_TICKET;
+            this.SP_DATOS_TICKETBindingSource.DataSource = this.BD_SERVICE_DESKDataSet;
             // 
             // SP_DATOS_TICKETTableAdapter
             // 
@@ -69,12 +70,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.reportGenerarTicket);
+            this.ClientSize = new System.Drawing.Size(667, 450);
+            this.Controls.Add(this.Generar_Ticket);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmGenerarTicket";
-            this.Text = "FrmGenerarTicket";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Generar Ticket";
             this.Load += new System.EventHandler(this.FrmGenerarTicket_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BD_SERVICE_DESK_GENERAR_TICKET)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BD_SERVICE_DESKDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_DATOS_TICKETBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -82,9 +88,9 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportGenerarTicket;
+        private Microsoft.Reporting.WinForms.ReportViewer Generar_Ticket;
         private System.Windows.Forms.BindingSource SP_DATOS_TICKETBindingSource;
-        private BD_SERVICE_DESK_GENERAR_TICKET BD_SERVICE_DESK_GENERAR_TICKET;
-        private BD_SERVICE_DESK_GENERAR_TICKETTableAdapters.SP_DATOS_TICKETTableAdapter SP_DATOS_TICKETTableAdapter;
+        private BD_SERVICE_DESKDataSet BD_SERVICE_DESKDataSet;
+        private BD_SERVICE_DESKDataSetTableAdapters.SP_DATOS_TICKETTableAdapter SP_DATOS_TICKETTableAdapter;
     }
 }

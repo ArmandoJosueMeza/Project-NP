@@ -115,3 +115,49 @@ CREATE PROCEDURE SP_ELIMINAR_ENTREGA(@NO_ENTREGA	NVARCHAR(8))
 AS
 	DELETE FROM Registros.Entrega WHERE No_Entrega = @NO_ENTREGA;
 GO
+------------------------------------------------------------------------------------------------------
+/* Datos Ticket */
+IF EXISTS(SELECT * FROM sys.databases WHERE name='SP_DATOS_ENTREGA')
+BEGIN
+	DROP PROCEDURE SP_DATOS_ENTREGA
+END
+GO
+
+CREATE PROCEDURE SP_DATOS_ENTREGA(@NO_ENTREGA NVARCHAR(8))
+AS
+	SELECT
+		ENT.No_Entrega,
+		TIC.No_Ticket,
+
+		CLI.No_Cliente,
+		CLI.Nombre_Cliente,
+		CLI.Apellido_Cliente,
+		CLI.Telefono, 
+		CLI.Correo_Electronico,
+
+		EQU.No_Serie,
+		EQU.Equipo,
+		EQU.Marca,
+		EQU.Modelo,
+
+		TEC.No_Tecnico, 
+		TEC.Nombre_Tecnico,
+		TEC.Apellido_Tecnico, 
+
+		EST.Tipo_Estado,
+
+		UPPER(FORMAT (ENT.Fecha_Entrega, N'dddd dd MMMM yyyy', 'es')) AS "Fecha",
+
+		ENT.Trabajo_Realizado,
+		ENT.Repuesto,
+		ENT.Garantia
+
+		FROM ((((Registros.Entrega AS ENT 
+		INNER JOIN Registros.Ticket AS TIC		ON ENT.No_Ticket = TIC.No_Ticket)
+		INNER JOIN Personas.Cliente AS CLI		ON ENT.No_Cliente = CLI.No_Cliente)
+		INNER JOIN Equipos.Equipo AS EQU		ON ENT.No_Serie = EQU.No_Serie)
+		INNER JOIN Registros.Estado AS EST		ON ENT.IDEstado = EST.IDEstado)
+		INNER JOIN Personas.Tecnico AS TEC		ON ENT.No_Tecnico_Asignado = TEC.No_Tecnico
+
+	WHERE No_Entrega = @NO_ENTREGA
+GO
