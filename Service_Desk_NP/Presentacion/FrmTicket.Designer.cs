@@ -60,6 +60,7 @@
             this.lblTecnicoAsignado = new System.Windows.Forms.Label();
             this.lblNoSerie = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.txtPrueba = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.gpbTicket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
@@ -440,6 +441,14 @@
             this.btnImprimir.TabIndex = 13;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // txtPrueba
+            // 
+            this.txtPrueba.Location = new System.Drawing.Point(108, 13);
+            this.txtPrueba.Name = "txtPrueba";
+            this.txtPrueba.Size = new System.Drawing.Size(100, 20);
+            this.txtPrueba.TabIndex = 103;
             // 
             // FrmTicket
             // 
@@ -447,6 +456,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(898, 585);
+            this.Controls.Add(this.txtPrueba);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
@@ -466,6 +476,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -498,5 +509,6 @@
         private System.Windows.Forms.ComboBox cmbFiltrado;
         private System.Windows.Forms.Label lblFiltrado;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtPrueba;
     }
 }

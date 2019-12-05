@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 using Negocios;
+using Presentacion;
 
 namespace Service_Desk_NP
 {
@@ -21,6 +23,7 @@ namespace Service_Desk_NP
         string[] array_estados = { "PENDIENTE", "EN PROCESO", "FINALIZADO" };
         private string EstadoTicket = null;
         private string FechaIngreso = null;
+        ReportDataSource rs = new ReportDataSource();
         public FrmTicket()
         {
             InitializeComponent();
@@ -51,6 +54,9 @@ namespace Service_Desk_NP
             cmbFiltrado.Items.Add("No. Cliente");
             cmbFiltrado.Items.Add("Estado");
             cmbFiltrado.Items.Add("Equipo");
+            //dgvTickets.DataSource = objetoCN.MostrarTickets("TODOS", "");
+            ReportDataSource rs = new ReportDataSource();
+           
         }
 
         public void LimpiarTextBox()
@@ -114,7 +120,7 @@ namespace Service_Desk_NP
              
                 txtProblema.Text = dgvTickets.CurrentRow.Cells["Problema reportado"].Value.ToString();
                 txtObservaciones.Text = dgvTickets.CurrentRow.Cells["Observaciones"].Value.ToString();
-                NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); ;
+                NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); 
             }
             else
                 MessageBox.Show("Por favor selecione una fila");
@@ -148,5 +154,27 @@ namespace Service_Desk_NP
             dgvTickets.DataSource = objetoCN.MostrarTickets(cmbFiltrado.Text, txtBusqueda.Text);
             LimpiarTextBox();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (dgvTickets.SelectedRows.Count > 0)
+            {
+                NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); 
+
+                txtPrueba.Text = NoTicket;
+                FrmGenerarTicket generarTicket = new FrmGenerarTicket(NoTicket);
+              
+                MessageBox.Show("Generando Ticket ");
+                generarTicket.ShowDialog();
+                MostrarTickets();
+                LimpiarTextBox();
+           
+            }
+            else
+            {
+                MessageBox.Show("Por favor selecione una fila");
+            }
+        }
+
     }
 }

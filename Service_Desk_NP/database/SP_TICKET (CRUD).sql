@@ -101,3 +101,40 @@ CREATE PROCEDURE SP_ELIMINAR_TICKET(@NO_TICKET	NVARCHAR(8))
 AS
 	DELETE FROM Registros.Ticket WHERE No_Ticket = @NO_TICKET;
 GO
+
+-----------------------------------------------------------------------------------
+/* Datos Ticket */
+IF EXISTS(SELECT * FROM sys.databases WHERE name='SP_DATOS_TICKET')
+BEGIN
+	DROP PROCEDURE SP_DATOS_TICKET
+END
+GO
+
+CREATE PROCEDURE SP_DATOS_TICKET(@NO_TICKET NVARCHAR(8))
+AS
+	SELECT 
+		TIC.No_Ticket, 
+		CLI.No_Cliente,
+		CLI.Nombre_Cliente, 
+		CLI.Apellido_Cliente, 
+		EQU.No_Serie,		
+		EQU.Equipo,		
+		EQU.Marca,
+		EQU.Modelo,
+		TEC.No_Tecnico,			 
+		TEC.Nombre_Tecnico,		
+		TEC.Apellido_Tecnico,	
+		UPPER(FORMAT (TIC.Fecha_Ticket, N'dddd dd MMMM yyyy', 'es')) AS "Fecha",
+		--TIC.Fecha_Ticket AS			"Fecha de ingreso",
+		EST.Tipo_Estado,			
+		TIC.Problema_Reportado,	
+		TIC.Observaciones
+
+		FROM (((Registros.Ticket AS TIC 
+		INNER JOIN Personas.Cliente AS CLI		ON TIC.No_Cliente = CLI.No_Cliente)
+		INNER JOIN Equipos.Equipo AS EQU		ON TIC.No_Serie = EQU.No_Serie)
+		INNER JOIN Registros.Estado AS EST		ON TIC.IDEstado = EST.IDEstado)
+		INNER JOIN Personas.Tecnico AS TEC		ON TIC.No_Tecnico_Asignado = TEC.No_Tecnico
+
+	WHERE No_Ticket = @NO_TICKET
+GO
