@@ -24,7 +24,7 @@ namespace Presentacion
             // TODO: esta línea de código carga datos en la tabla 'BD_SERVICE_DESKDataSet.SP_DATOS_ENTREGA' Puede moverla o quitarla según sea necesario.
             this.SP_DATOS_ENTREGATableAdapter.Fill(this.BD_SERVICE_DESKDataSet.SP_DATOS_ENTREGA, NoEntrega);
 
-            this.reportViewer1.RefreshReport();
+            this.reportEntrega.RefreshReport();
         }
     }
 }

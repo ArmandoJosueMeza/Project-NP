@@ -156,7 +156,7 @@ namespace Service_Desk_NP
                 NoEntrega = dgvEntregas.CurrentRow.Cells["No. Entrega"].Value.ToString();
 
                 FrmGenerarEntrega generarEntrega = new FrmGenerarEntrega(NoEntrega);
-                MessageBox.Show("Generando Ticket ");
+                MessageBox.Show("Generando Entrega");
                 generarEntrega.ShowDialog();
                 MostrarEntregas();
                 LimpiarTextBox();

@@ -160,15 +160,12 @@ namespace Service_Desk_NP
             if (dgvTickets.SelectedRows.Count > 0)
             {
                 NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); 
-
-           
-                FrmGenerarTicket generarTicket = new FrmGenerarTicket(NoTicket);
-              
+                // Generar ticket en report viewer para poder ser visualizarlo e imprimir
+                //FrmReportTicket generarTicket = new FrmReportTicket(NoTicket);
                 MessageBox.Show("Generando Ticket ");
-                generarTicket.ShowDialog();
+                //generarTicket.ShowDialog();
                 MostrarTickets();
                 LimpiarTextBox();
-           
             }
             else
             {

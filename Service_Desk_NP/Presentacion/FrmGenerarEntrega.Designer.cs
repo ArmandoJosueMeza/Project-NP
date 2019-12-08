@@ -30,8 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGenerarEntrega));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportEntrega = new Microsoft.Reporting.WinForms.ReportViewer();
             this.BD_SERVICE_DESKDataSet = new Presentacion.BD_SERVICE_DESKDataSet();
             this.SP_DATOS_ENTREGABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SP_DATOS_ENTREGATableAdapter = new Presentacion.BD_SERVICE_DESKDataSetTableAdapters.SP_DATOS_ENTREGATableAdapter();
@@ -39,18 +38,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.SP_DATOS_ENTREGABindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // reportEntrega
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "Generar_Entrega_DataSet";
+            this.reportEntrega.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet_Entrega";
             reportDataSource1.Value = this.SP_DATOS_ENTREGABindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Entrega.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(555, 450);
-            this.reportViewer1.TabIndex = 0;
+            this.reportEntrega.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportEntrega.LocalReport.ReportEmbeddedResource = "Presentacion.Entrega.rdlc";
+            this.reportEntrega.Location = new System.Drawing.Point(0, 0);
+            this.reportEntrega.Name = "reportEntrega";
+            this.reportEntrega.ServerReport.BearerToken = null;
+            this.reportEntrega.Size = new System.Drawing.Size(800, 450);
+            this.reportEntrega.TabIndex = 0;
             // 
             // BD_SERVICE_DESKDataSet
             // 
@@ -70,14 +69,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 450);
-            this.Controls.Add(this.reportViewer1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.reportEntrega);
             this.Name = "FrmGenerarEntrega";
-            this.ShowIcon = false;
-            this.Text = "Generar Entrega";
+            this.Text = "FrmGenerarEntrega";
             this.Load += new System.EventHandler(this.FrmGenerarEntrega_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BD_SERVICE_DESKDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SP_DATOS_ENTREGABindingSource)).EndInit();
@@ -87,7 +82,7 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportEntrega;
         private System.Windows.Forms.BindingSource SP_DATOS_ENTREGABindingSource;
         private BD_SERVICE_DESKDataSet BD_SERVICE_DESKDataSet;
         private BD_SERVICE_DESKDataSetTableAdapters.SP_DATOS_ENTREGATableAdapter SP_DATOS_ENTREGATableAdapter;

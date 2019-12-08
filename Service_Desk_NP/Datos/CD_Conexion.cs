@@ -10,7 +10,7 @@ namespace Datos
 {
     public class CD_Conexion
     {
-        private SqlConnection ConexionSQL = new SqlConnection(" Server=               (local);" +
+        private SqlConnection ConexionSQL = new SqlConnection(@"server=                (local)\sqlexpress;" +
                                                                 " DataBase=             BD_SERVICE_DESK;" +
                                                                 " Integrated Security=  true");
 
