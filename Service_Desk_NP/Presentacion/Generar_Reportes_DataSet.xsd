@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="BD_SERVICE_DESKDataSet" targetNamespace="http://tempuri.org/BD_SERVICE_DESKDataSet.xsd" xmlns:mstns="http://tempuri.org/BD_SERVICE_DESKDataSet.xsd" xmlns="http://tempuri.org/BD_SERVICE_DESKDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="Generar_Reportes_DataSet" targetNamespace="http://tempuri.org/Generar_Reportes_DataSet.xsd" xmlns:mstns="http://tempuri.org/Generar_Reportes_DataSet.xsd" xmlns="http://tempuri.org/Generar_Reportes_DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -84,7 +84,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="BD_SERVICE_DESKDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BD_SERVICE_DESKDataSet" msprop:Generator_UserDSName="BD_SERVICE_DESKDataSet">
+  <xs:element name="Generar_Reportes_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Generar_Reportes_DataSet" msprop:Generator_UserDSName="Generar_Reportes_DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="SP_DATOS_ENTREGA" msprop:Generator_TableClassName="SP_DATOS_ENTREGADataTable" msprop:Generator_TableVarName="tableSP_DATOS_ENTREGA" msprop:Generator_TablePropName="SP_DATOS_ENTREGA" msprop:Generator_RowDeletingName="SP_DATOS_ENTREGARowDeleting" msprop:Generator_RowChangingName="SP_DATOS_ENTREGARowChanging" msprop:Generator_RowEvHandlerName="SP_DATOS_ENTREGARowChangeEventHandler" msprop:Generator_RowDeletedName="SP_DATOS_ENTREGARowDeleted" msprop:Generator_UserTableName="SP_DATOS_ENTREGA" msprop:Generator_RowChangedName="SP_DATOS_ENTREGARowChanged" msprop:Generator_RowEvArgName="SP_DATOS_ENTREGARowChangeEvent" msprop:Generator_RowClassName="SP_DATOS_ENTREGARow">

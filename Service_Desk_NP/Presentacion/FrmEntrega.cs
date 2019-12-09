@@ -20,6 +20,7 @@ namespace Service_Desk_NP
         string[] array_estados = { "PENDIENTE", "EN PROCESO", "FINALIZADO" };
         private string EstadoEntrega = null;
         private string FechaEntrega = null;
+        ReportDataSource rs = new ReportDataSource();
         public FrmEntrega()
         {
             InitializeComponent();
@@ -155,7 +156,7 @@ namespace Service_Desk_NP
             {
                 NoEntrega = dgvEntregas.CurrentRow.Cells["No. Entrega"].Value.ToString();
 
-                FrmGenerarEntrega generarEntrega = new FrmGenerarEntrega(NoEntrega);
+                FrmEntregaReport generarEntrega = new FrmEntregaReport(NoEntrega);
                 MessageBox.Show("Generando Entrega");
                 generarEntrega.ShowDialog();
                 MostrarEntregas();

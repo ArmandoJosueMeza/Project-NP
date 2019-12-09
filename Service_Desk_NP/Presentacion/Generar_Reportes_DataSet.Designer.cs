@@ -20,9 +20,9 @@ namespace Presentacion {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BD_SERVICE_DESKDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Generar_Reportes_DataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BD_SERVICE_DESKDataSet : global::System.Data.DataSet {
+    public partial class Generar_Reportes_DataSet : global::System.Data.DataSet {
         
         private SP_DATOS_ENTREGADataTable tableSP_DATOS_ENTREGA;
         
@@ -32,7 +32,7 @@ namespace Presentacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public BD_SERVICE_DESKDataSet() {
+        public Generar_Reportes_DataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +43,7 @@ namespace Presentacion {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected BD_SERVICE_DESKDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Generar_Reportes_DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -142,7 +142,7 @@ namespace Presentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BD_SERVICE_DESKDataSet cln = ((BD_SERVICE_DESKDataSet)(base.Clone()));
+            Generar_Reportes_DataSet cln = ((Generar_Reportes_DataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -223,9 +223,9 @@ namespace Presentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BD_SERVICE_DESKDataSet";
+            this.DataSetName = "Generar_Reportes_DataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BD_SERVICE_DESKDataSet.xsd";
+            this.Namespace = "http://tempuri.org/Generar_Reportes_DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableSP_DATOS_ENTREGA = new SP_DATOS_ENTREGADataTable();
@@ -257,7 +257,7 @@ namespace Presentacion {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BD_SERVICE_DESKDataSet ds = new BD_SERVICE_DESKDataSet();
+            Generar_Reportes_DataSet ds = new Generar_Reportes_DataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -803,7 +803,7 @@ namespace Presentacion {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BD_SERVICE_DESKDataSet ds = new BD_SERVICE_DESKDataSet();
+                Generar_Reportes_DataSet ds = new Generar_Reportes_DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1324,7 +1324,7 @@ namespace Presentacion {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BD_SERVICE_DESKDataSet ds = new BD_SERVICE_DESKDataSet();
+                Generar_Reportes_DataSet ds = new Generar_Reportes_DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2067,7 +2067,7 @@ namespace Presentacion {
         }
     }
 }
-namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
+namespace Presentacion.Generar_Reportes_DataSetTableAdapters {
     
     
     /// <summary>
@@ -2236,7 +2236,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BD_SERVICE_DESKDataSet.SP_DATOS_ENTREGADataTable dataTable, string NO_ENTREGA) {
+        public virtual int Fill(Generar_Reportes_DataSet.SP_DATOS_ENTREGADataTable dataTable, string NO_ENTREGA) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((NO_ENTREGA == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2255,7 +2255,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BD_SERVICE_DESKDataSet.SP_DATOS_ENTREGADataTable GetData(string NO_ENTREGA) {
+        public virtual Generar_Reportes_DataSet.SP_DATOS_ENTREGADataTable GetData(string NO_ENTREGA) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((NO_ENTREGA == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2263,7 +2263,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(NO_ENTREGA));
             }
-            BD_SERVICE_DESKDataSet.SP_DATOS_ENTREGADataTable dataTable = new BD_SERVICE_DESKDataSet.SP_DATOS_ENTREGADataTable();
+            Generar_Reportes_DataSet.SP_DATOS_ENTREGADataTable dataTable = new Generar_Reportes_DataSet.SP_DATOS_ENTREGADataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2433,7 +2433,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BD_SERVICE_DESKDataSet.SP_DATOS_TICKETDataTable dataTable, string NO_TICKET) {
+        public virtual int Fill(Generar_Reportes_DataSet.SP_DATOS_TICKETDataTable dataTable, string NO_TICKET) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((NO_TICKET == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2452,7 +2452,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BD_SERVICE_DESKDataSet.SP_DATOS_TICKETDataTable GetData(string NO_TICKET) {
+        public virtual Generar_Reportes_DataSet.SP_DATOS_TICKETDataTable GetData(string NO_TICKET) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((NO_TICKET == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -2460,7 +2460,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(NO_TICKET));
             }
-            BD_SERVICE_DESKDataSet.SP_DATOS_TICKETDataTable dataTable = new BD_SERVICE_DESKDataSet.SP_DATOS_TICKETDataTable();
+            Generar_Reportes_DataSet.SP_DATOS_TICKETDataTable dataTable = new Generar_Reportes_DataSet.SP_DATOS_TICKETDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2534,7 +2534,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(BD_SERVICE_DESKDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Generar_Reportes_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -2544,7 +2544,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(BD_SERVICE_DESKDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Generar_Reportes_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -2554,7 +2554,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(BD_SERVICE_DESKDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Generar_Reportes_DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -2588,7 +2588,7 @@ namespace Presentacion.BD_SERVICE_DESKDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(BD_SERVICE_DESKDataSet dataSet) {
+        public virtual int UpdateAll(Generar_Reportes_DataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

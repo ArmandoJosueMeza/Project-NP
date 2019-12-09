@@ -54,7 +54,7 @@ namespace Service_Desk_NP
             cmbFiltrado.Items.Add("No. Cliente");
             cmbFiltrado.Items.Add("Estado");
             cmbFiltrado.Items.Add("Equipo");
-            //dgvTickets.DataSource = objetoCN.MostrarTickets("TODOS", "");
+            dgvTickets.DataSource = objetoCN.MostrarTickets("TODOS", "");
             ReportDataSource rs = new ReportDataSource();
            
         }
@@ -161,9 +161,10 @@ namespace Service_Desk_NP
             {
                 NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); 
                 // Generar ticket en report viewer para poder ser visualizarlo e imprimir
-                //FrmReportTicket generarTicket = new FrmReportTicket(NoTicket);
+                FrmTicketReport generarTicket = new FrmTicketReport(NoTicket);
                 MessageBox.Show("Generando Ticket ");
-                //generarTicket.ShowDialog();
+              
+                generarTicket.ShowDialog();
                 MostrarTickets();
                 LimpiarTextBox();
             }
@@ -172,6 +173,5 @@ namespace Service_Desk_NP
                 MessageBox.Show("Por favor selecione una fila");
             }
         }
-
     }
 }
