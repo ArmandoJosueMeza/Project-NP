@@ -26,5 +26,6 @@ namespace Datos
                 ConexionSQL.Close();
             return ConexionSQL;
         }
+
     }
 }

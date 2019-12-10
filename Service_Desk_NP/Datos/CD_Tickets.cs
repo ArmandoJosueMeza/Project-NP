@@ -68,6 +68,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@NO_TICKET", no_ticket);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
+
         }
     }
 }

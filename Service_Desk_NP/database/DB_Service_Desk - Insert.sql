@@ -9,14 +9,23 @@ GO
 /* Pruebas de insercion */
 
 /* TABLA USUARIOS */
-INSERT INTO Personas.Usuario(Nombre_Usuario, Apellido_Usuario, Correo_Usuario,  Nombre_Acceso, Clave_Usuario)
-VALUES						('Jonatan', 'Amaya', 'jamaya@network.com', 'JAmaya', 'JAmaya');
+INSERT INTO Personas.Usuario(Nombre_Login, Clave_Login, Nombre_Usuario, Apellido_Usuario, Puesto, Correo_Usuario)
+VALUES						('Administrador', 'admin@1234', 'Francisco', 'Ramos', 'Jefe de departamento', 'framos@networkhn.com');
 
 GO
 
-INSERT INTO Personas.Usuario(Nombre_Usuario, Apellido_Usuario, Correo_Usuario,  Nombre_Acceso, Clave_Usuario)
-VALUES						('Francisco', 'Ramos', 'framos@network.com','FRamos', 'FRamos');
+INSERT INTO Personas.Usuario(Nombre_Login, Clave_Login, Nombre_Usuario, Apellido_Usuario, Puesto, Correo_Usuario)
+VALUES						('Jonatan', 'jamaya', 'Jonatan', 'Amaya', 'Tecnico', 'jamaya@networkhn.com');
 GO
+
+INSERT INTO Personas.Usuario(Nombre_Login, Clave_Login, Nombre_Usuario, Apellido_Usuario, Puesto, Correo_Usuario)
+VALUES						('Josue', 'jmeza', 'Josue', 'Meza', 'Tecnico', 'jmeza@networkhn.com');
+GO
+
+DECLARE @NOMBRE_LOGIN NVARCHAR(50) = 'Administrador'
+DECLARE @CLAVE_LOGIN NVARCHAR(50) = 'admin@1234'
+
+SELECT * FROM Personas.Usuario WHERE Nombre_Login = @NOMBRE_LOGIN AND Clave_Login = @CLAVE_LOGIN
 
 
 /* TABLA TECNICO */

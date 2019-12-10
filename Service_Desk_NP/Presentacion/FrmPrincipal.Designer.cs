@@ -71,6 +71,7 @@
             this.barraTitulo.Name = "barraTitulo";
             this.barraTitulo.Size = new System.Drawing.Size(910, 40);
             this.barraTitulo.TabIndex = 1;
+     
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
             // btnExpandir

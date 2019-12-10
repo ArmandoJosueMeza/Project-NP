@@ -16,7 +16,7 @@ namespace Service_Desk_NP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+            Application.Run(new Presentacion.FrmLogin());
         }
     }
 }

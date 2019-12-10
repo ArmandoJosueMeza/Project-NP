@@ -68,11 +68,12 @@ CREATE TABLE Personas.Usuario
 (
 	IDUsuario			INT				IDENTITY(1,1),	
 	No_Usuario			AS				(RIGHT ('000' + CONVERT (NVARCHAR, IDUsuario), (3))) PERSISTED CONSTRAINT PK_Personas_Usuario_ID PRIMARY KEY CLUSTERED,
+	Nombre_Login		NVARCHAR(50)	NOT NULL,
+	Clave_Login			NVARCHAR(50)	NOT NULL,
 	Nombre_Usuario		NVARCHAR(50)	NOT NULL,
 	Apellido_Usuario	NVARCHAR(50)	NOT NULL,
-	Correo_Usuario		NVARCHAR(50)	NOT NULL,
-	Nombre_Acceso		NVARCHAR(50)	NOT NULL,	
-	Clave_Usuario		NVARCHAR(50)	NOT NULL
+	Puesto				NVARCHAR(50)	NOT NULL,	
+	Correo_Usuario		NVARCHAR(50)	NOT NULL
 )
 GO
 
