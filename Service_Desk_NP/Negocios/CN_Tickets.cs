@@ -20,14 +20,14 @@ namespace Negocios
             return tabla;
         }
 
-        public void InsertarTickets(string no_cliente, string no_serie, string no_tecnico, string fecha, int estado, string problema, string observaciones)
+        public void InsertarTickets(string cliente, string serie, string tecnico, string fecha, int estado, string problema, string observaciones)
         {
-            objetoCD.Insertar(no_cliente, no_serie, no_tecnico, fecha, estado, problema, observaciones);
+            objetoCD.Insertar(cliente, serie, tecnico, fecha, estado, problema, observaciones);
         }
 
-        public void EditarTickets(string no_cliente, string no_serie, string no_tecnico, string fecha, int estado, string problema, string observaciones, string no_ticket)
+        public void EditarTickets(string cliente, string serie, string tecnico, string fecha, int estado, string problema, string observaciones, string no_ticket)
         {
-            objetoCD.Editar(no_cliente, no_serie, no_tecnico, fecha, estado, problema, observaciones, no_ticket);
+            objetoCD.Editar(cliente, serie, tecnico, fecha, estado, problema, observaciones, no_ticket);
 
         }
 

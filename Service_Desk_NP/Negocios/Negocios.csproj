@@ -54,6 +54,10 @@
       <Project>{2f0190f6-4288-414d-bf0e-332b44d95fed}</Project>
       <Name>Datos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Soporte\Soporte.csproj">
+      <Project>{4c3dd2e0-a7a9-4bc7-bae8-95823101f2d8}</Project>
+      <Name>Soporte</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

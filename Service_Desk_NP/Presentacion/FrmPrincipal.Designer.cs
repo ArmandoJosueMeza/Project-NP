@@ -38,6 +38,7 @@
             this.btnContraer = new System.Windows.Forms.PictureBox();
             this.btnPrincipal = new System.Windows.Forms.PictureBox();
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnArticulo = new System.Windows.Forms.Button();
             this.btnEntrega = new System.Windows.Forms.Button();
             this.btnTicket = new System.Windows.Forms.Button();
@@ -46,6 +47,10 @@
             this.toolMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblPuesto = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
             this.barraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExpandir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -56,6 +61,7 @@
             this.menuVertical.SuspendLayout();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // barraTitulo
@@ -71,7 +77,6 @@
             this.barraTitulo.Name = "barraTitulo";
             this.barraTitulo.Size = new System.Drawing.Size(910, 40);
             this.barraTitulo.TabIndex = 1;
-     
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
             // btnExpandir
@@ -160,6 +165,11 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.White;
+            this.menuVertical.Controls.Add(this.lblCorreo);
+            this.menuVertical.Controls.Add(this.lblPuesto);
+            this.menuVertical.Controls.Add(this.lblNombre);
+            this.menuVertical.Controls.Add(this.pictureBox1);
+            this.menuVertical.Controls.Add(this.btnCerrarSesion);
             this.menuVertical.Controls.Add(this.btnArticulo);
             this.menuVertical.Controls.Add(this.btnEntrega);
             this.menuVertical.Controls.Add(this.btnTicket);
@@ -172,6 +182,24 @@
             this.menuVertical.Size = new System.Drawing.Size(294, 640);
             this.menuVertical.TabIndex = 0;
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(25, 587);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(287, 41);
+            this.btnCerrarSesion.TabIndex = 5;
+            this.btnCerrarSesion.Text = "CERRAR SESIÓN";
+            this.toolMensaje.SetToolTip(this.btnCerrarSesion, "Cerrar sesión");
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // btnArticulo
             // 
             this.btnArticulo.FlatAppearance.BorderSize = 0;
@@ -181,7 +209,7 @@
             this.btnArticulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnArticulo.Image = ((System.Drawing.Image)(resources.GetObject("btnArticulo.Image")));
             this.btnArticulo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArticulo.Location = new System.Drawing.Point(25, 192);
+            this.btnArticulo.Location = new System.Drawing.Point(25, 260);
             this.btnArticulo.Name = "btnArticulo";
             this.btnArticulo.Size = new System.Drawing.Size(287, 41);
             this.btnArticulo.TabIndex = 1;
@@ -199,7 +227,7 @@
             this.btnEntrega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEntrega.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrega.Image")));
             this.btnEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrega.Location = new System.Drawing.Point(25, 286);
+            this.btnEntrega.Location = new System.Drawing.Point(25, 354);
             this.btnEntrega.Name = "btnEntrega";
             this.btnEntrega.Size = new System.Drawing.Size(287, 41);
             this.btnEntrega.TabIndex = 3;
@@ -217,7 +245,7 @@
             this.btnTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTicket.Image = ((System.Drawing.Image)(resources.GetObject("btnTicket.Image")));
             this.btnTicket.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTicket.Location = new System.Drawing.Point(25, 239);
+            this.btnTicket.Location = new System.Drawing.Point(25, 307);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(287, 41);
             this.btnTicket.TabIndex = 2;
@@ -235,7 +263,7 @@
             this.btnTecnico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTecnico.Image = ((System.Drawing.Image)(resources.GetObject("btnTecnico.Image")));
             this.btnTecnico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTecnico.Location = new System.Drawing.Point(25, 333);
+            this.btnTecnico.Location = new System.Drawing.Point(25, 401);
             this.btnTecnico.Name = "btnTecnico";
             this.btnTecnico.Size = new System.Drawing.Size(287, 41);
             this.btnTecnico.TabIndex = 4;
@@ -253,7 +281,7 @@
             this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
             this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCliente.Location = new System.Drawing.Point(25, 145);
+            this.btnCliente.Location = new System.Drawing.Point(25, 213);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(287, 41);
             this.btnCliente.TabIndex = 0;
@@ -281,6 +309,49 @@
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 98);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(74, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblNombre.Location = new System.Drawing.Point(92, 103);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(73, 19);
+            this.lblNombre.TabIndex = 7;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblPuesto
+            // 
+            this.lblPuesto.AutoSize = true;
+            this.lblPuesto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblPuesto.Location = new System.Drawing.Point(92, 126);
+            this.lblPuesto.Name = "lblPuesto";
+            this.lblPuesto.Size = new System.Drawing.Size(58, 19);
+            this.lblPuesto.TabIndex = 8;
+            this.lblPuesto.Text = "Puesto";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblCorreo.Location = new System.Drawing.Point(92, 147);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(61, 19);
+            this.lblCorreo.TabIndex = 9;
+            this.lblCorreo.Text = "Correo";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +366,7 @@
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.barraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExpandir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -303,8 +375,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnContraer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrincipal)).EndInit();
             this.menuVertical.ResumeLayout(false);
+            this.menuVertical.PerformLayout();
             this.panelContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,6 +400,11 @@
         private System.Windows.Forms.Button btnArticulo;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblPuesto;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

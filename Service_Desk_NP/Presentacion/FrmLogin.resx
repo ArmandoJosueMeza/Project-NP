@@ -33395,13 +33395,13 @@
   </data>
   <data name="lblMensajeError.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAMYAAADGAbB0m8UAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAABBklEQVQ4T6VTyxGCMBCNNdiDlXiSzYELoQSPdqBtUIJnxiqsgsBYAsN4ifuWjwECOnp4M8nbt4/9
-        BOWcG6Eyh12R0qU0lNtEPwCcwSE21b8vSm0KE52soZrRWKPvpdEZgHPLUQ0NtGMDSaYbC5xNo2sVx9vB
-        uAM4xKCBtjeRYPdlZxM6+kmF0QT4HDStCVfCd+kZpcHdF4rY6Ccw49tKauQqDIcvTahsqYox5aUdzikT
-        OiuZNg9pKgKWDIB2yJRzT1iTzsKiZQPZDud+MAjPABgM1loIbaHH0MLaEIsk2gNTfjTE1TVyicCM99cI
-        YvEhBSqYPSQJ/PuUBWLy68/kAX19/zs79QK4Iodf9oPuogAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        xgAAAMYBsHSbxQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEGSURBVDhPpVPL
+        EYIwEI012IOVeJLNgQuhBI92oG1QgmfGKqyCwFgCw3iJ+5aPAQI6engzydu3j/0E5ZwboTKHXZHSpTSU
+        20Q/AJzBITbVvy9KbQoTnayhmtFYo++l0RmAc8tRDQ20YwNJphsLnE2jaxXH28G4AzjEoIG2N5Fg92Vn
+        Ezr6SYXRBPgcNK0JV8J36Rmlwd0XitjoJzDj20pq5CoMhy9NqGypijHlpR3OKRM6K5k2D2kqApYMgHbI
+        lHNPWJPOwqJlA9kO534wCM8AGAzWWghtocfQwtoQiyTaA1N+NMTVNXKJwIz31whi8SEFKpg9JAn8+5QF
+        YvLrz+QBfX3/Ozv1Argih1/2g+6iAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

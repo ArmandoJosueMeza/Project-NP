@@ -27,14 +27,14 @@ namespace Datos
             return tabla;
         }
 
-        public void Insertar(string no_cliente, string no_serie, string no_tecnico, string fecha, int estado, string problema, string observaciones)
+        public void Insertar(string cliente, string serie, string tecnico, string fecha, int estado, string problema, string observaciones)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SP_AGREGAR_TICKET";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NO_CLIENTE", no_cliente);
-            comando.Parameters.AddWithValue("@NO_SERIE", no_serie);
-            comando.Parameters.AddWithValue("@NO_TECNICO_ASIGNADO", no_tecnico);
+            comando.Parameters.AddWithValue("@NO_CLIENTE", cliente);
+            comando.Parameters.AddWithValue("@NO_SERIE", serie);
+            comando.Parameters.AddWithValue("@NO_TECNICO_ASIGNADO", tecnico);
             comando.Parameters.AddWithValue("@FECHA_TICKET", fecha);
             comando.Parameters.AddWithValue("@ID_ESTADO", estado);
             comando.Parameters.AddWithValue("@PROBLEMA_REPORTADO", problema);
@@ -43,14 +43,14 @@ namespace Datos
             comando.Parameters.Clear();
         }
 
-        public void Editar(string no_cliente, string no_serie, string no_tecnico, string fecha, int estado, string problema, string observaciones, string no_ticket)
+        public void Editar(string cliente, string serie, string tecnico, string fecha, int estado, string problema, string observaciones, string no_ticket)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SP_ACTUALIZAR_TICKET";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NO_CLIENTE", no_cliente);
-            comando.Parameters.AddWithValue("@NO_SERIE", no_serie);
-            comando.Parameters.AddWithValue("@NO_TECNICO_ASIGNADO", no_tecnico);
+            comando.Parameters.AddWithValue("@NO_CLIENTE", cliente);
+            comando.Parameters.AddWithValue("@NO_SERIE", serie);
+            comando.Parameters.AddWithValue("@NO_TECNICO_ASIGNADO", tecnico);
             comando.Parameters.AddWithValue("@FECHA_TICKET", fecha);
             comando.Parameters.AddWithValue("@ID_ESTADO", estado);
             comando.Parameters.AddWithValue("@PROBLEMA_REPORTADO", problema);

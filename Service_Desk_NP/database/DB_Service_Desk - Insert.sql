@@ -11,7 +11,6 @@ GO
 /* TABLA USUARIOS */
 INSERT INTO Personas.Usuario(Nombre_Login, Clave_Login, Nombre_Usuario, Apellido_Usuario, Puesto, Correo_Usuario)
 VALUES						('Administrador', 'admin@1234', 'Francisco', 'Ramos', 'Jefe de departamento', 'framos@networkhn.com');
-
 GO
 
 INSERT INTO Personas.Usuario(Nombre_Login, Clave_Login, Nombre_Usuario, Apellido_Usuario, Puesto, Correo_Usuario)

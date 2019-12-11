@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
 using Presentacion;
+using Soporte.Cache;
 using Service_Desk_NP;
 
 namespace Presentacion
@@ -56,7 +57,9 @@ namespace Presentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Esta seguro de cerrar el programa?", "¡CUIDADO!",
+                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -70,13 +73,16 @@ namespace Presentacion
                     if (loginValido == true)
                     {
                         FrmPrincipal menuPrincipal = new FrmPrincipal();
+                        MessageBox.Show("Bienvenido " + UsuarioLoginCache.nombre_usuario + " " + UsuarioLoginCache.apellido_usuario);
+                        //MessageBoxIcon.Information;
                         menuPrincipal.Show();
+                        menuPrincipal.FormClosed += Logout;
                         this.Hide();
                     }
                     else
                     {
-                        msgError("Error al iniciar sesión usuario o contraseña incorrectos. \n Por favor intente de nuevo.");
-                        txtClave.Clear();
+                        msgError("Error al iniciar sesión usuario o contraseña incorrectos. \n     Por favor intente de nuevo.");
+                        txtClave.Text = "CONTRASEÑA";
                         txtUsuario.Focus();
                     }
                 }
@@ -89,6 +95,16 @@ namespace Presentacion
         {
             lblMensajeError.Text = "     " + msg;
             lblMensajeError.Visible = true;
+        }
+
+        public void Logout (object sender, FormClosedEventArgs e)
+        {
+            txtClave.Text = "CONTRASEÑA";
+            txtClave.UseSystemPasswordChar = false;
+            txtUsuario.Text = "USUARIO";
+            lblMensajeError.Visible = false;
+            this.Show();
+           
         }
     }
 }

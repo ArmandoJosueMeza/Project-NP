@@ -19,6 +19,7 @@ namespace Service_Desk_NP
     {
         CN_Tickets objetoCN = new CN_Tickets();
         private string NoTicket = null;
+     
         private bool Editar = false;
         string[] array_estados = { "PENDIENTE", "EN PROCESO", "FINALIZADO" };
         private string EstadoTicket = null;
@@ -157,6 +158,7 @@ namespace Service_Desk_NP
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
+            /*NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString();
             if (dgvTickets.SelectedRows.Count > 0)
             {
                 NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); 
@@ -171,7 +173,7 @@ namespace Service_Desk_NP
             else
             {
                 MessageBox.Show("Por favor selecione una fila");
-            }
+            }*/
         }
     }
 }

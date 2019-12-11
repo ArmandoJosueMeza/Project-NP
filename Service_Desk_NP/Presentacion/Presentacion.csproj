@@ -226,6 +226,10 @@
       <Project>{39c9c785-e23a-4b6f-b40e-fdb21eb90160}</Project>
       <Name>Negocios</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Soporte\Soporte.csproj">
+      <Project>{4c3dd2e0-a7a9-4bc7-bae8-95823101f2d8}</Project>
+      <Name>Soporte</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Datos;
+using Soporte.Cache;
 
 
 namespace Negocios
@@ -18,5 +19,11 @@ namespace Negocios
         {
             return UsuarioDAO.Login(nombre_login, clave_login);
         }
+
+        /*public bool Editar_Clave(string nombre_login, string clave_login)
+        {
+            if (nombre_login==UsuarioLoginCache.nombre_login) { }
+            return true;
+        }*/
     }
 }

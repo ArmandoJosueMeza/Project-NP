@@ -144,7 +144,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnLogin.Location = new System.Drawing.Point(321, 241);
+            this.btnLogin.Location = new System.Drawing.Point(321, 249);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(402, 40);
             this.btnLogin.TabIndex = 3;
@@ -158,7 +158,7 @@
             this.linkClave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkClave.ForeColor = System.Drawing.Color.White;
             this.linkClave.LinkColor = System.Drawing.Color.White;
-            this.linkClave.Location = new System.Drawing.Point(410, 294);
+            this.linkClave.Location = new System.Drawing.Point(410, 300);
             this.linkClave.Name = "linkClave";
             this.linkClave.Size = new System.Drawing.Size(198, 17);
             this.linkClave.TabIndex = 0;
@@ -185,8 +185,8 @@
             this.lblMensajeError.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensajeError.ForeColor = System.Drawing.Color.White;
             this.lblMensajeError.Image = ((System.Drawing.Image)(resources.GetObject("lblMensajeError.Image")));
-            this.lblMensajeError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblMensajeError.Location = new System.Drawing.Point(326, 207);
+            this.lblMensajeError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblMensajeError.Location = new System.Drawing.Point(326, 204);
             this.lblMensajeError.Name = "lblMensajeError";
             this.lblMensajeError.Size = new System.Drawing.Size(114, 17);
             this.lblMensajeError.TabIndex = 8;

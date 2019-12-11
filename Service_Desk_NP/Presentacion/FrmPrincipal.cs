@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Soporte.Cache;
 // Libreria para poder arrastar la pantalla
 using System.Runtime.InteropServices;
 
@@ -17,7 +18,13 @@ namespace Service_Desk_NP
         public FrmPrincipal()
         {
             InitializeComponent();
-           
+        }
+
+        private void LoadDatosUsuario()
+        {
+            lblNombre.Text = UsuarioLoginCache.nombre_usuario + " " + UsuarioLoginCache.apellido_usuario;
+            lblPuesto.Text = UsuarioLoginCache.puesto_usuario;
+            lblCorreo.Text = UsuarioLoginCache.correo_usuario;
         }
         
   
@@ -39,7 +46,9 @@ namespace Service_Desk_NP
         //  Boton para cerrar la pantalla
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Esta seguro de cerrar el programa?", "¡CUIDADO!",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Application.Exit();
         }
         // Boton para expandir la pantalla
         private void BtnExpandir_Click(object sender, EventArgs e)
@@ -108,6 +117,18 @@ namespace Service_Desk_NP
         private void btnEntrega_Click(object sender, EventArgs e)
         {
             AbrirFormEnPrincipal(new FrmEntrega());
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Esta seguro de cerrar sesión?", "¡CUIDADO!",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            this.Close();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            LoadDatosUsuario();
         }
     }
 }

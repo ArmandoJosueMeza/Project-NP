@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Soporte.Cache;
 
 namespace Datos
 {
@@ -24,6 +25,14 @@ namespace Datos
             SqlDataReader reader = comando.ExecuteReader();
             if (reader.HasRows)
             {
+                while (reader.Read())
+                {
+                    //UsuarioLoginCache.nombre_login = reader.GetString(2);
+                    UsuarioLoginCache.nombre_usuario = reader.GetString(4);
+                    UsuarioLoginCache.apellido_usuario = reader.GetString(5);
+                    UsuarioLoginCache.puesto_usuario = reader.GetString(6);
+                    UsuarioLoginCache.correo_usuario = reader.GetString(7);
+                }
                 return true;
             }
             else
