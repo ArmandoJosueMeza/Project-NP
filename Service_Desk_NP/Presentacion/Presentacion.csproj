@@ -146,6 +146,18 @@
     <Compile Include="FrmTicketReport.Designer.cs">
       <DependentUpon>FrmTicketReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_NuevoEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_NuevoEntrega.Designer.cs">
+      <DependentUpon>Frm_NuevoEntrega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Ticket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ticket.Designer.cs">
+      <DependentUpon>Frm_Ticket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Generar_Reportes_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,6 +195,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTicketReport.resx">
       <DependentUpon>FrmTicketReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_NuevoEntrega.resx">
+      <DependentUpon>Frm_NuevoEntrega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ticket.resx">
+      <DependentUpon>Frm_Ticket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

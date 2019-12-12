@@ -130,5 +130,10 @@ namespace Service_Desk_NP
         {
             LoadDatosUsuario();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new Presentacion.Frm_NuevoEntrega());
+        }
     }
 }

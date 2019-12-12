@@ -69,7 +69,7 @@ namespace Service_Desk_NP
             {
                 try
                 {
-                    objetoCN.InsertarEntregas(txtTicket.Text, txtNoCliente.Text, txtNoSerie.Text, txtTecnicoAsignado.Text, cmbEstado.SelectedIndex + 1, dtFechaEntrega.Value.Date.ToString("MM/dd/yyyy"), txtTrabajoRealizado.Text, txtRepuesto.Text, txtGarantia.Text);
+                    objetoCN.InsertarEntregas(txtTicket.Text, txtNoCliente.Text, txtNoSerie.Text, txtTecnicoAsignado.Text, cmbEstado.SelectedIndex + 1, dtFechaEntrega.Value.Date.ToString("dd/MM/yyyy"), txtTrabajoRealizado.Text, txtRepuesto.Text, txtGarantia.Text);
                     MessageBox.Show("Guardado con exito");
                     MostrarEntregas();
                     LimpiarTextBox();

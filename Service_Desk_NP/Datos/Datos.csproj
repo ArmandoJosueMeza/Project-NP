@@ -45,9 +45,11 @@
     <Compile Include="CD_Clientes.cs" />
     <Compile Include="CD_Entregas.cs" />
     <Compile Include="CD_Equipos.cs" />
+    <Compile Include="CD_NuevoEntrega.cs" />
     <Compile Include="CD_Tecnicos.cs" />
     <Compile Include="CD_Tickets.cs" />
     <Compile Include="CD_UsuarioDAO.cs" />
+    <Compile Include="CD_NuevoTicket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

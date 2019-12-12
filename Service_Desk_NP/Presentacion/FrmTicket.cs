@@ -77,7 +77,7 @@ namespace Service_Desk_NP
                 try
                 {
                     
-                    objetoCN.InsertarTickets(txtNoCliente.Text, txtNoSerie.Text, txtTecnicoAsignado.Text, dateFechaIngreso.Value.Date.ToString("MM/dd/yyyy"), cmbEstado.SelectedIndex +1, txtProblema.Text, txtObservaciones.Text);
+                    objetoCN.InsertarTickets(txtNoCliente.Text, txtNoSerie.Text, txtTecnicoAsignado.Text, dateFechaIngreso.Value.Date.ToString("dd/MM/yyyy"), cmbEstado.SelectedIndex +1, txtProblema.Text, txtObservaciones.Text);
                     MessageBox.Show("Guardado con exito");
                     MostrarTickets();
                     LimpiarTextBox();
@@ -158,7 +158,7 @@ namespace Service_Desk_NP
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            /*NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString();
+            NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString();
             if (dgvTickets.SelectedRows.Count > 0)
             {
                 NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); 
@@ -173,7 +173,7 @@ namespace Service_Desk_NP
             else
             {
                 MessageBox.Show("Por favor selecione una fila");
-            }*/
+            }
         }
     }
 }
