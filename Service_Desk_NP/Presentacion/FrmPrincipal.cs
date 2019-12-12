@@ -106,7 +106,7 @@ namespace Service_Desk_NP
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPrincipal(new FrmTicket());
+            AbrirFormEnPrincipal(new Presentacion.Frm_NuevoTicket());
         }
 
         private void btnTecnico_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace Service_Desk_NP
 
         private void btnEntrega_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPrincipal(new FrmEntrega());
+            //AbrirFormEnPrincipal(new FrmEntrega());
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

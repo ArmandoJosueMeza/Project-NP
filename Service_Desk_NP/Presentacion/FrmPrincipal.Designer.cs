@@ -38,20 +38,19 @@
             this.btnContraer = new System.Windows.Forms.PictureBox();
             this.btnPrincipal = new System.Windows.Forms.PictureBox();
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnArticulo = new System.Windows.Forms.Button();
-            this.btnEntrega = new System.Windows.Forms.Button();
             this.btnTicket = new System.Windows.Forms.Button();
             this.btnTecnico = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.toolMensaje = new System.Windows.Forms.ToolTip(this.components);
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.barraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExpandir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -173,7 +172,6 @@
             this.menuVertical.Controls.Add(this.pictureBox1);
             this.menuVertical.Controls.Add(this.btnCerrarSesion);
             this.menuVertical.Controls.Add(this.btnArticulo);
-            this.menuVertical.Controls.Add(this.btnEntrega);
             this.menuVertical.Controls.Add(this.btnTicket);
             this.menuVertical.Controls.Add(this.btnTecnico);
             this.menuVertical.Controls.Add(this.btnCliente);
@@ -183,6 +181,24 @@
             this.menuVertical.Name = "menuVertical";
             this.menuVertical.Size = new System.Drawing.Size(294, 640);
             this.menuVertical.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(25, 354);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(287, 41);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "ENTREGA DE EQUIPO";
+            this.toolMensaje.SetToolTip(this.button1, "Entrega de Equipo");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblCorreo
             // 
@@ -263,24 +279,6 @@
             this.btnArticulo.UseVisualStyleBackColor = true;
             this.btnArticulo.Click += new System.EventHandler(this.btnArticulo_Click);
             // 
-            // btnEntrega
-            // 
-            this.btnEntrega.FlatAppearance.BorderSize = 0;
-            this.btnEntrega.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrega.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnEntrega.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrega.Image")));
-            this.btnEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrega.Location = new System.Drawing.Point(25, 354);
-            this.btnEntrega.Name = "btnEntrega";
-            this.btnEntrega.Size = new System.Drawing.Size(287, 41);
-            this.btnEntrega.TabIndex = 3;
-            this.btnEntrega.Text = "ENTREGA DE EQUIPO";
-            this.toolMensaje.SetToolTip(this.btnEntrega, "Entrega de Equipo");
-            this.btnEntrega.UseVisualStyleBackColor = true;
-            this.btnEntrega.Click += new System.EventHandler(this.btnEntrega_Click);
-            // 
             // btnTicket
             // 
             this.btnTicket.FlatAppearance.BorderSize = 0;
@@ -354,24 +352,6 @@
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(25, 448);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(287, 41);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "PRUEBA-ENTREGA";
-            this.toolMensaje.SetToolTip(this.button1, "Entrega de Equipo");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +395,6 @@
         private System.Windows.Forms.ToolTip toolMensaje;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnTicket;
-        private System.Windows.Forms.Button btnEntrega;
         private System.Windows.Forms.Button btnTecnico;
         private System.Windows.Forms.Button btnArticulo;
         private System.Windows.Forms.Panel panelContenedor;

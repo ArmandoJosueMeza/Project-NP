@@ -42,12 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CN_Clientes.cs" />
-    <Compile Include="CN_Entregas.cs" />
     <Compile Include="CN_Equipos.cs" />
     <Compile Include="CN_NuevoEntrega.cs" />
     <Compile Include="CN_NuevoTicket.cs" />
     <Compile Include="CN_Tecnicos.cs" />
-    <Compile Include="CN_Tickets.cs" />
     <Compile Include="CN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -17,7 +17,7 @@ namespace Service_Desk_NP
   
     public partial class FrmTicket : Form
     {
-        CN_Tickets objetoCN = new CN_Tickets();
+        //CN_Tickets objetoCN = new CN_Tickets();
         private string NoTicket = null;
      
         private bool Editar = false;
@@ -32,8 +32,8 @@ namespace Service_Desk_NP
 
         public void MostrarTickets()
         {
-            CN_Tickets objetoCN = new CN_Tickets();
-            dgvTickets.DataSource = objetoCN.MostrarTickets("TODOS", "");  
+            //CN_Tickets objetoCN = new CN_Tickets();
+            //dgvTickets.DataSource = objetoCN.MostrarTickets("TODOS", "");  
         }
 
 
@@ -55,7 +55,7 @@ namespace Service_Desk_NP
             cmbFiltrado.Items.Add("No. Cliente");
             cmbFiltrado.Items.Add("Estado");
             cmbFiltrado.Items.Add("Equipo");
-            dgvTickets.DataSource = objetoCN.MostrarTickets("TODOS", "");
+            //dgvTickets.DataSource = objetoCN.MostrarTickets("TODOS", "");
             ReportDataSource rs = new ReportDataSource();
            
         }
@@ -77,7 +77,7 @@ namespace Service_Desk_NP
                 try
                 {
                     
-                    objetoCN.InsertarTickets(txtNoCliente.Text, txtNoSerie.Text, txtTecnicoAsignado.Text, dateFechaIngreso.Value.Date.ToString("dd/MM/yyyy"), cmbEstado.SelectedIndex +1, txtProblema.Text, txtObservaciones.Text);
+                    //objetoCN.InsertarTickets(txtNoCliente.Text, txtNoSerie.Text, txtTecnicoAsignado.Text, dateFechaIngreso.Value.Date.ToString("dd/MM/yyyy"), cmbEstado.SelectedIndex +1, txtProblema.Text, txtObservaciones.Text);
                     MessageBox.Show("Guardado con exito");
                     MostrarTickets();
                     LimpiarTextBox();
@@ -91,7 +91,7 @@ namespace Service_Desk_NP
             {
                 try
                 {
-                    objetoCN.EditarTickets(txtNoCliente.Text, txtNoSerie.Text, txtTecnicoAsignado.Text, dateFechaIngreso.Value.Date.ToString("MM/dd/yyyy"), cmbEstado.SelectedIndex + 1, txtProblema.Text, txtObservaciones.Text, NoTicket);
+                    //objetoCN.EditarTickets(txtNoCliente.Text, txtNoSerie.Text, txtTecnicoAsignado.Text, dateFechaIngreso.Value.Date.ToString("MM/dd/yyyy"), cmbEstado.SelectedIndex + 1, txtProblema.Text, txtObservaciones.Text, NoTicket);
                     MessageBox.Show("Edito con exito");
                     MostrarTickets();
                     LimpiarTextBox();
@@ -133,7 +133,7 @@ namespace Service_Desk_NP
             if (dgvTickets.SelectedRows.Count > 0)
             {
                 NoTicket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString(); ;
-                objetoCN.EliminarTickets(NoTicket);
+                //objetoCN.EliminarTickets(NoTicket);
                 MessageBox.Show("Elimino con exito");
                 MostrarTickets();
             }
@@ -151,8 +151,8 @@ namespace Service_Desk_NP
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            CN_Tickets objetoCN = new CN_Tickets();
-            dgvTickets.DataSource = objetoCN.MostrarTickets(cmbFiltrado.Text, txtBusqueda.Text);
+            //CN_Tickets objetoCN = new CN_Tickets();
+            //dgvTickets.DataSource = objetoCN.MostrarTickets(cmbFiltrado.Text, txtBusqueda.Text);
             LimpiarTextBox();
         }
 
