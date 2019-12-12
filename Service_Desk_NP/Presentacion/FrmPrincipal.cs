@@ -18,6 +18,7 @@ namespace Service_Desk_NP
         public FrmPrincipal()
         {
             InitializeComponent();
+            personalizar();
         }
 
         private void LoadDatosUsuario()
@@ -77,46 +78,51 @@ namespace Service_Desk_NP
         }
 
         // Funcion para enlazar formularios en el Formulario Principal
-        private void AbrirFormEnPrincipal(object FormSecundario)
+        private Form formActivo = null;
+
+        private void AbrirFormEnPrincipal(Form FormSecundario)
         {
-            if (this.panelContenedor.Controls.Count > 0)
-                this.panelContenedor.Controls.RemoveAt(0);
-            Form fs = FormSecundario as Form;
-            fs.TopLevel = false;
-            fs.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(fs);
-            this.panelContenedor.Tag = fs;
-            fs.Show();
+           if (formActivo!= null)
+                formActivo.Close();
+            formActivo = FormSecundario;
+            FormSecundario.TopLevel = false;
+            FormSecundario.FormBorderStyle = FormBorderStyle.None;
+            FormSecundario.Dock = DockStyle.Fill;
+            panelContenedor.Controls.Add(FormSecundario);
+            panelContenedor.Tag = FormSecundario;
+            FormSecundario.BringToFront();
+            FormSecundario.Show();
+            
         }
 
         private void BtnCliente_Click(object sender, EventArgs e)
         {
             AbrirFormEnPrincipal(new FrmCliente());
+            hideSubmenu();
         }
 
         private void btnPrincipal_Click(object sender, EventArgs e)
         {
             AbrirFormEnPrincipal(new FrmInicio());
+            hideSubmenu();
         }
 
         private void btnArticulo_Click(object sender, EventArgs e)
         {
             AbrirFormEnPrincipal(new FrmEquipo());
+            hideSubmenu();
         }
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
             AbrirFormEnPrincipal(new Presentacion.Frm_NuevoTicket());
+            hideSubmenu();
         }
 
         private void btnTecnico_Click(object sender, EventArgs e)
         {
             AbrirFormEnPrincipal(new FrmTecnico());
-        }
-
-        private void btnEntrega_Click(object sender, EventArgs e)
-        {
-            //AbrirFormEnPrincipal(new FrmEntrega());
+            hideSubmenu();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -126,19 +132,63 @@ namespace Service_Desk_NP
             this.Close();
         }
 
+        private void btnEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new Presentacion.Frm_NuevoEntrega());
+            hideSubmenu();
+        }
+
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             LoadDatosUsuario();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void personalizar()
         {
-            AbrirFormEnPrincipal(new Presentacion.Frm_NuevoEntrega());
+            panelSubMenuServicios.Visible = false;
         }
 
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        public void hideSubmenu()
         {
+            if(panelSubMenuServicios.Visible == true)
+            {
+                panelSubMenuServicios.Visible = false;
+            }
+        }
 
+        public void showSubmenu(Panel Submenu)
+        {
+            if (Submenu.Visible == false)
+            {
+                hideSubmenu();
+                Submenu.Visible = true;
+            }
+            else 
+                Submenu.Visible = false;
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+           
+            showSubmenu(panelSubMenuServicios);
+        }
+
+        private void btnPendientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new Presentacion.Frm_Info_Pendiente());
+            hideSubmenu();
+        }
+
+        private void btnProceso_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new Presentacion.Frm_Info_Proceso());
+            hideSubmenu();
+        }
+
+        private void btnFinalizado_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPrincipal(new Presentacion.Frm_Info_Finalizar());
+            hideSubmenu();
         }
     }
 }

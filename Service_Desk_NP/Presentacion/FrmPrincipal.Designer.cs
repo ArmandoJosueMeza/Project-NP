@@ -38,11 +38,12 @@
             this.btnContraer = new System.Windows.Forms.PictureBox();
             this.btnPrincipal = new System.Windows.Forms.PictureBox();
             this.menuVertical = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.panelSubMenuServicios = new System.Windows.Forms.Panel();
+            this.btnFinalizado = new System.Windows.Forms.Button();
+            this.btnPendientes = new System.Windows.Forms.Button();
+            this.btnProceso = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEntrega = new System.Windows.Forms.Button();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnContraer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrincipal)).BeginInit();
             this.menuVertical.SuspendLayout();
+            this.panelSubMenuServicios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -169,11 +171,9 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.White;
-            this.menuVertical.Controls.Add(this.button4);
-            this.menuVertical.Controls.Add(this.button3);
-            this.menuVertical.Controls.Add(this.button2);
+            this.menuVertical.Controls.Add(this.panelSubMenuServicios);
             this.menuVertical.Controls.Add(this.btnInfo);
-            this.menuVertical.Controls.Add(this.button1);
+            this.menuVertical.Controls.Add(this.btnEntrega);
             this.menuVertical.Controls.Add(this.lblCorreo);
             this.menuVertical.Controls.Add(this.lblPuesto);
             this.menuVertical.Controls.Add(this.lblNombre);
@@ -187,59 +187,76 @@
             this.menuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuVertical.Location = new System.Drawing.Point(0, 0);
             this.menuVertical.Name = "menuVertical";
+            this.menuVertical.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.menuVertical.Size = new System.Drawing.Size(294, 676);
             this.menuVertical.TabIndex = 0;
             // 
-            // button4
+            // panelSubMenuServicios
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(62, 566);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(287, 27);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "FINALIZADO";
-            this.toolMensaje.SetToolTip(this.button4, "Tecnico");
-            this.button4.UseVisualStyleBackColor = true;
+            this.panelSubMenuServicios.Controls.Add(this.btnFinalizado);
+            this.panelSubMenuServicios.Controls.Add(this.btnPendientes);
+            this.panelSubMenuServicios.Controls.Add(this.btnProceso);
+            this.panelSubMenuServicios.Location = new System.Drawing.Point(25, 496);
+            this.panelSubMenuServicios.Name = "panelSubMenuServicios";
+            this.panelSubMenuServicios.Size = new System.Drawing.Size(266, 103);
+            this.panelSubMenuServicios.TabIndex = 12;
             // 
-            // button3
+            // btnFinalizado
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(62, 531);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(287, 29);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "EN PROCESO";
-            this.toolMensaje.SetToolTip(this.button3, "Tecnico");
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnFinalizado.FlatAppearance.BorderSize = 0;
+            this.btnFinalizado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnFinalizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFinalizado.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizado.Image")));
+            this.btnFinalizado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinalizado.Location = new System.Drawing.Point(3, 73);
+            this.btnFinalizado.Name = "btnFinalizado";
+            this.btnFinalizado.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnFinalizado.Size = new System.Drawing.Size(260, 27);
+            this.btnFinalizado.TabIndex = 14;
+            this.btnFinalizado.Text = "FINALIZADO";
+            this.toolMensaje.SetToolTip(this.btnFinalizado, "Finalizado");
+            this.btnFinalizado.UseVisualStyleBackColor = true;
+            this.btnFinalizado.Click += new System.EventHandler(this.btnFinalizado_Click);
             // 
-            // button2
+            // btnPendientes
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(62, 496);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(287, 29);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "PENDIENTES";
-            this.toolMensaje.SetToolTip(this.button2, "Tecnico");
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPendientes.FlatAppearance.BorderSize = 0;
+            this.btnPendientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnPendientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPendientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPendientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnPendientes.Image = ((System.Drawing.Image)(resources.GetObject("btnPendientes.Image")));
+            this.btnPendientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPendientes.Location = new System.Drawing.Point(3, 3);
+            this.btnPendientes.Name = "btnPendientes";
+            this.btnPendientes.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnPendientes.Size = new System.Drawing.Size(260, 29);
+            this.btnPendientes.TabIndex = 12;
+            this.btnPendientes.Text = "PENDIENTES";
+            this.toolMensaje.SetToolTip(this.btnPendientes, "Pendientes");
+            this.btnPendientes.UseVisualStyleBackColor = true;
+            this.btnPendientes.Click += new System.EventHandler(this.btnPendientes_Click);
+            // 
+            // btnProceso
+            // 
+            this.btnProceso.FlatAppearance.BorderSize = 0;
+            this.btnProceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnProceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProceso.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProceso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnProceso.Image = ((System.Drawing.Image)(resources.GetObject("btnProceso.Image")));
+            this.btnProceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProceso.Location = new System.Drawing.Point(3, 38);
+            this.btnProceso.Name = "btnProceso";
+            this.btnProceso.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.btnProceso.Size = new System.Drawing.Size(260, 29);
+            this.btnProceso.TabIndex = 13;
+            this.btnProceso.Text = "EN PROCESO";
+            this.toolMensaje.SetToolTip(this.btnProceso, "En proceso");
+            this.btnProceso.UseVisualStyleBackColor = true;
+            this.btnProceso.Click += new System.EventHandler(this.btnProceso_Click);
             // 
             // btnInfo
             // 
@@ -255,33 +272,34 @@
             this.btnInfo.Size = new System.Drawing.Size(287, 41);
             this.btnInfo.TabIndex = 11;
             this.btnInfo.Text = "SERVICIOS";
-            this.toolMensaje.SetToolTip(this.btnInfo, "Tecnico");
+            this.toolMensaje.SetToolTip(this.btnInfo, "Servicios");
             this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
-            // button1
+            // btnEntrega
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(25, 355);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(287, 41);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "ENTREGA DE EQUIPO";
-            this.toolMensaje.SetToolTip(this.button1, "Entrega de Equipo");
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEntrega.FlatAppearance.BorderSize = 0;
+            this.btnEntrega.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnEntrega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntrega.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEntrega.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrega.Image")));
+            this.btnEntrega.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEntrega.Location = new System.Drawing.Point(25, 355);
+            this.btnEntrega.Name = "btnEntrega";
+            this.btnEntrega.Size = new System.Drawing.Size(287, 41);
+            this.btnEntrega.TabIndex = 10;
+            this.btnEntrega.Text = "ENTREGA DE EQUIPO";
+            this.toolMensaje.SetToolTip(this.btnEntrega, "Entrega de Equipo");
+            this.btnEntrega.UseVisualStyleBackColor = true;
+            this.btnEntrega.Click += new System.EventHandler(this.btnEntrega_Click);
             // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblCorreo.Location = new System.Drawing.Point(92, 164);
+            this.lblCorreo.Location = new System.Drawing.Point(122, 164);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(52, 16);
             this.lblCorreo.TabIndex = 9;
@@ -292,7 +310,7 @@
             this.lblPuesto.AutoSize = true;
             this.lblPuesto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblPuesto.Location = new System.Drawing.Point(92, 143);
+            this.lblPuesto.Location = new System.Drawing.Point(122, 143);
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(49, 16);
             this.lblPuesto.TabIndex = 8;
@@ -303,7 +321,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblNombre.Location = new System.Drawing.Point(92, 120);
+            this.lblNombre.Location = new System.Drawing.Point(122, 120);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(60, 16);
             this.lblNombre.TabIndex = 7;
@@ -351,7 +369,7 @@
             this.btnArticulo.Size = new System.Drawing.Size(287, 41);
             this.btnArticulo.TabIndex = 1;
             this.btnArticulo.Text = "EQUIPO";
-            this.toolMensaje.SetToolTip(this.btnArticulo, "Articulo");
+            this.toolMensaje.SetToolTip(this.btnArticulo, "Equipo");
             this.btnArticulo.UseVisualStyleBackColor = true;
             this.btnArticulo.Click += new System.EventHandler(this.btnArticulo_Click);
             // 
@@ -418,7 +436,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(900, 624);
             this.panelContenedor.TabIndex = 2;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // pbLogo
             // 
@@ -454,6 +471,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnPrincipal)).EndInit();
             this.menuVertical.ResumeLayout(false);
             this.menuVertical.PerformLayout();
+            this.panelSubMenuServicios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
@@ -482,11 +500,12 @@
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEntrega;
         private System.Windows.Forms.Button btnInfo;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFinalizado;
+        private System.Windows.Forms.Button btnProceso;
+        private System.Windows.Forms.Button btnPendientes;
+        private System.Windows.Forms.Panel panelSubMenuServicios;
     }
 }
 
