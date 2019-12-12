@@ -135,5 +135,10 @@ namespace Service_Desk_NP
         {
             AbrirFormEnPrincipal(new Presentacion.Frm_NuevoEntrega());
         }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

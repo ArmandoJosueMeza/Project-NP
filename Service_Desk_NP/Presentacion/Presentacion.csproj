@@ -104,11 +104,11 @@
     <Compile Include="FrmEquipo.Designer.cs">
       <DependentUpon>FrmEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInicio.cs">
+    <Compile Include="Frm_Informacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInicio.Designer.cs">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
+    <Compile Include="Frm_Informacion.Designer.cs">
+      <DependentUpon>Frm_Informacion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -128,17 +128,29 @@
     <Compile Include="FrmTecnico.Designer.cs">
       <DependentUpon>FrmTecnico.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTicket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTicket.Designer.cs">
-      <DependentUpon>FrmTicket.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmTicketReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTicketReport.Designer.cs">
       <DependentUpon>FrmTicketReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Info_Finalizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Info_Finalizar.Designer.cs">
+      <DependentUpon>Frm_Info_Finalizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Info_Pendiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Info_Pendiente.Designer.cs">
+      <DependentUpon>Frm_Info_Pendiente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Info_Proceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Info_Proceso.Designer.cs">
+      <DependentUpon>Frm_Info_Proceso.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_NuevoEntrega.cs">
       <SubType>Form</SubType>
@@ -168,8 +180,8 @@
     <EmbeddedResource Include="FrmEquipo.resx">
       <DependentUpon>FrmEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInicio.resx">
-      <DependentUpon>FrmInicio.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Informacion.resx">
+      <DependentUpon>Frm_Informacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -180,11 +192,17 @@
     <EmbeddedResource Include="FrmTecnico.resx">
       <DependentUpon>FrmTecnico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTicket.resx">
-      <DependentUpon>FrmTicket.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmTicketReport.resx">
       <DependentUpon>FrmTicketReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Info_Finalizar.resx">
+      <DependentUpon>Frm_Info_Finalizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Info_Pendiente.resx">
+      <DependentUpon>Frm_Info_Pendiente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Info_Proceso.resx">
+      <DependentUpon>Frm_Info_Proceso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_NuevoEntrega.resx">
       <DependentUpon>Frm_NuevoEntrega.cs</DependentUpon>
