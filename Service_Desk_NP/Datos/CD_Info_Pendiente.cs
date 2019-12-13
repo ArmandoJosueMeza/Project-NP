@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/// IMPORTACION DE LA CLASES PARA 
+/// LA CONEXION CON LA BASE DE DATOS 
+/// EN SQL SERVER 
 using System.Data;
 using System.Data.SqlClient;
 
@@ -14,6 +17,10 @@ namespace Datos
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
+        /// <summary>
+        /// OBTIENE EL PROCEDIMIENTO PARA MOSTRAR TODOS LOS TICKETS PENDIENTES
+        /// </summary>
+        /// <returns></returns>
         public DataTable Mostrar()
         {
             comando.Connection = conexion.AbrirConexion();

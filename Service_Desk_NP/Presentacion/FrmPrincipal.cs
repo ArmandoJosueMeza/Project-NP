@@ -37,12 +37,12 @@ namespace Service_Desk_NP
         // Boton para expandir o contraer el menu
         private void BtnSlide_Click(object sender, EventArgs e)
         {
-            if (menuVertical.Width == 294)
+            /* (menuVertical.Width == 294)
             {
                 menuVertical.Width = 90;
             }
             else
-                menuVertical.Width = 294;
+                menuVertical.Width = 294;*/
         }
         //  Boton para cerrar la pantalla
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -54,16 +54,16 @@ namespace Service_Desk_NP
         // Boton para expandir la pantalla
         private void BtnExpandir_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            /*this.WindowState = FormWindowState.Maximized;
             btnContraer.Visible = true;
-            btnExpandir.Visible = false;
+            btnExpandir.Visible = false;*/
         }
         // Boton para contraer o restaurar la pantalla a su posicion original
         private void BtnContraer_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            /*this.WindowState = FormWindowState.Normal;
             btnContraer.Visible = false;
-            btnExpandir.Visible = true;
+            btnExpandir.Visible = true;*/
         }
         // Boton para minimizar la pantalla 
         private void BtnMinimizar_Click(object sender, EventArgs e)
