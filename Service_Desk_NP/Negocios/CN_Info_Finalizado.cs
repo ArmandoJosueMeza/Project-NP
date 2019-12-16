@@ -12,7 +12,10 @@ namespace Negocios
     public class CN_Info_Finalizado
     {
         private CD_Info_Finalizado objetoCD = new CD_Info_Finalizado();
-
+        /// <summary>
+        /// SE ENCARGA DE LEER LOS DATOS EN VISTA TICKETS FINALIZADOS 
+        /// </summary>
+        /// <returns></returns>
         public DataTable MostrarFinalizado()
         {
             DataTable tabla = new DataTable();

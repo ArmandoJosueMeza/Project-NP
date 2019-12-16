@@ -12,7 +12,10 @@ namespace Negocios
     public class CN_Info_Pendiente
     {
         private CD_Info_Pendiente objetoCD = new CD_Info_Pendiente();
-
+        /// <summary>
+        /// SE ENCARGA DE LEER LOS DATOS EN LA VISTA TICKETS PENDIENTES 
+        /// </summary>
+        /// <returns></returns>
         public DataTable MostrarPendiente()
         {
             DataTable tabla = new DataTable();

@@ -12,7 +12,10 @@ namespace Negocios
     public class CN_Info_Proceso
     {
         private CD_Info_Proceso objetoCD = new CD_Info_Proceso();
-
+        /// <summary>
+        /// SE ENCARGA DE LEER LOS DATOS EN LA VISTA TICKETS EN PROCESO
+        /// </summary>
+        /// <returns></returns>
         public DataTable MostrarProceso()
         {
             DataTable tabla = new DataTable();
