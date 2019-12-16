@@ -58,9 +58,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 69);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 76);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(244, 152);
+            this.pictureBox1.Size = new System.Drawing.Size(234, 145);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -167,8 +167,10 @@
             // btnAcceso
             // 
             this.btnAcceso.BackColor = System.Drawing.Color.White;
+            this.btnAcceso.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAcceso.FlatAppearance.BorderSize = 0;
-            this.btnAcceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAcceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnAcceso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcceso.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcceso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));

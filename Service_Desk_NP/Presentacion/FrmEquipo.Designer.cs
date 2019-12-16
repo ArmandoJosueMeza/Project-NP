@@ -73,7 +73,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(739, 579);
+            this.btnGuardar.Location = new System.Drawing.Point(748, 551);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 33);
             this.btnGuardar.TabIndex = 12;
@@ -91,7 +91,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(359, 579);
+            this.btnEliminar.Location = new System.Drawing.Point(352, 551);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(140, 33);
             this.btnEliminar.TabIndex = 2;
@@ -108,12 +108,12 @@
             this.gpbBusquedaEquipo.Controls.Add(this.btnBuscar);
             this.gpbBusquedaEquipo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbBusquedaEquipo.ForeColor = System.Drawing.Color.White;
-            this.gpbBusquedaEquipo.Location = new System.Drawing.Point(516, 40);
+            this.gpbBusquedaEquipo.Location = new System.Drawing.Point(525, 12);
             this.gpbBusquedaEquipo.Name = "gpbBusquedaEquipo";
             this.gpbBusquedaEquipo.Size = new System.Drawing.Size(363, 121);
             this.gpbBusquedaEquipo.TabIndex = 99;
             this.gpbBusquedaEquipo.TabStop = false;
-            this.gpbBusquedaEquipo.Text = "Busqueda de Equipo";
+            this.gpbBusquedaEquipo.Text = "BUSQUEDA";
             // 
             // txtBusqueda
             // 
@@ -185,7 +185,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(213, 579);
+            this.btnEditar.Location = new System.Drawing.Point(206, 551);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(140, 33);
             this.btnEditar.TabIndex = 1;
@@ -198,12 +198,12 @@
             this.gpbEquipos.Controls.Add(this.dgvEquipos);
             this.gpbEquipos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbEquipos.ForeColor = System.Drawing.Color.White;
-            this.gpbEquipos.Location = new System.Drawing.Point(19, 40);
+            this.gpbEquipos.Location = new System.Drawing.Point(12, 12);
             this.gpbEquipos.Name = "gpbEquipos";
             this.gpbEquipos.Size = new System.Drawing.Size(480, 533);
             this.gpbEquipos.TabIndex = 100;
             this.gpbEquipos.TabStop = false;
-            this.gpbEquipos.Text = "Equipos";
+            this.gpbEquipos.Text = "EQUIPOS";
             // 
             // dgvEquipos
             // 
@@ -271,17 +271,17 @@
             this.gpbDatosEquipo.Controls.Add(this.lblEquipo);
             this.gpbDatosEquipo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDatosEquipo.ForeColor = System.Drawing.Color.White;
-            this.gpbDatosEquipo.Location = new System.Drawing.Point(516, 238);
+            this.gpbDatosEquipo.Location = new System.Drawing.Point(525, 267);
             this.gpbDatosEquipo.Name = "gpbDatosEquipo";
             this.gpbDatosEquipo.Size = new System.Drawing.Size(363, 278);
             this.gpbDatosEquipo.TabIndex = 101;
             this.gpbDatosEquipo.TabStop = false;
-            this.gpbDatosEquipo.Text = "Datos del Equipo";
+            this.gpbDatosEquipo.Text = "DATOS";
             // 
             // txtNoCliente
             // 
             this.txtNoCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoCliente.Location = new System.Drawing.Point(153, 63);
+            this.txtNoCliente.Location = new System.Drawing.Point(153, 60);
             this.txtNoCliente.Name = "txtNoCliente";
             this.txtNoCliente.Size = new System.Drawing.Size(200, 23);
             this.txtNoCliente.TabIndex = 6;
@@ -289,7 +289,7 @@
             // txtNoSerie
             // 
             this.txtNoSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoSerie.Location = new System.Drawing.Point(153, 179);
+            this.txtNoSerie.Location = new System.Drawing.Point(153, 176);
             this.txtNoSerie.Name = "txtNoSerie";
             this.txtNoSerie.Size = new System.Drawing.Size(200, 23);
             this.txtNoSerie.TabIndex = 10;
@@ -297,7 +297,7 @@
             // txtModelo
             // 
             this.txtModelo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModelo.Location = new System.Drawing.Point(153, 150);
+            this.txtModelo.Location = new System.Drawing.Point(153, 147);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(200, 23);
             this.txtModelo.TabIndex = 9;
@@ -307,7 +307,7 @@
             this.lblClaveAcceso.AutoSize = true;
             this.lblClaveAcceso.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClaveAcceso.ForeColor = System.Drawing.Color.White;
-            this.lblClaveAcceso.Location = new System.Drawing.Point(10, 215);
+            this.lblClaveAcceso.Location = new System.Drawing.Point(10, 212);
             this.lblClaveAcceso.Name = "lblClaveAcceso";
             this.lblClaveAcceso.Size = new System.Drawing.Size(122, 16);
             this.lblClaveAcceso.TabIndex = 10;
@@ -318,7 +318,7 @@
             this.lblModelo.AutoSize = true;
             this.lblModelo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModelo.ForeColor = System.Drawing.Color.White;
-            this.lblModelo.Location = new System.Drawing.Point(15, 157);
+            this.lblModelo.Location = new System.Drawing.Point(15, 154);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(61, 16);
             this.lblModelo.TabIndex = 9;
@@ -327,7 +327,7 @@
             // txtMarca
             // 
             this.txtMarca.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(153, 121);
+            this.txtMarca.Location = new System.Drawing.Point(153, 118);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(200, 23);
             this.txtMarca.TabIndex = 8;
@@ -337,7 +337,7 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.ForeColor = System.Drawing.Color.White;
-            this.lblMarca.Location = new System.Drawing.Point(15, 128);
+            this.lblMarca.Location = new System.Drawing.Point(15, 125);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(55, 16);
             this.lblMarca.TabIndex = 8;
@@ -348,7 +348,7 @@
             this.lblNoCliente.AutoSize = true;
             this.lblNoCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoCliente.ForeColor = System.Drawing.Color.White;
-            this.lblNoCliente.Location = new System.Drawing.Point(15, 70);
+            this.lblNoCliente.Location = new System.Drawing.Point(15, 67);
             this.lblNoCliente.Name = "lblNoCliente";
             this.lblNoCliente.Size = new System.Drawing.Size(80, 16);
             this.lblNoCliente.TabIndex = 5;
@@ -357,7 +357,7 @@
             // txtClaveAcceso
             // 
             this.txtClaveAcceso.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClaveAcceso.Location = new System.Drawing.Point(153, 208);
+            this.txtClaveAcceso.Location = new System.Drawing.Point(153, 205);
             this.txtClaveAcceso.Name = "txtClaveAcceso";
             this.txtClaveAcceso.Size = new System.Drawing.Size(200, 23);
             this.txtClaveAcceso.TabIndex = 11;
@@ -365,7 +365,7 @@
             // txtEquipo
             // 
             this.txtEquipo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEquipo.Location = new System.Drawing.Point(153, 92);
+            this.txtEquipo.Location = new System.Drawing.Point(153, 89);
             this.txtEquipo.Name = "txtEquipo";
             this.txtEquipo.Size = new System.Drawing.Size(200, 23);
             this.txtEquipo.TabIndex = 7;
@@ -375,7 +375,7 @@
             this.lblNoSerie.AutoSize = true;
             this.lblNoSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoSerie.ForeColor = System.Drawing.Color.White;
-            this.lblNoSerie.Location = new System.Drawing.Point(15, 186);
+            this.lblNoSerie.Location = new System.Drawing.Point(15, 183);
             this.lblNoSerie.Name = "lblNoSerie";
             this.lblNoSerie.Size = new System.Drawing.Size(66, 16);
             this.lblNoSerie.TabIndex = 6;
@@ -386,7 +386,7 @@
             this.lblEquipo.AutoSize = true;
             this.lblEquipo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo.ForeColor = System.Drawing.Color.White;
-            this.lblEquipo.Location = new System.Drawing.Point(15, 99);
+            this.lblEquipo.Location = new System.Drawing.Point(15, 96);
             this.lblEquipo.Name = "lblEquipo";
             this.lblEquipo.Size = new System.Drawing.Size(57, 16);
             this.lblEquipo.TabIndex = 7;

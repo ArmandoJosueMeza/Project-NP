@@ -76,7 +76,7 @@
             this.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(572, 579);
+            this.btnImprimir.Location = new System.Drawing.Point(586, 553);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(156, 33);
             this.btnImprimir.TabIndex = 105;
@@ -94,7 +94,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(734, 579);
+            this.btnGuardar.Location = new System.Drawing.Point(748, 553);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 33);
             this.btnGuardar.TabIndex = 106;
@@ -112,7 +112,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(354, 579);
+            this.btnEliminar.Location = new System.Drawing.Point(352, 553);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(140, 33);
             this.btnEliminar.TabIndex = 104;
@@ -129,12 +129,12 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(511, 38);
+            this.groupBox1.Location = new System.Drawing.Point(525, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(363, 121);
             this.groupBox1.TabIndex = 107;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda de Ticket";
+            this.groupBox1.Text = "BUSQUEDA";
             // 
             // txtBusqueda
             // 
@@ -206,7 +206,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(208, 579);
+            this.btnEditar.Location = new System.Drawing.Point(206, 553);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(140, 33);
             this.btnEditar.TabIndex = 103;
@@ -219,12 +219,12 @@
             this.gpbTicket.Controls.Add(this.dgvTickets);
             this.gpbTicket.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbTicket.ForeColor = System.Drawing.Color.White;
-            this.gpbTicket.Location = new System.Drawing.Point(14, 38);
+            this.gpbTicket.Location = new System.Drawing.Point(12, 12);
             this.gpbTicket.Name = "gpbTicket";
             this.gpbTicket.Size = new System.Drawing.Size(480, 535);
             this.gpbTicket.TabIndex = 108;
             this.gpbTicket.TabStop = false;
-            this.gpbTicket.Text = "Tickets";
+            this.gpbTicket.Text = "TICKETS";
             // 
             // dgvTickets
             // 
@@ -294,12 +294,12 @@
             this.groupBox2.Controls.Add(this.lblNoSerie);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(511, 207);
+            this.groupBox2.Location = new System.Drawing.Point(525, 187);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(363, 360);
             this.groupBox2.TabIndex = 109;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos del Ticket";
+            this.groupBox2.Text = "DATOS";
             // 
             // dtFecha
             // 

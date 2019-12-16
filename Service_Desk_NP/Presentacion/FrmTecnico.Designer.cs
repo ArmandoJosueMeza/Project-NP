@@ -69,7 +69,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(734, 579);
+            this.btnGuardar.Location = new System.Drawing.Point(748, 535);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 33);
             this.btnGuardar.TabIndex = 11;
@@ -87,7 +87,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(354, 579);
+            this.btnEliminar.Location = new System.Drawing.Point(352, 535);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(140, 33);
             this.btnEliminar.TabIndex = 2;
@@ -104,12 +104,12 @@
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(511, 56);
+            this.groupBox1.Location = new System.Drawing.Point(525, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(363, 121);
             this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda de Tecnico";
+            this.groupBox1.Text = "BUSQUEDA";
             // 
             // txtBusqueda
             // 
@@ -181,7 +181,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(208, 579);
+            this.btnEditar.Location = new System.Drawing.Point(206, 535);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(140, 33);
             this.btnEditar.TabIndex = 1;
@@ -194,12 +194,12 @@
             this.groupBox3.Controls.Add(this.dgvTecnicos);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(14, 56);
+            this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(480, 517);
             this.groupBox3.TabIndex = 101;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tecnicos";
+            this.groupBox3.Text = "TECNICOS";
             // 
             // dgvTecnicos
             // 
@@ -263,12 +263,12 @@
             this.groupBox2.Controls.Add(this.lblNombre);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(511, 270);
+            this.groupBox2.Location = new System.Drawing.Point(525, 298);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(363, 231);
             this.groupBox2.TabIndex = 102;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos del Tecnico";
+            this.groupBox2.Text = "DATOS";
             // 
             // txtNombre
             // 
