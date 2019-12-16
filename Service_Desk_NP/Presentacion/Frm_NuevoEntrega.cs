@@ -153,7 +153,7 @@ namespace Presentacion
                 no_entrega = dgvEntregas.CurrentRow.Cells["No. Entrega"].Value.ToString();
 
                 FrmEntregaReport generarEntrega = new FrmEntregaReport(no_entrega);
-                MessageBox.Show("Generando Entrega");
+                MessageBox.Show("Generando entrega");
                 generarEntrega.ShowDialog();
                 MostrarNuevoEntregas();
                 LimpiarTextBox();

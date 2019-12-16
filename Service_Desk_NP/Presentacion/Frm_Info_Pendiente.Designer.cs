@@ -33,23 +33,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Info_Pendiente));
-            this.gpbTablaCliente = new System.Windows.Forms.GroupBox();
+            this.gpbTablaPendientes = new System.Windows.Forms.GroupBox();
             this.dgvPendientes = new System.Windows.Forms.DataGridView();
-            this.gpbTablaCliente.SuspendLayout();
+            this.gpbTablaPendientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // gpbTablaCliente
+            // gpbTablaPendientes
             // 
-            this.gpbTablaCliente.Controls.Add(this.dgvPendientes);
-            this.gpbTablaCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbTablaCliente.ForeColor = System.Drawing.Color.White;
-            this.gpbTablaCliente.Location = new System.Drawing.Point(12, 12);
-            this.gpbTablaCliente.Name = "gpbTablaCliente";
-            this.gpbTablaCliente.Size = new System.Drawing.Size(876, 600);
-            this.gpbTablaCliente.TabIndex = 117;
-            this.gpbTablaCliente.TabStop = false;
-            this.gpbTablaCliente.Text = "Servicios Pendientes";
+            this.gpbTablaPendientes.Controls.Add(this.dgvPendientes);
+            this.gpbTablaPendientes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbTablaPendientes.ForeColor = System.Drawing.Color.White;
+            this.gpbTablaPendientes.Location = new System.Drawing.Point(12, 12);
+            this.gpbTablaPendientes.Name = "gpbTablaPendientes";
+            this.gpbTablaPendientes.Size = new System.Drawing.Size(876, 600);
+            this.gpbTablaPendientes.TabIndex = 117;
+            this.gpbTablaPendientes.TabStop = false;
+            this.gpbTablaPendientes.Text = "SERVICIOS PENDIENTES";
             // 
             // dgvPendientes
             // 
@@ -107,13 +107,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(900, 624);
-            this.Controls.Add(this.gpbTablaCliente);
+            this.Controls.Add(this.gpbTablaPendientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Info_Pendiente";
             this.Text = "Frm_Info_Pendiente";
             this.Load += new System.EventHandler(this.Frm_Info_Pendiente_Load);
-            this.gpbTablaCliente.ResumeLayout(false);
+            this.gpbTablaPendientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendientes)).EndInit();
             this.ResumeLayout(false);
 
@@ -121,7 +121,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gpbTablaCliente;
+        private System.Windows.Forms.GroupBox gpbTablaPendientes;
         private System.Windows.Forms.DataGridView dgvPendientes;
     }
 }

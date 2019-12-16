@@ -37,10 +37,9 @@
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lblInicioSesion = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.linkClave = new System.Windows.Forms.LinkLabel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.lblMensajeError = new System.Windows.Forms.Label();
+            this.btnAcceso = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -59,9 +58,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 69);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 69);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 147);
+            this.pictureBox1.Size = new System.Drawing.Size(244, 152);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -137,34 +136,6 @@
             this.lblInicioSesion.TabIndex = 4;
             this.lblInicioSesion.Text = "INICIAR SESIÓN";
             // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.White;
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnLogin.Location = new System.Drawing.Point(321, 249);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(402, 40);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "INGRESAR";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // linkClave
-            // 
-            this.linkClave.AutoSize = true;
-            this.linkClave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkClave.ForeColor = System.Drawing.Color.White;
-            this.linkClave.LinkColor = System.Drawing.Color.White;
-            this.linkClave.Location = new System.Drawing.Point(410, 300);
-            this.linkClave.Name = "linkClave";
-            this.linkClave.Size = new System.Drawing.Size(198, 17);
-            this.linkClave.TabIndex = 0;
-            this.linkClave.TabStop = true;
-            this.linkClave.Text = "¿Ha olvidado la contraseña?";
-            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,16 +164,32 @@
             this.lblMensajeError.Text = "Mensaje de error";
             this.lblMensajeError.Visible = false;
             // 
+            // btnAcceso
+            // 
+            this.btnAcceso.BackColor = System.Drawing.Color.White;
+            this.btnAcceso.FlatAppearance.BorderSize = 0;
+            this.btnAcceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAcceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceso.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcceso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAcceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcceso.Location = new System.Drawing.Point(324, 255);
+            this.btnAcceso.Name = "btnAcceso";
+            this.btnAcceso.Size = new System.Drawing.Size(402, 40);
+            this.btnAcceso.TabIndex = 9;
+            this.btnAcceso.Text = "INGRESAR";
+            this.btnAcceso.UseVisualStyleBackColor = false;
+            this.btnAcceso.Click += new System.EventHandler(this.btnAcceso_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.btnAcceso);
             this.Controls.Add(this.lblMensajeError);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.linkClave);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblInicioSesion);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtClave);
@@ -231,10 +218,9 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.Label lblInicioSesion;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.LinkLabel linkClave;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblMensajeError;
+        private System.Windows.Forms.Button btnAcceso;
     }
 }

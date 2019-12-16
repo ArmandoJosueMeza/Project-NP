@@ -50,7 +50,6 @@
     <Compile Include="CD_NuevoEntrega.cs" />
     <Compile Include="CD_Info_Pendiente.cs" />
     <Compile Include="CD_Tecnicos.cs" />
-    <Compile Include="CD_Tickets.cs" />
     <Compile Include="CD_UsuarioDAO.cs" />
     <Compile Include="CD_NuevoTicket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

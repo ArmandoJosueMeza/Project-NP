@@ -33,24 +33,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Info_Finalizar));
-            this.gpbTablaCliente = new System.Windows.Forms.GroupBox();
+            this.gpbTablFinalizados = new System.Windows.Forms.GroupBox();
             this.dgvFinalizados = new System.Windows.Forms.DataGridView();
-            this.gpbTablaCliente.SuspendLayout();
+            this.gpbTablFinalizados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFinalizados)).BeginInit();
             this.SuspendLayout();
             // 
-            // gpbTablaCliente
+            // gpbTablFinalizados
             // 
-            this.gpbTablaCliente.Controls.Add(this.dgvFinalizados);
-            this.gpbTablaCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbTablaCliente.ForeColor = System.Drawing.Color.White;
-            this.gpbTablaCliente.Location = new System.Drawing.Point(12, 12);
-            this.gpbTablaCliente.Name = "gpbTablaCliente";
-            this.gpbTablaCliente.Size = new System.Drawing.Size(876, 600);
-            this.gpbTablaCliente.TabIndex = 116;
-            this.gpbTablaCliente.TabStop = false;
-            this.gpbTablaCliente.Text = "Servicios Finalizados";
-            
+            this.gpbTablFinalizados.Controls.Add(this.dgvFinalizados);
+            this.gpbTablFinalizados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbTablFinalizados.ForeColor = System.Drawing.Color.White;
+            this.gpbTablFinalizados.Location = new System.Drawing.Point(12, 12);
+            this.gpbTablFinalizados.Name = "gpbTablFinalizados";
+            this.gpbTablFinalizados.Size = new System.Drawing.Size(876, 600);
+            this.gpbTablFinalizados.TabIndex = 116;
+            this.gpbTablFinalizados.TabStop = false;
+            this.gpbTablFinalizados.Text = "SERVICIOS FINALIZADOS";
             // 
             // dgvFinalizados
             // 
@@ -108,13 +107,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(900, 624);
-            this.Controls.Add(this.gpbTablaCliente);
+            this.Controls.Add(this.gpbTablFinalizados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Info_Finalizar";
             this.Text = "Frm_Info_Finalizar";
             this.Load += new System.EventHandler(this.Frm_Info_Finalizar_Load);
-            this.gpbTablaCliente.ResumeLayout(false);
+            this.gpbTablFinalizados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFinalizados)).EndInit();
             this.ResumeLayout(false);
 
@@ -122,7 +121,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gpbTablaCliente;
+        private System.Windows.Forms.GroupBox gpbTablFinalizados;
         private System.Windows.Forms.DataGridView dgvFinalizados;
     }
 }

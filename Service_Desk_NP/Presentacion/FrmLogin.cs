@@ -62,11 +62,28 @@ namespace Presentacion
                 Application.Exit();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+       
+        public void msgError(string msg)
         {
-            if (txtUsuario.Text != "USUARIO") 
+            lblMensajeError.Text = "     " + msg;
+            lblMensajeError.Visible = true;
+        }
+
+        public void Logout (object sender, FormClosedEventArgs e)
+        {
+            txtClave.Text = "CONTRASEÑA";
+            txtClave.UseSystemPasswordChar = false;
+            txtUsuario.Text = "USUARIO";
+            lblMensajeError.Visible = false;
+            this.Show();
+           
+        }
+
+        private void btnAcceso_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text != "USUARIO")
             {
-                if (txtClave.Text != "CONTRASEÑA") 
+                if (txtClave.Text != "CONTRASEÑA")
                 {
                     CN_Usuario usuario = new CN_Usuario();
                     var loginValido = usuario.Inicio_Sesion(txtUsuario.Text, txtClave.Text);
@@ -89,22 +106,6 @@ namespace Presentacion
                 else msgError("Por favor ingrese su contraseña.");
             }
             else msgError("Por favor ingrese nombre de usuario.");
-        }
-
-        public void msgError(string msg)
-        {
-            lblMensajeError.Text = "     " + msg;
-            lblMensajeError.Visible = true;
-        }
-
-        public void Logout (object sender, FormClosedEventArgs e)
-        {
-            txtClave.Text = "CONTRASEÑA";
-            txtClave.UseSystemPasswordChar = false;
-            txtUsuario.Text = "USUARIO";
-            lblMensajeError.Visible = false;
-            this.Show();
-           
         }
     }
 }

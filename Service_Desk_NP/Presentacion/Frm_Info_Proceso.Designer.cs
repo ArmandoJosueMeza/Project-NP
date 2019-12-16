@@ -33,23 +33,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Info_Proceso));
-            this.gpbTablaCliente = new System.Windows.Forms.GroupBox();
+            this.gpbTablaProceso = new System.Windows.Forms.GroupBox();
             this.dgvProcesos = new System.Windows.Forms.DataGridView();
-            this.gpbTablaCliente.SuspendLayout();
+            this.gpbTablaProceso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesos)).BeginInit();
             this.SuspendLayout();
             // 
-            // gpbTablaCliente
+            // gpbTablaProceso
             // 
-            this.gpbTablaCliente.Controls.Add(this.dgvProcesos);
-            this.gpbTablaCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbTablaCliente.ForeColor = System.Drawing.Color.White;
-            this.gpbTablaCliente.Location = new System.Drawing.Point(12, 12);
-            this.gpbTablaCliente.Name = "gpbTablaCliente";
-            this.gpbTablaCliente.Size = new System.Drawing.Size(876, 600);
-            this.gpbTablaCliente.TabIndex = 118;
-            this.gpbTablaCliente.TabStop = false;
-            this.gpbTablaCliente.Text = "Servicios En Proceso";
+            this.gpbTablaProceso.Controls.Add(this.dgvProcesos);
+            this.gpbTablaProceso.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbTablaProceso.ForeColor = System.Drawing.Color.White;
+            this.gpbTablaProceso.Location = new System.Drawing.Point(12, 12);
+            this.gpbTablaProceso.Name = "gpbTablaProceso";
+            this.gpbTablaProceso.Size = new System.Drawing.Size(876, 600);
+            this.gpbTablaProceso.TabIndex = 118;
+            this.gpbTablaProceso.TabStop = false;
+            this.gpbTablaProceso.Text = "SERVICIOS EN PROCESO";
             // 
             // dgvProcesos
             // 
@@ -107,13 +107,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(900, 624);
-            this.Controls.Add(this.gpbTablaCliente);
+            this.Controls.Add(this.gpbTablaProceso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Info_Proceso";
             this.Text = "Frm_Info_Proceso";
             this.Load += new System.EventHandler(this.Frm_Info_Proceso_Load);
-            this.gpbTablaCliente.ResumeLayout(false);
+            this.gpbTablaProceso.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcesos)).EndInit();
             this.ResumeLayout(false);
 
@@ -121,7 +121,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gpbTablaCliente;
+        private System.Windows.Forms.GroupBox gpbTablaProceso;
         private System.Windows.Forms.DataGridView dgvProcesos;
     }
 }

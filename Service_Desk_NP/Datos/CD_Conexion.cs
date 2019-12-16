@@ -20,7 +20,7 @@ namespace Datos
         /// <summary>
         /// ESTABLECER LOS PARAMETROS DE CONEXION CON LA BASE DE DATOS 
         /// </summary>
-        private SqlConnection ConexionSQL = new SqlConnection(@"Server=               (local);" +
+        private SqlConnection ConexionSQL = new SqlConnection(@"Server=               (local)\SQLEXPRESS;" +
                                                                "DataBase=             BD_SERVICE_DESK;" +
                                                                "Integrated Security=  true");
 

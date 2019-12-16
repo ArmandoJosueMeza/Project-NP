@@ -141,7 +141,7 @@ namespace Presentacion
                 no_ticket = dgvTickets.CurrentRow.Cells["No. Ticket"].Value.ToString();
 
                 FrmTicketReport generarEntrega = new FrmTicketReport(no_ticket);
-                MessageBox.Show("Generando Comprobante de entrega");
+                MessageBox.Show("Generando comprobante de entrega");
                 generarEntrega.ShowDialog();
                 MostrarNuevoTickets();
                 LimpiarTextBox();

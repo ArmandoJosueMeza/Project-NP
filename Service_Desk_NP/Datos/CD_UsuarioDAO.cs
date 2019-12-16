@@ -3,18 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/// IMPORTACION DE LA CLASES PARA 
+/// LA CONEXION CON LA BASE DE DATOS 
+/// EN SQL SERVER 
 using System.Data.SqlClient;
 using System.Data;
 using Soporte.Cache;
 
 namespace Datos
 {
+    /// <summary>
+    /// SE ENCAGARA DE OBTENER LA INFORMACION DEL USUARIO
+    /// CREADO EN LA BASE DE DATOS:  BD_SERVICE_DESK
+    /// </summary>
+    /// </summary>
     public class CD_UsuarioDAO
     {
         private CD_Conexion conexion = new CD_Conexion();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
+
+        /// <summary>
+        /// MUESTRA LOS DATOS DEL CLIENTE MIENTRAS ESTE EN INICIO DE SESION
+        /// </summary>
+        /// <param name="nombre_login"></param>
+        /// <param name="clave_login"></param>
+        /// <returns></returns>
         public bool Login(string nombre_login, string clave_login)
         {
             comando.Connection = conexion.AbrirConexion();
