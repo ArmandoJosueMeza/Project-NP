@@ -111,7 +111,9 @@ namespace Datos
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "SP_ELIMINAR_TICKET";
             comando.CommandType = CommandType.StoredProcedure;
+
             comando.Parameters.AddWithValue("@NO_TICKET", no_ticket);
+
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
         }

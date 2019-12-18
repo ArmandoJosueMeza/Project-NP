@@ -460,7 +460,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pantalla Principal";
+            this.Text = "Service Desk Network Place STD";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.barraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnExpandir)).EndInit();
